@@ -1,0 +1,133 @@
+
+#pane {
+    position: relative;
+    width: 100%;
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+    padding: 4vh 8vh;
+    background: rgba(253, 251, 254, 0.74);
+    border: 0.2vh solid black;
+    z-index: 1;
+}
+
+#pane h2 {
+    text-align: center;
+    padding-bottom: 1vh;
+    margin: auto;
+    width: 20vh;
+    border-bottom: 0.2vh solid black;
+}
+
+#cart {
+    margin-top: 5vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+}
+
+#products-table {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    overflow: hidden;
+    border-top: 0.25vh solid;
+    border-bottom: 0.25vh solid;
+}
+
+#products-table p {
+    margin-bottom: 1.5vh;
+    margin-top: 1.5vh;
+}
+
+#transport {
+    width: 50vw;
+}
+
+#products-price-total {
+    margin-top: 1.5vh;
+    text-align: right;
+}
+
+#dpd-pickup-point-select {
+    width: 40vh;
+    display: block;
+    margin-top: -1.5vh;
+    margin-bottom: 1.5vh;
+}
+
+#omniva-pickup-point-select {
+    width: 40vh;
+    display: block;
+    margin-top: -1.5vh;
+    margin-bottom: 1.5vh;
+}
+
+.transport-type {
+    display: flex;
+    flex-direction: row;
+}
+
+.transport-type input {
+    margin-top: -1.75vh;
+    margin-right: 2vh;
+    width: 2vh;
+}
+
+.transport-type select {
+    width: 20vh;
+}
+
+#personal-data {
+    display: grid;
+    grid-template-columns: 20vh 20vh 20vh;
+}
+
+@media only screen and (max-width: 750px) {
+    #personal-data {
+        grid-template-columns: 20vh 20vh;
+    }
+}
+
+@media only screen and (max-width: 520px) {
+    #personal-data {
+        grid-template-columns: 20vh;
+    }
+}
+
+#personal-data input{
+    margin-bottom: 1vh;
+    width: 16vh;
+    height: 2vh;
+    font-size: 1.5vh;
+}
+
+#email-for-verification {
+    display: inline;
+}
+
+#verification-wrong-email {
+    color: red;
+    margin-left: 1vh;
+    font-size: 1.5vh;
+}
+
+#verify-email {
+    display: block;
+}
+
+#verification-code {
+    display: block;
+    margin-bottom: 1vh;
+}
+
+#verify-code {
+    display: block;
+}
+
+#submit-order {
+    display: block;
+    width: 20vh;
+    margin: auto;
+    margin-top: 1.5vh;
+}

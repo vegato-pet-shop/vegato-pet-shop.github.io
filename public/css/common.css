@@ -1,0 +1,297 @@
+:root {
+    --light-orange: #FFF2D7;
+    --orange:#F38F47;
+    --whitish:#FDFBFE;
+    --light-blue:#E2F7FF;
+    --blue: #81C4DD;
+    --dark-blue: #015878;
+}  
+
+svg {
+    width: auto;
+    height: auto;
+}
+
+:not(svg *) {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border: none;
+    font-size: 0;
+}
+
+html {
+    overflow-x: hidden;
+}
+  
+body {
+    position: relative;
+    overflow-x: hidden;
+    background: var(--light-orange);
+}
+
+body {
+    min-height: 100vh;
+}
+
+#wrapper {
+    position: relative;
+    width: 87%;
+    max-width: 120vh;
+    margin: auto;
+}
+
+
+/*---Fonts---------------------------------------------------------*/
+
+.Grotesk {
+    font-family: "Space Grotesk"
+}
+
+
+/*---Text related------------------------------------------------------------------------------*/
+
+b {
+    font-family: inherit;
+    font-size: inherit;
+}
+
+h1 {
+    font-family: "Space Grotesk", sans-serif;
+}
+
+h2 {
+    font-size: 4vh;
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: bold;
+}
+
+h3 {
+    font-family: 'Space Grotesk', sans-serif;;
+    font-size: 2.4vh
+}
+
+h4 {
+    font-family: 'Space Grotesk', sans-serif;;
+    font-size: 2vh
+}
+
+span {
+    font-size: 2.4vh;
+    height: auto;
+    width: auto;
+}
+
+p {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 2.4vh;
+}
+
+label {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 2.4vh;
+}
+
+a {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 2.4vh;
+    color: black;
+}
+
+a:link { text-decoration: none; }
+
+a:visited { text-decoration: none; }
+
+a:hover { text-decoration: none; }
+
+a:active { text-decoration: none; }
+
+a:focus { text-decoration: none; }
+
+
+/*---Button/input related--------------------------------------------------------------*/
+
+button {
+    cursor: pointer;
+}
+
+button {
+    background: transparent;
+}
+
+button:focus {
+    outline:0;
+}
+
+
+input {
+    font-family: 'Space Grotesk', sans-serif;
+    background-color: white;
+    border-radius: 0.185vh;
+    border-color: black;
+    border: black solid 0.093vh;
+    padding-left: 0.75vh;
+}
+
+input[type="text"] {
+    padding-left: 0.5vh;
+    -webkit-appearance: textfield;
+    -moz-appearance: textfield;
+    appearance: textfield;
+    font: 2vh 'Space Grotesk', sans-serif;
+    font-weight: normal;
+    color: #353535;
+    height: 4vh;
+}
+
+input[type="email"] {
+    padding-left: 0.5vh;
+    -webkit-appearance: textfield;
+    -moz-appearance: textfield;
+    appearance: textfield;
+    font: 2vh 'Space Grotesk', sans-serif;
+    font-weight: normal;
+    color: #353535;
+    height: 4vh;
+}
+
+input[type="password"] {
+    padding-left: 0.5vh;
+    -webkit-appearance: textfield;
+    -moz-appearance: textfield;
+    appearance: textfield;
+    font: 2vh 'Space Grotesk', sans-serif;
+    font-weight: normal;
+    color: #353535;
+    height: 4vh;
+}
+
+input[type="number"] {
+    -webkit-appearance: textfield;
+    -moz-appearance: textfield;
+    appearance: textfield;
+    width: 4.63vh;
+    font: 2vh 'Space Grotesk', sans-serif;
+    font-weight: normal;
+    color: #353535;
+}
+  
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+/*-----------------------------------------------*/
+
+.number-input {
+    margin-top: -1vh;
+    margin-bottom: 2vh;
+    border: 0.2vh solid #ddd;
+    display: inline-flex;
+}
+
+.number-input,
+.number-input * {
+    box-sizing: border-box;
+    width: 10vh;
+}
+
+.number-input button {
+    outline:none;
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: transparent;
+    border: none;
+    align-items: center;
+    justify-content: center;
+    width: 3vh;
+    height: 3vh;
+    cursor: pointer;
+    margin: 0;
+    position: relative;
+}
+
+.number-input button:after {
+    display: inline-block;
+    position: absolute;
+    font-family: "Space Grotesk" sans-serif; 
+    transform: translate(-50%, -50%) rotate(180deg);
+    font-size: 2vh;
+}
+.number-input button.plus:after {
+    content: '+';
+}
+.number-input button.minus:after {
+    content: '-';
+}
+
+.number-input input[type=number] {
+    font-family: "Space Grotesk" sans-serif; 
+    max-width: 5vh;
+    padding: 0.357vh;
+    border: solid #ddd;
+    border-width: 0 0.2vh;
+    font-size: 1.5vh;
+    height: 3vh;
+    font-weight: bold;
+    text-align: center;
+}
+
+
+/*---Background----------------------------------------------------------------------*/
+
+#background {
+    position: absolute;
+    overflow: hidden;
+    height: 100%;
+    width: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -100;
+}
+
+#blue-top {
+    position: absolute;
+    width: 120vh;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-50deg);;
+    margin-top: -90vh;
+    margin-left: 20vh;
+}
+
+
+#orange-top {
+    position: absolute;
+    width: 150vh;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(0deg);
+    margin-top: -20vh;
+    margin-left: -70vh;
+}
+
+#orange-bottom {
+    position: absolute;
+    width: 120vh;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-0deg);;
+    margin-top: 30vh;
+    margin-left: 50vh;
+}
+
+
+#blue-bottom {
+    position: absolute;
+    width: 150vh;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(0deg);
+    margin-top: 60vh;
+    margin-left: -70vh;
+}
+
+
