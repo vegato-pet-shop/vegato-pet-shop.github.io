@@ -4,46 +4,46 @@
     display: flex;
     position: relative;
     margin: auto;
-    margin-top: 1vh;
-    top: 1vh;
+    margin-top: 0.682rem;
+    top: 0.682rem;
     width: 87%;
-    max-width: 120vh;
-    padding: 0 3vh;
+    max-width: 81.9rem;
+    padding: 0 2.047rem;
     justify-content: space-between;
     align-items: center;
     z-index: 10;
-    border-bottom: 0.25vh solid black;
+    border-bottom: 0.171rem solid black;
 }
 
 #navbar-logo {
-    width: 15vh;
+    width: 10.238rem;
     height: 100%;
 }
 
 #navbar ul a {
     display: block;
     font-family: 'Space Grotesk', sans-serif;
-    font-size: 2.31vh;
+    font-size: 1.577rem;
     text-decoration: none;
     text-align: center;
 }
 
 #navbar ul li {
     display: inline-block;
-    padding: 0.46vh;
+    padding: 0.314rem;
     position: relative;
     transition: all 300ms cubic-bezier(0.075, 0.82, 0.165, 1);
-    margin-left: 2vh;
-    margin-right: 2vh;
+    margin-left: 1.365rem;
+    margin-right: 1.365rem;
 }
 
-#navbar ul li:first-child { margin-left: 0vh; }
-#navbar ul li:last-child { margin-right: 0vh; }
+#navbar ul li:first-child { margin-left: 0.0rem; }
+#navbar ul li:last-child { margin-right: 0.0rem; }
 
 #navbar ul li:last-child img {
     position: relative;
-    width: 3vh;
-    margin-bottom: -0.3vh;
+    width: 2.047rem;
+    margin-bottom: -0.205rem;
 
 }
 
@@ -63,8 +63,8 @@
     height: 0%;
     right: 0;
     bottom: 0;
-    border-bottom: 0.185vh solid transparent;
-    border-right: 0.185vh solid transparent;
+    border-bottom: 0.126rem solid transparent;
+    border-right: 0.126rem solid transparent;
     z-index: 1000;
 }
 
@@ -73,27 +73,27 @@
     height: 0%;
     top: 0;
     left: 0;
-    border-top: 0.185vh solid transparent;
-    border-left: 0.185vh solid transparent;
+    border-top: 0.126rem solid transparent;
+    border-left: 0.126rem solid transparent;
 }
 
 .navbar-li:hover::before,
 .navbar-li:hover::after {
-    width: 0.93vh;
-    height: 0.93vh;
+    width: 0.635rem;
+    height: 0.635rem;
     border-color: var(--pink);
     z-index: 1000;
 }
 
 #cart-counter {
     position: absolute;
-    top: -0.4vh;
-    left: 2.6vh;
-    width: 2vh;
-    height: 2vh;
-    border-radius: 5vh;
+    top: -0.273rem;
+    left: 1.774rem;
+    width: 1.365rem;
+    height: 1.365rem;
+    border-radius: 3.412rem;
     font-family: "Space Grotesk";
-    font-size: 1.5vh;
+    font-size: 1.024rem;
     text-align: center;
     color: white;
     background: var(--orange);

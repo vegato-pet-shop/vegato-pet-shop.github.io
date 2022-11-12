@@ -38,7 +38,7 @@ function vh_to_rem()
             read(f, String)
         end
         split_css = split(css, "\r\n")
-        for k = 1:lastindex(css_fragment)
+        for k = 1:lastindex(split_css)
             css_fragment = split_css[k]
             if occursin("vh", css_fragment)
                 split_css_fragment = split(css_fragment, " ")

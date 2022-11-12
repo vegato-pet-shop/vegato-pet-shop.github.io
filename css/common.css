@@ -30,14 +30,14 @@ body {
     justify-content: space-between;
     overflow-x: hidden;
     background: var(--light-orange);
-    min-height: 100vh;
+    min-height: 68.25rem;
 }
 
 
 #wrapper {
     position: relative;
     width: 87%;
-    max-width: 120vh;
+    max-width: 81.9rem;
     margin: auto;
 }
 
@@ -45,58 +45,90 @@ html {
     font-size: 16px;
 }
 
+@media only screen and (max-width: 960px) {
+    html {
+        font-size: 14px;
+    }
+}
+
+@media only screen and (max-width: 860px) {
+    html {
+        font-size: 12px;
+    }
+}
+
+@media only screen and (max-width: 620px) {
+    html {
+        font-size: 10px;
+    }
+}
+@media only screen and (max-width: 520px) {
+    html {
+        font-size: 8px;
+    }
+}
+@media only screen and (max-width: 520px) {
+    html {
+        font-size: 8px;
+    }
+}
+@media only screen and (max-width: 420px) {
+    html {
+        font-size: 6px;
+    }
+}
+@media only screen and (max-width: 315px) {
+    html {
+        font-size: 5px;
+    }
+}
 /*---Background----------------------------------------------------------------------*/
 
 #background {
     position: fixed;
     width: 100%;
     height: 0;
-    top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translateX(-50%);
     z-index: -100;
 }
 
 #blue-top {
     position: absolute;
-    width: 120vh;
-    top: 50%;
+    width: 81.9rem;
     left: 50%;
-    transform: translate(-50%, -50%) rotate(-50deg);;
-    margin-top: -40vh;
-    margin-left: 20vh;
+    transform: translateX(-50%) rotate(-50deg);
+    margin-top: -27.3rem;
+    margin-left: 13.65rem;
 }
 
 
 #orange-top {
     position: absolute;
-    width: 150vh;
-    top: 50%;
+    width: 102.375rem;
     left: 50%;
-    transform: translate(-50%, -50%) rotate(0deg);
-    margin-top: 30vh;
-    margin-left: -70vh;
+    transform: translateX(-50%) rotate(0deg);
+    margin-top: 20.475rem;
+    margin-left: -47.775rem;
 }
 
 #orange-bottom {
     position: absolute;
-    width: 120vh;
-    top: 50%;
+    width: 81.9rem;
     left: 50%;
-    transform: translate(-50%, -50%) rotate(-0deg);;
-    margin-top: 80vh;
-    margin-left: 50vh;
+    transform: translateX(-50%) rotate(-0deg);
+    margin-top: 54.6rem;
+    margin-left: 34.125rem;
 }
 
 
 #blue-bottom {
     position: absolute;
-    width: 150vh;
-    top: 50%;
+    width: 102.375rem;
     left: 50%;
-    transform: translate(-50%, -50%) rotate(0deg);
-    margin-top: 110vh;
-    margin-left: -70vh;
+    transform: translateX(-50%) rotate(0deg);
+    margin-top: 75.075rem;
+    margin-left: -47.775rem;
 }
 
 
@@ -119,40 +151,40 @@ h1 {
 }
 
 h2 {
-    font-size: 4vh;
+    font-size: 2.73rem;
     font-family: 'Space Grotesk', sans-serif;
     font-weight: bold;
 }
 
 h3 {
     font-family: 'Space Grotesk', sans-serif;;
-    font-size: 2.4vh
+    font-size: 1.638rem
 }
 
 h4 {
     font-family: 'Space Grotesk', sans-serif;;
-    font-size: 2vh
+    font-size: 1.365rem
 }
 
 span {
-    font-size: 2.4vh;
+    font-size: 1.638rem;
     height: auto;
     width: auto;
 }
 
 p {
     font-family: 'Space Grotesk', sans-serif;
-    font-size: 2.4vh;
+    font-size: 1.638rem;
 }
 
 label {
     font-family: 'Space Grotesk', sans-serif;
-    font-size: 2.4vh;
+    font-size: 1.638rem;
 }
 
 a {
     font-family: 'Space Grotesk', sans-serif;
-    font-size: 2.4vh;
+    font-size: 1.638rem;
     color: black;
 }
 
@@ -185,51 +217,51 @@ button:focus {
 input, select {
     font-family: 'Space Grotesk', sans-serif;
     background-color: white;
-    border-radius: 0.185vh;
+    border-radius: 0.126rem;
     border-color: black;
-    border: black solid 0.093vh;
-    padding-left: 0.75vh;
+    border: black solid 0.063rem;
+    padding-left: 0.512rem;
 }
 
 input[type="text"] {
-    padding-left: 0.5vh;
+    padding-left: 0.341rem;
     -webkit-appearance: textfield;
     -moz-appearance: textfield;
     appearance: textfield;
-    font: 2vh 'Space Grotesk', sans-serif;
+    font: 1.365rem 'Space Grotesk', sans-serif;
     font-weight: normal;
     color: #353535;
-    height: 4vh;
+    height: 2.73rem;
 }
 
 input[type="email"] {
-    padding-left: 0.5vh;
+    padding-left: 0.341rem;
     -webkit-appearance: textfield;
     -moz-appearance: textfield;
     appearance: textfield;
-    font: 2vh 'Space Grotesk', sans-serif;
+    font: 1.365rem 'Space Grotesk', sans-serif;
     font-weight: normal;
     color: #353535;
-    height: 4vh;
+    height: 2.73rem;
 }
 
 input[type="password"] {
-    padding-left: 0.5vh;
+    padding-left: 0.341rem;
     -webkit-appearance: textfield;
     -moz-appearance: textfield;
     appearance: textfield;
-    font: 2vh 'Space Grotesk', sans-serif;
+    font: 1.365rem 'Space Grotesk', sans-serif;
     font-weight: normal;
     color: #353535;
-    height: 4vh;
+    height: 2.73rem;
 }
 
 input[type="number"] {
     -webkit-appearance: textfield;
     -moz-appearance: textfield;
     appearance: textfield;
-    width: 4.63vh;
-    font: 2vh 'Space Grotesk', sans-serif;
+    width: 3.16rem;
+    font: 1.365rem 'Space Grotesk', sans-serif;
     font-weight: normal;
     color: #353535;
 }
@@ -241,39 +273,39 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 select {    
-    padding-left: 0.5vh;
+    padding-left: 0.341rem;
     -webkit-appearance: textfield;
     -moz-appearance: textfield;
     appearance: textfield;
-    font: 2vh 'Space Grotesk', sans-serif;
+    font: 1.365rem 'Space Grotesk', sans-serif;
     font-weight: normal;
     color: #353535;
-    height: 4vh;
-    font-size: 2vh;
-    height: 3vh;
+    height: 2.73rem;
+    font-size: 1.365rem;
+    height: 2.047rem;
 }
 
 option {
-    font-size: 1.5vh;
+    font-size: 1.024rem;
 }
 
 optgroup {
-    font-size: 1.5vh;
+    font-size: 1.024rem;
 }
 
 /*-----------------------------------------------*/
 
 .number-input {
-    margin-top: -1vh;
-    margin-bottom: 2vh;
-    border: 0.2vh solid #ddd;
+    margin-top: -0.682rem;
+    margin-bottom: 1.365rem;
+    border: 0.136rem solid #ddd;
     display: inline-flex;
 }
 
 .number-input,
 .number-input * {
     box-sizing: border-box;
-    width: 10vh;
+    width: 6.825rem;
 }
 
 .number-input button {
@@ -284,8 +316,8 @@ optgroup {
     border: none;
     align-items: center;
     justify-content: center;
-    width: 3vh;
-    height: 3vh;
+    width: 2.047rem;
+    height: 2.047rem;
     cursor: pointer;
     margin: 0;
     position: relative;
@@ -296,7 +328,7 @@ optgroup {
     position: absolute;
     font-family: "Space Grotesk" sans-serif; 
     transform: translate(-50%, -50%) rotate(180deg);
-    font-size: 2vh;
+    font-size: 1.365rem;
 }
 .number-input button.plus:after {
     content: '+';
@@ -307,12 +339,12 @@ optgroup {
 
 .number-input input[type=number] {
     font-family: "Space Grotesk" sans-serif; 
-    max-width: 5vh;
-    padding: 0.357vh;
+    max-width: 3.412rem;
+    padding: 0.244rem;
     border: solid #ddd;
-    border-width: 0 0.2vh;
-    font-size: 1.5vh;
-    height: 3vh;
+    border-width: 0 0.136rem;
+    font-size: 1.024rem;
+    height: 2.047rem;
     font-weight: bold;
     text-align: center;
 }

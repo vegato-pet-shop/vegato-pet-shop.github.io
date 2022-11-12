@@ -1,25 +1,25 @@
 #pane {
     position: relative;
     width: 100%;
-    margin-top: 5vh;
-    margin-bottom: 5vh;
-    padding: 4vh 8vh;
+    margin-top: 3.412rem;
+    margin-bottom: 3.412rem;
+    padding: 2.73rem 5.46rem;
     background: rgba(253, 251, 254, 0.74);
-    border: 0.2vh solid black;
+    border: 0.136rem solid black;
     z-index: 1;
 }
 
 #pane h2 {
     text-align: center;
-    padding-bottom: 1vh;
+    padding-bottom: 0.682rem;
     margin: auto;
-    width: 20vh;
-    border-bottom: 0.2vh solid black;
+    width: 13.65rem;
+    border-bottom: 0.136rem solid black;
 }
 
 #cart {
-    margin-top: 2vh;
-    margin-bottom: 5vh;
+    margin-top: 1.365rem;
+    margin-bottom: 3.412rem;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -31,40 +31,40 @@
     flex-direction: row;
     justify-content: space-between;
     overflow: hidden;
-    border-top: 0.25vh solid;
-    border-bottom: 0.25vh solid;
+    border-top: 0.171rem solid;
+    border-bottom: 0.171rem solid;
 }
 
 #products-table p {
-    margin-bottom: 1.5vh;
-    margin-top: 1.5vh;
+    margin-bottom: 1.024rem;
+    margin-top: 1.024rem;
 }
 
 #dpd-div {
     position: relative;
-    margin-bottom: 2vh;
+    margin-bottom: 1.365rem;
 }
 
 #products-price-total {
-    margin-top: 1.5vh;
+    margin-top: 1.024rem;
     text-align: right;
 }
 
 #dpd-pickup-point-select {
     display: block;
-    width: 40vh;
-    margin-top: 1vh;
+    width: 27.3rem;
+    margin-top: 0.682rem;
 }
 
 #omniva-pickup-point-select {
     display: block;
-    width: 40vh;
-    margin-top: 1vh;
+    width: 27.3rem;
+    margin-top: 0.682rem;
 }
 
 #transport {
-    margin-top: 2vh;
-    margin-bottom: 5vh;
+    margin-top: 1.365rem;
+    margin-bottom: 3.412rem;
 }
 
 .transport-type {
@@ -73,40 +73,40 @@
 }
 
 .transport-type input {
-    margin-top: 0vh;
-    margin-right: 2vh;
-    width: 2vh;
+    margin-top: 0.0rem;
+    margin-right: 1.365rem;
+    width: 1.365rem;
     accent-color: var(-dark-blue);
 }
 
 .transport-type select {
-    width: 20vh;
+    width: 13.65rem;
 }
 
 #personal-data {
     display: grid;
-    grid-template-columns: 20vh 20vh 20vh;
-    margin-top: 2vh;
-    margin-bottom: 3vh;
+    grid-template-columns: 13.65rem 13.65rem 13.65rem;
+    margin-top: 1.365rem;
+    margin-bottom: 2.047rem;
 }
 
 @media only screen and (max-width: 750px) {
     #personal-data {
-        grid-template-columns: 20vh 20vh;
+        grid-template-columns: 13.65rem 13.65rem;
     }
 }
 
 @media only screen and (max-width: 520px) {
     #personal-data {
-        grid-template-columns: 20vh;
+        grid-template-columns: 13.65rem;
     }
 }
 
 #personal-data input{
-    margin-bottom: 1vh;
-    width: 16vh;
-    height: 3vh;
-    font-size: 2vh;
+    margin-bottom: 0.682rem;
+    width: 10.92rem;
+    height: 2.047rem;
+    font-size: 1.365rem;
 }
 
 #email-for-verification {
@@ -115,8 +115,8 @@
 
 #verification-wrong-email {
     color: red;
-    margin-left: 1vh;
-    font-size: 1.5vh;
+    margin-left: 0.682rem;
+    font-size: 1.024rem;
 }
 
 #verify-email {
@@ -125,7 +125,7 @@
 
 #verification-code {
     display: block;
-    margin-bottom: 1vh;
+    margin-bottom: 0.682rem;
 }
 
 #verify-code {
@@ -136,11 +136,11 @@
     position: relative;
     display: block;
     margin: auto;
-    margin-top: 0vh;
-    margin-bottom: 3vh;
-    padding: 1vh;
-    width: 15vh;
+    margin-top: 0.0rem;
+    margin-bottom: 2.047rem;
+    padding: 0.682rem;
+    width: 10.238rem;
     background: var(--whitish);
-    border: 0.2vh solid black;
-    font-size: 2.4vh;
+    border: 0.136rem solid black;
+    font-size: 1.638rem;
 }
