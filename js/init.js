@@ -45,6 +45,5 @@ if (localStorage.getItem('transportation')!=null && localStorage.getItem('transp
 let callback = function() {
     let cartCounter = document.getElementById("cart-counter")
     cartCounter.innerHTML = sum(Object.values(quantity))
-    console.log( window.innerHeight )
 }
 window.addEventListener("load", callback)

@@ -204,7 +204,6 @@ function sendConfirmationEmail() {
     var url = 'https://looduslikud-taimed.000webhostapp.com/order';
     var xhr = createCORSRequest('POST', url);
     xhr.onreadystatechange = function() {
-        console.log(xhr.readyState == 4 && xhr.status == 200)
         if (xhr.readyState == 4 && xhr.status == 200) {
             var response = JSON.parse(xhr.responseText)
             console.log(response[0])
@@ -234,7 +233,7 @@ function displayError() {
 
 window.addEventListener("load", function() {
     updateCart()
-    console.log(transportation)
+
     // Select transportation
     let provider = transportation[0]
     if (provider!="") {

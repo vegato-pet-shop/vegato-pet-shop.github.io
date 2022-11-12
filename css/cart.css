@@ -90,18 +90,6 @@
     margin-bottom: 2.047rem;
 }
 
-@media only screen and (max-width: 750px) {
-    #personal-data {
-        grid-template-columns: 13.65rem 13.65rem;
-    }
-}
-
-@media only screen and (max-width: 520px) {
-    #personal-data {
-        grid-template-columns: 13.65rem;
-    }
-}
-
 #personal-data input{
     margin-bottom: 0.682rem;
     width: 10.92rem;
@@ -143,4 +131,25 @@
     background: var(--whitish);
     border: 0.136rem solid black;
     font-size: 1.638rem;
+}
+
+@media only screen and (max-width: 750px) {
+    #personal-data {
+        grid-template-columns: 13.65rem 13.65rem;
+    }
+}
+
+@media only screen and (max-width: 520px) {
+    #personal-data {
+        grid-template-columns: 13.65rem;
+    }
+}
+
+@media only screen and (min-height: 595px) {
+    #wrapper {
+        margin-top: 0;
+    }
+    #pane {
+        margin-bottom: 2rem;
+    }
 }
