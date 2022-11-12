@@ -15,8 +15,8 @@
     <link rel="icon" href="img/icons/favicon-32.png" sizes="32x32">
 
     <!--Load fonts-->
-    <link href="https://fonts.googleapis.com/css?family=Space+Grotesk" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@700&display=swap" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Space+Grotesk' rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@700&display=swap' rel="stylesheet">
 
     <!--Load CSS-->
     <link rel="stylesheet" href="css/common.css">
@@ -38,13 +38,11 @@
         
     </div>
     <div id="navbar">
-        <a href="/">
+        <a href="">
             <img src="img/vegato_logo.png" id="navbar-logo" alt="vegato logo">
         </a>
         <ul>
-            <li class="navbar-li"><a href="/">home</a></li>
-            <li class="navbar-li"><a href="cats">cats</a></li>
-            <li class="navbar-li"><a href="dogs">dogs</a></li>
+            <li class="navbar-li"><a href="">home</a></li>
             <li class="navbar-li"><a href="contact">contact</a></li>
             <li class="navbar-li"><a href="cart">
                 <img src="img/cart.svg" alt="cart">
@@ -65,16 +63,12 @@
                 <p id="products-price-total"></p>
                 <script>updateCart()</script>
             </div>
+            <h2>Transport</h2>
             <div id="transport">
-                <h2>Транспорт</h2>
-                <div class="transport-type">
-                    <input id="self-pickup" type="radio" name="group1" onclick="selectTransportationType(0)"></input>
-                    <p id="self-pickup-text">Заберу сам из Кохтла-Ярве, Олеви 37-46 (0 EUR)</p>
-                </div>
-                <div class="transport-type">
+                <div id="dpd-div" class="transport-type">
                     <input type="radio" name="group1" onclick="selectTransportationType(1)"></input>
                     <div>
-                        <p>DPD почтовый автомат (3 EUR)</p>
+                        <p>DPD parcel locker (3 EUR)</p>
                         <select id="dpd-pickup-point-select" style="display: none;" onchange="selectTransportationDestination(1)">
                             <option></option>
                             <optgroup  label="Abja-Paluoja">
@@ -839,10 +833,10 @@
                         </select>
                     </div>
                 </div>
-                <div class="transport-type">
+                <div id="omniva-div" class="transport-type">
                     <input type="radio" name="group1" onclick="selectTransportationType(2)"></input>
                     <div>
-                        <p>Omniva почтовый автомат (3.50 EUR)</p>
+                        <p>Omniva parcel locker (3.50 EUR)</p>
                         <select id="omniva-pickup-point-select" style="display: none;" onchange="selectTransportationDestination(2)">
                             <option></option>
                             <optgroup label="Viljandi maakond">
@@ -1454,36 +1448,28 @@
                     </div>
                 </div>
             </div>
-            <h2>Личные данные</h2>
+            <h2>My data</h2>
             <div id="personal-data">
                 <div>
-                    <label>Имя:</label>
+                    <label>Name:</label>
                     <input type="text" id="personal-data-name1">
                 </div>
                 <div>
-                    <label>Фамилия:</label>
+                    <label>Family name:</label>
                     <input type="text" id="personal-data-name2">
                 </div>
                 <div>
-                    <label>Телефон:</label>
+                    <label>Phone number:</label>
                     <input type="number" id="personal-data-phone">
                 </div>
                 <div>
-                    <label>Электронная почта:</label>
+                    <label>Email:</label>
                     <input type="email" id="personal-data-email">
                 </div>
                 <div>
-                    <label>Адрес:</label>
+                    <label>Address:</label>
                     <input type="text" id="personal-data-address">
                 </div>
-                <!-- 
-                <p id="verification-wrong-email" style="display: none">Электронная почта должна иметь "@".</p>
-                <button id="verify-email" onclick="sendConfirmationCode()">Проверить</button>
-                <div id="verification-code-block" style="display: none">
-                    <label>Полученный код:</label>
-                    <input type="number" id="verification-code">
-                    <button id="verify-code" onclick="checkConfirmationCode()">Проверить</button>
-                </div> !-->
             </div>
             <button id="submit-order" onclick="sendConfirmationEmail()">Заказать</button>
         </div>

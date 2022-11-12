@@ -34,10 +34,20 @@ var names = {
 
 if (localStorage.getItem('quantity')!=null && localStorage.getItem('quantity')!=undefined) {
     let quantityTemp = JSON.parse(localStorage.getItem('quantity'))
-    console.log(quantityTemp)
-    if (Object.keys(quantityTemp)==Object.keys(quantity)) {
+    if (Object.keys(quantityTemp).toString()==Object.keys(quantity).toString()) {
         quantity = quantityTemp
     }
     
     transportation = JSON.parse(localStorage.getItem('transportation'))
 }
+
+document.addEventListener('DOMContentLoaded', function() {
+
+}, false)
+
+let callback = function() {
+    console.log(quantity)
+    let cartCounter = document.getElementById("cart-counter")
+    cartCounter.innerHTML = sum(Object.values(quantity))
+}
+window.addEventListener("load", callback)

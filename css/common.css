@@ -25,20 +25,75 @@ html {
 }
   
 body {
-    position: relative;
+    display: flex; 
+    flex-direction: column; 
+    justify-content: space-between;
     overflow-x: hidden;
     background: var(--light-orange);
-}
-
-body {
     min-height: 100vh;
 }
+
 
 #wrapper {
     position: relative;
     width: 87%;
     max-width: 120vh;
     margin: auto;
+}
+
+
+/*---Background----------------------------------------------------------------------*/
+
+#background {
+    position: fixed;
+    width: 100%;
+    height: 0;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -100;
+}
+
+#blue-top {
+    position: absolute;
+    width: 120vh;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-50deg);;
+    margin-top: -40vh;
+    margin-left: 20vh;
+}
+
+
+#orange-top {
+    position: absolute;
+    width: 150vh;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(0deg);
+    margin-top: 30vh;
+    margin-left: -70vh;
+}
+
+#orange-bottom {
+    position: absolute;
+    width: 120vh;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-0deg);;
+    margin-top: 80vh;
+    margin-left: 50vh;
+}
+
+
+#blue-bottom {
+    position: absolute;
+    width: 150vh;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(0deg);
+    margin-top: 110vh;
+    margin-left: -70vh;
 }
 
 
@@ -124,7 +179,7 @@ button:focus {
 }
 
 
-input {
+input, select {
     font-family: 'Space Grotesk', sans-serif;
     background-color: white;
     border-radius: 0.185vh;
@@ -182,6 +237,27 @@ input[type=number]::-webkit-outer-spin-button {
     appearance: none;
 }
 
+select {    
+    padding-left: 0.5vh;
+    -webkit-appearance: textfield;
+    -moz-appearance: textfield;
+    appearance: textfield;
+    font: 2vh 'Space Grotesk', sans-serif;
+    font-weight: normal;
+    color: #353535;
+    height: 4vh;
+    font-size: 2vh;
+    height: 3vh;
+}
+
+option {
+    font-size: 1.5vh;
+}
+
+optgroup {
+    font-size: 1.5vh;
+}
+
 /*-----------------------------------------------*/
 
 .number-input {
@@ -236,62 +312,6 @@ input[type=number]::-webkit-outer-spin-button {
     height: 3vh;
     font-weight: bold;
     text-align: center;
-}
-
-
-/*---Background----------------------------------------------------------------------*/
-
-#background {
-    position: absolute;
-    overflow: hidden;
-    height: 100%;
-    width: 100%;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: -100;
-}
-
-#blue-top {
-    position: absolute;
-    width: 120vh;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) rotate(-50deg);;
-    margin-top: -90vh;
-    margin-left: 20vh;
-}
-
-
-#orange-top {
-    position: absolute;
-    width: 150vh;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) rotate(0deg);
-    margin-top: -20vh;
-    margin-left: -70vh;
-}
-
-#orange-bottom {
-    position: absolute;
-    width: 120vh;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) rotate(-0deg);;
-    margin-top: 30vh;
-    margin-left: 50vh;
-}
-
-
-#blue-bottom {
-    position: absolute;
-    width: 150vh;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) rotate(0deg);
-    margin-top: 60vh;
-    margin-left: -70vh;
 }
 
 

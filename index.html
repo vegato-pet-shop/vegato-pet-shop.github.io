@@ -15,8 +15,8 @@
     <link rel="icon" href="img/icons/favicon-32.png" sizes="32x32">
 
     <!--Load fonts-->
-    <link href="https://fonts.googleapis.com/css?family=Space+Grotesk" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@700&display=swap" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Space+Grotesk' rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@700&display=swap' rel="stylesheet">
 
     <!--Load CSS-->
     <link rel="stylesheet" href="css/common.css">
@@ -30,25 +30,22 @@
 </head>
 <body>
     <div id="background">
-        
         <img src="img/blue-top.svg" id="blue-top" alt="blue-top">
         <img src="img/orange-top.svg" id="orange-top" alt="orange-top">
         <img src="img/blue-bottom.svg" id="blue-bottom" alt="blue-bottom">
         <img src="img/orange-bottom.svg" id="orange-bottom" alt="orange-bottom">
-        
     </div>
+    
     <div id="navbar">
-        <a href="/">
+        <a href="">
             <img src="img/vegato_logo.png" id="navbar-logo" alt="vegato logo">
         </a>
         <ul>
-            <li class="navbar-li"><a href="/">home</a></li>
-            <li class="navbar-li"><a href="cats">cats</a></li>
-            <li class="navbar-li"><a href="dogs">dogs</a></li>
+            <li class="navbar-li"><a href="">home</a></li>
             <li class="navbar-li"><a href="contact">contact</a></li>
             <li class="navbar-li"><a href="cart">
                 <img src="img/cart.svg" alt="cart">
-                <div id="cart-counter">0</div>
+                <div id="cart-counter"></div>
             </a></li>
         </ul>
     </div> 
@@ -78,7 +75,7 @@
                         <span>2.5 kg (xx EUR):</span>
                         <div id="cat-small-input" class="number-input">
                             <button onclick="subtract(this,['catFoodSmall'])" class="minus"></button>
-                            <input class="quantity" min="0" name="quantity" value="0" type="number">
+                            <input id="cat-food-small-input" class="quantity" min="0" name="quantity" value="0" type="number">
                             <button onclick="add(this,['catFoodSmall'])" class="plus"></button>
                         </div>
                     </div>
@@ -86,7 +83,7 @@
                         <span>12.5 kg (xx EUR):</span>
                         <div id="cat-small-input" class="number-input">
                             <button onclick="subtract(this,['catFoodBig'])" class="minus"></button>
-                            <input class="quantity" min="0" name="quantity" value="0" type="number">
+                            <input id="cat-food-big-input" class="quantity" min="0" name="quantity" value="0" type="number">
                             <button onclick="add(this,['catFoodBig'])" class="plus"></button>
                         </div>
                     </div>
@@ -101,7 +98,7 @@
                         <span>2.5 kg (xx EUR):</span>
                         <div id="cat-small-input" class="number-input">
                             <button onclick="subtract(this,['dogFoodSmall'])" class="minus"></button>
-                            <input class="quantity" min="0" name="quantity" value="0" type="number">
+                            <input id="dog-food-small-input" class="quantity" min="0" name="quantity" value="0" type="number">
                             <button onclick="add(this,['dogFoodSmall'])" class="plus"></button>
                         </div>
                     </div>
@@ -109,7 +106,7 @@
                         <span>12.5 kg (xx EUR):</span>
                         <div id="cat-small-input" class="number-input">
                             <button onclick="subtract(this,['dogFoodBig'])" class="minus"></button>
-                            <input class="quantity" min="0" name="quantity" value="0" type="number">
+                            <input id="dog-food-big-input" class="quantity" min="0" name="quantity" value="0" type="number">
                             <button onclick="add(this,['dogFoodBig'])" class="plus"></button>
                         </div>
                     </div>
@@ -126,5 +123,17 @@
         </div>
     </div>
     <footer></footer>
+    <script>
+        window.addEventListener("load", function() {
+            let input1 = document.getElementById("cat-food-big-input")
+            let input2 = document.getElementById("cat-food-small-input")
+            let input3 = document.getElementById("dog-food-small-input")
+            let input4 = document.getElementById("dog-food-big-input")
+            input1.value = quantity.catFoodBig
+            input2.value = quantity.catFoodSmall
+            input3.value = quantity.dogFoodSmall
+            input4.value = quantity.dogFoodBig
+        })
+    </script>
 </body>
 </html>

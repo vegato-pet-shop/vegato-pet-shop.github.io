@@ -140,7 +140,7 @@
 /* Dog on top */
 #dog-food>img:first-child {
     width: 10vh;
-    top: -10vh;
+    top: -9.5vh;
     margin-left: 8vh;
 }
 
