@@ -14,23 +14,26 @@
     position: relative;
     display: grid;
     align-items: center;
+    justify-content: center;   
     grid-template-columns: 30vh min-content;
     column-gap: 7vh;
     margin: auto;
     margin-top: 8vh;
-    width: 77vh;
+    max-width: 77vh;
 }
 
 #feed-img {
     position: relative;
+    top: -4vh;
     width: 30vh;
     z-index: 2;
     filter: drop-shadow(0.2vh 0.2vh 0.1vh rgba(0, 0, 0, 0.377));
 }
 
 #dog-hero {
-    position: absolute;
+    position: relative;
     left: 18vh;
+    top: 3vh;
     width: 8vh;
     z-index: 0;
     transform: rotate(10deg);
@@ -58,6 +61,22 @@
 }
 
 
+@media only screen and (max-width: 960px) {
+
+    #hero {
+        column-gap: 3vh;
+    }
+
+    #hero-text {
+        width: 32vh;
+    }
+
+    #hero-text h1 {
+        font-size: 4vh;
+        font-weight: 500;
+    }
+}
+
 /*---Products----------------------------------------------------------*/
 
 #products {
@@ -65,7 +84,7 @@
     width: 100%;
     margin-top: 5vh;
     margin-bottom: 5vh;
-    padding: 4vh 8vh;
+    padding: 4vh 0vh;
     background: rgba(253, 251, 254, 0.74);
     border: 0.2vh solid black;
     z-index: 1;
@@ -81,20 +100,24 @@
 
 /*---Feeds---*/
 
+
+
 #products-grid {
     position: relative;
+    display: flex;
+    justify-content: space-between;
     margin: auto;
+    align-items: center;
     margin-top: 12vh;
-    margin-left: 10vh;
-    margin-right: 10vh;
+    margin-left: 10%;
+    margin-right: 10%;
     margin-bottom: 10vh;
-    display: grid;
-    grid-template-columns: 38.5vh 38.5vh;
-    justify-content:space-between;
+
 }
 
 #products-grid>div {
     position: relative;
+    width: 38.5vh;
     background: var(--whitish);
     padding: 2vh 6vh;
     border: 0.2vh solid black;
@@ -153,18 +176,28 @@
     filter: drop-shadow(0.2vh 0.2vh 0.1vh rgba(0, 0, 0, 0.377));
 }
 
+@media only screen and (max-width: 1250px) {
+    #products-grid {
+        flex-direction: column;
+    }
+
+    #products-grid>div:first-child {
+        margin-bottom: 15vh;
+    }
+}
+
 /*---Formula---*/
 
 #products hr {
     position: relative;
     margin: auto;
     border-top: 0.2vh solid black;
-    width: 40vh
+    width: 35%;
 }
 
 #formula-text {
-    margin-left: 10vh;
-    margin-right: 10vh;
+    margin-left: 10%;
+    margin-right: 10%;
     text-align: center;
     font-size: 3vh;
     padding: 4vh 0vh;
