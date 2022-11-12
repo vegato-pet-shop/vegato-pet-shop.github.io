@@ -30,9 +30,8 @@ body {
     justify-content: space-between;
     overflow-x: hidden;
     background: var(--light-orange);
-    min-height: 68.25rem;
+    min-height: 100vh;
 }
-
 
 #wrapper {
     position: relative;
