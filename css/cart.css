@@ -87,7 +87,7 @@
     display: grid;
     grid-template-columns: 20vh 20vh 20vh;
     margin-top: 2vh;
-    margin-bottom: 5vh;
+    margin-bottom: 3vh;
 }
 
 @media only screen and (max-width: 750px) {
@@ -133,8 +133,14 @@
 }
 
 #submit-order {
+    position: relative;
     display: block;
-    width: 20vh;
     margin: auto;
-    margin-top: 1.5vh;
+    margin-top: 0vh;
+    margin-bottom: 3vh;
+    padding: 1vh;
+    width: 15vh;
+    background: var(--whitish);
+    border: 0.2vh solid black;
+    font-size: 2.4vh;
 }

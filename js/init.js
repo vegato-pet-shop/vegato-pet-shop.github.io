@@ -6,7 +6,7 @@ var quantity = {
     dogFoodBig: 0
 }
 
-var transportation = ["",""]
+var transportation = ["","",-1]
 var transportationPrice = {
     "self-pickup": 0,
     DPD: 3,
@@ -37,16 +37,12 @@ if (localStorage.getItem('quantity')!=null && localStorage.getItem('quantity')!=
     if (Object.keys(quantityTemp).toString()==Object.keys(quantity).toString()) {
         quantity = quantityTemp
     }
-    
+}
+if (localStorage.getItem('transportation')!=null && localStorage.getItem('transportation')!=undefined) {
     transportation = JSON.parse(localStorage.getItem('transportation'))
 }
 
-document.addEventListener('DOMContentLoaded', function() {
-
-}, false)
-
 let callback = function() {
-    console.log(quantity)
     let cartCounter = document.getElementById("cart-counter")
     cartCounter.innerHTML = sum(Object.values(quantity))
 }

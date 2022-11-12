@@ -27,6 +27,7 @@
     <!--Load javascript-->
     <script type="text/javascript" src="js/init.js"></script>
     <script type="text/javascript" src="js/script.js"></script>
+    <script type="text/javascript" src="js/cart.js"></script>
 </head>
 <body>
     <div id="background">
@@ -61,12 +62,11 @@
                     <div id="products-price"></div>
                 </div>
                 <p id="products-price-total"></p>
-                <script>updateCart()</script>
             </div>
             <h2>Transport</h2>
             <div id="transport">
                 <div id="dpd-div" class="transport-type">
-                    <input type="radio" name="group1" onclick="selectTransportationType(1)"></input>
+                    <input id="dpd-radio-button" type="radio" name="group1" onclick="selectTransportationType(1)"></input>
                     <div>
                         <p>DPD parcel locker (3 EUR)</p>
                         <select id="dpd-pickup-point-select" style="display: none;" onchange="selectTransportationDestination(1)">
@@ -834,7 +834,7 @@
                     </div>
                 </div>
                 <div id="omniva-div" class="transport-type">
-                    <input type="radio" name="group1" onclick="selectTransportationType(2)"></input>
+                    <input id="omniva-radio-button" type="radio" name="group1" onclick="selectTransportationType(2)"></input>
                     <div>
                         <p>Omniva parcel locker (3.50 EUR)</p>
                         <select id="omniva-pickup-point-select" style="display: none;" onchange="selectTransportationDestination(2)">
@@ -1471,7 +1471,7 @@
                     <input type="text" id="personal-data-address">
                 </div>
             </div>
-            <button id="submit-order" onclick="sendConfirmationEmail()">Заказать</button>
+            <button id="submit-order" onclick="sendConfirmationEmail()">Order</button>
         </div>
     </div>
     <footer></footer>
