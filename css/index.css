@@ -27,7 +27,7 @@
     top: -4vh;
     width: 30vh;
     z-index: 2;
-    filter: drop-shadow(0.2vh 0.2vh 0.1vh rgba(0, 0, 0, 0.377));
+    filter: drop-shadow( 0.2vh 0.2vh 0.1vh rgba(0, 0, 0, 0.377));
 }
 
 #dog-hero {
@@ -173,7 +173,7 @@
     display: block;
     width: 20vh;
     margin: auto;
-    filter: drop-shadow(0.2vh 0.2vh 0.1vh rgba(0, 0, 0, 0.377));
+    filter: drop-shadow( 0.2vh 0.2vh 0.1vh rgba(0, 0, 0, 0.377));
 }
 
 @media only screen and (max-width: 1250px) {
