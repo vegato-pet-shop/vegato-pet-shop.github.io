@@ -262,4 +262,5 @@ window.addEventListener("load", function() {
         buttonDPD.checked = false
         buttonOmniva.checked = false
     }
+    console.log("here")
 })
