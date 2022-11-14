@@ -12,51 +12,59 @@
     <meta property="og:url" content="">
 
     <!--Icons-->
-    <link rel="icon" href="img/icons/favicon-32.png" sizes="32x32">
+    <link href="../img/icons/favicon-32.png" rel="icon" sizes="32x32">
 
     <!--Load fonts-->
     <link href='https://fonts.googleapis.com/css?family=Space+Grotesk' rel="stylesheet">
     <link href='https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@700&display=swap' rel="stylesheet">
 
     <!--Load CSS-->
-    <link rel="stylesheet" href="css/common.css">
-    <link rel="stylesheet" href="css/navbar.css">
-    <link rel="stylesheet" href="css/footer.css">
-    <link rel="stylesheet" href="css/index.css">
+    <link href="../css/common.css" rel="stylesheet">
+    <link href="../css/navbar.css" rel="stylesheet">
+    <link href="../css/footer.css" rel="stylesheet">
+    <link href="../css/index.css" rel="stylesheet">
 
     <!--Load javascript-->
-    <script type="text/javascript" src="js/init.js"></script>
-    <script type="text/javascript" src="js/script.js"></script>
+    <script src="../js/init.js" type="text/javascript"></script>
+    <script src="../js/script.js" type="text/javascript"></script>
 </head>
 <body>
     <div id="background">
-        <img src="img/blue-top.svg" id="blue-top" alt="blue-top">
-        <img src="img/orange-top.svg" id="orange-top" alt="orange-top">
-        <img src="img/blue-bottom.svg" id="blue-bottom" alt="blue-bottom">
-        <img src="img/orange-bottom.svg" id="orange-bottom" alt="orange-bottom">
+        <img src="../img/blue-top.svg" id="blue-top" alt="blue-top">
+        <img src="../img/orange-top.svg" id="orange-top" alt="orange-top">
+        <img src="../img/blue-bottom.svg" id="blue-bottom" alt="blue-bottom">
+        <img src="../img/orange-bottom.svg" id="orange-bottom" alt="orange-bottom">
     </div>
     
     <div id="navbar">
         <a href="">
-            <img src="img/vegato_logo.png" id="navbar-logo" alt="vegato logo">
+            <img src="../img/vegato_logo.png" id="navbar-logo" alt="vegato logo">
         </a>
         <ul>
             <li class="navbar-li"><a href="">home</a></li>
             <li class="navbar-li"><a href="cart">
-                <img src="img/cart.svg" alt="cart">
+                <img src="../img/cart.svg" id="cart-icon" alt="cart">
                 <div id="cart-counter"></div>
             </a></li>
+            <li class="navbar-li dropdown">
+                <img src="../img/globe.png" id="language-icon" alt="language">
+                <div class="dropdown-content">
+                    <button class="language-option" onclick="switchLanguage('est')">EST</button>
+                    <button class="language-option" onclick="switchLanguage('rus')">RUS</button>
+                    <button class="language-option" onclick="switchLanguage('eng')">ENG</button>
+                </div>
+            </li>
         </ul>
     </div> 
 
     <div id="wrapper">
         <div id="hero">
             <div id="hero-images">
-                <img src="img/dog.png" id="dog-hero" alt="dog-hero">
-                <img src="img/feed.png" id="feed-img" alt="feed">
+                <img src="../img/dog.png" id="dog-hero" alt="dog-hero">
+                <img src="../img/feed.png" id="feed-img" alt="feed">
             </div>
             <div id="hero-text">
-                <h1>Plant-based pet food for optimal health</h1>
+                <h1>Plant-based pet<br> food for optimal<br> health</h1>
                 <button onclick="location.href='#products'">shop now</button>
             </div>
         </div>
@@ -65,8 +73,8 @@
             <h2>Products</h2>
             <div id="products-grid" href="#products">
                 <div id="cat-food">
-                    <img src="img/ginger_cat.png" alt="cat">
-                    <img src="img/cat_food.svg" alt="cat food">
+                    <img src="../img/ginger_cat.png" alt="cat">
+                    <img src="../img/cat_food.svg" alt="cat food">
                     <h3>DRY FOOD FOR CATS</h3>
                     <p>nutritionally complete</p>
                     <p>for all sizes</p>
@@ -88,8 +96,8 @@
                     </div>
                 </div>
                 <div id="dog-food">
-                    <img src="img/dog.png" alt="dog">
-                    <img src="img/dog_food.svg" alt="dog food">
+                    <img src="../img/dog.png" alt="dog">
+                    <img src="../img/dog_food.svg" alt="dog food">
                     <h3>DRY FOOD FOR DOGS</h3>
                     <p>nutritionally complete</p>
                     <p>for all sizes</p>
@@ -112,12 +120,12 @@
                 </div>
             </div>
             <hr>
-            <p id="formula-text">formula developed by specialized veterinarians based on European Pet food Industry federation guidelines.</p>
+            <p id="formula-text">Formula developed by specialized veterinarians based on European Pet food Industry federation guidelines.</p>
             <hr>
             <div id="labels">
-                <img src="img/vegan_label.png" alt="vegan label">
-                <img src="img/cruelty_free_label.png" alt="cruelty free label">
-                <img src="img/veterinary_label.png" alt="veterinary label">
+                <img src="../img/vegan_label.png" alt="vegan label">
+                <img src="../img/cruelty_free_label.png" alt="cruelty free label">
+                <img src="../img/veterinary_label.png" alt="veterinary label">
             </div>
         </div>
     </div>

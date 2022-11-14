@@ -31,3 +31,10 @@ fixMinHeight = () => {
 }
 
 document.addEventListener("load", fixMinHeight)
+
+function switchLanguage(newLanguage) {
+    let url = window.location.href
+    let splitUrl = url.split(userData.language)
+    console.log(newLanguage,splitUrl[1])
+    window.location.href = "/"+newLanguage+splitUrl[1]
+}

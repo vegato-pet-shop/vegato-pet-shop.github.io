@@ -40,11 +40,22 @@
 #navbar ul li:first-child { margin-left: 0.0rem; }
 #navbar ul li:last-child { margin-right: 0.0rem; }
 
-#navbar ul li:last-child img {
+#navbar ul li { 
+    height: 2.65rem; 
+}
+
+#cart-icon {
     position: relative;
     width: 2.047rem;
-    margin-bottom: -0.205rem;
+    margin-bottom: -0.2rem;
+    padding-top: 0.3rem;
+}
 
+#language-icon {
+    position: relative;
+    width: 1.6rem;
+    margin-bottom: -0.2rem;
+    padding-top: 0.3rem;
 }
 
 .navbar-li:after,
@@ -97,4 +108,36 @@
     text-align: center;
     color: white;
     background: var(--orange);
+}
+
+/*---Dropdown---*/
+
+.dropdown {
+
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1rem;
+    left: -1rem;
+    top: 2.6rem;
+    background-color: var(--whitish);
+    box-shadow: 0 0.5rem 1rem 0 rgba(0,0,0,0.2);
+}
+
+.dropdown-content button {
+    font-size: 1.2rem;
+    color: #353535;
+    width: 4rem;
+    padding: 0.7rem 1rem;
+}
+
+.dropdown-content button:hover {
+    background-color: #cecece;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
 }

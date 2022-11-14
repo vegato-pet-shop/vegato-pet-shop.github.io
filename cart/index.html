@@ -61,7 +61,7 @@
                 </div>
                 <p id="products-price-total"></p>
             </div>
-            <h2>Transport</h2>
+            <h2>Transportation</h2>
             <div id="transport">
                 <div id="dpd-div" class="transport-type">
                     <input id="dpd-radio-button" type="radio" name="group1" onclick="selectTransportationType(1)"></input>
@@ -1450,23 +1450,23 @@
             <div id="personal-data">
                 <div>
                     <label>Name:</label>
-                    <input type="text" id="personal-data-name1">
+                    <input type="text" id="personal-data-name1" class="my-data-inputs" oninput="changePersonalData('name1',this.value)">
                 </div>
                 <div>
                     <label>Family name:</label>
-                    <input type="text" id="personal-data-name2">
+                    <input type="text" id="personal-data-name2" class="my-data-inputs" oninput="changePersonalData('name2',this.value)">
                 </div>
                 <div>
                     <label>Phone number:</label>
-                    <input type="number" id="personal-data-phone">
+                    <input type="number" id="personal-data-phone" class="my-data-inputs" oninput="changePersonalData('phoneNumber',this.value)">
                 </div>
                 <div>
                     <label>Email:</label>
-                    <input type="email" id="personal-data-email">
+                    <input type="email" id="personal-data-email" class="my-data-inputs" oninput="changePersonalData('email',this.value)">
                 </div>
                 <div>
                     <label>Address:</label>
-                    <input type="text" id="personal-data-address">
+                    <input type="text" id="personal-data-address" class="my-data-inputs" oninput="changePersonalData('address',this.value)">
                 </div>
             </div>
             <button id="submit-order" onclick="sendConfirmationEmail()">Order</button>

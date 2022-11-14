@@ -15,10 +15,11 @@
     display: grid;
     align-items: center;
     justify-content: center;   
-    grid-template-columns: 20.475rem min-content;
+    grid-template-columns: 20.475rem max-content;
     column-gap: 4.778rem;
     margin: auto;
-    margin-top: 5.46rem;
+    margin-top: 3rem;
+    margin-top: 3rem;
     max-width: 52.552rem;
 }
 
@@ -40,7 +41,6 @@
 }
 
 #hero-text {
-    width: 27.3rem;
     margin-top: -3.412rem;
 }
 
@@ -53,8 +53,7 @@
 #hero-text button {
     position: relative;
     top: 1.365rem;
-    padding: 0.682rem;
-    width: 10.238rem;
+    padding: 0.682rem 2rem;
     background: var(--whitish);
     border: 0.136rem solid black;
     font-size: 1.638rem;
@@ -82,7 +81,6 @@
 #products {
     position: relative;
     width: 100%;
-    margin-top: 3.412rem;
     margin-bottom: 3.412rem;
     padding: 2.73rem 0.0rem;
     background: rgba(253, 251, 254, 0.74);
@@ -117,7 +115,7 @@
 
 #products-grid>div {
     position: relative;
-    width: 26.276rem;
+
     background: var(--whitish);
     padding: 1.365rem 4.095rem;
     border: 0.136rem solid black;
@@ -156,15 +154,19 @@
 /* Cat on top */
 #cat-food>img:first-child {
     width: 8.872rem;
+    margin-left: -1.5rem;
     top: -6.825rem;
-    margin-left: 2.73rem;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 /* Dog on top */
 #dog-food>img:first-child {
     width: 6.825rem;
+    margin-left: 0.5rem;
     top: -6.484rem;
-    margin-left: 5.46rem;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 /* Feed images */

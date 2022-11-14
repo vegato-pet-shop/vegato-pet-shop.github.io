@@ -13,7 +13,7 @@
     text-align: center;
     padding-bottom: 0.682rem;
     margin: auto;
-    width: 13.65rem;
+    width: 20rem;
     border-bottom: 0.136rem solid black;
 }
 
@@ -85,16 +85,31 @@
 
 #personal-data {
     display: grid;
-    grid-template-columns: 13.65rem 13.65rem 13.65rem;
+    grid-auto-flow: column;
+    grid-template-columns: min-content min-content;
+    grid-template-rows: auto auto auto;
+    column-gap: 3rem;
     margin-top: 1.365rem;
     margin-bottom: 2.047rem;
 }
 
-#personal-data input{
+#personal-data label {
+    display: block;
+}
+
+.my-data-inputs {
     margin-bottom: 0.682rem;
-    width: 10.92rem;
-    height: 2.047rem;
+    width: 13rem;
+    height: 2.73rem;
     font-size: 1.365rem;
+}
+
+#personal-data-email {
+    width: 22rem;
+}
+
+#personal-data-address {
+    width: 22rem;
 }
 
 #email-for-verification {
@@ -133,23 +148,18 @@
     font-size: 1.638rem;
 }
 
-@media only screen and (max-width: 750px) {
-    #personal-data {
-        grid-template-columns: 13.65rem 13.65rem;
-    }
-}
-
-@media only screen and (max-width: 520px) {
-    #personal-data {
-        grid-template-columns: 13.65rem;
-    }
-}
-
 @media only screen and (min-height: 595px) {
     #wrapper {
         margin-top: 0;
     }
     #pane {
         margin-bottom: 2rem;
+    }
+}
+
+@media only screen and (max-width: 645px) {
+    #personal-data {
+        grid-template-columns: 13.65rem;
+        grid-template-rows: auto auto auto auto auto;
     }
 }

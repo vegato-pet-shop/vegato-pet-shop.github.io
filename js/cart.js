@@ -19,6 +19,7 @@ function updateIncrementers() {
 }
 
 function updateCart() {
+    language = userData.language
     var objName = document.getElementById("products-name")
     var objQuantity = document.getElementById("products-quantity")
     var objPrice = document.getElementById("products-price")
@@ -36,7 +37,7 @@ function updateCart() {
         var item = ksItems[i]
         var productsQuantity = quantity[item]
         if (productsQuantity!=0) {
-            var productName = names[item]
+            var productName = names[item][language]
             var productsPrice = price[item]
 
             priceTotal += productsQuantity*productsPrice
@@ -59,6 +60,7 @@ function updateCart() {
             objPrice.appendChild(p)
         }
     }
+    userData.order = order
     
     // Transport
     if (transportation[0]!="") {
@@ -80,6 +82,7 @@ function updateCart() {
         objPrice.appendChild(p)
         objTotal.appendChild(document.createTextNode(priceTotal+" EUR"))
     }
+    userData.orderSum = priceTotal
 }
 
 function selectTransportationType(ind) {
@@ -139,6 +142,19 @@ function checkConfirmationCode() {
     }
 }
 
+
+function r(min, max) {
+    return Math.floor(Math.random() * (max - min + 1) + min)
+}
+
+function getOrderNumber() {
+    return "" + r(0, 9) + r(0, 9) + r(0, 9) + r(0, 9) + r(0, 9) + r(0, 9)
+}
+
+function l0(t) {
+    return ('0'+t).slice(-2)
+}
+
 function createCORSRequest(method, url) {
     var xhr = new XMLHttpRequest();
     if ("withCredentials" in xhr) {
@@ -152,19 +168,8 @@ function createCORSRequest(method, url) {
       // CORS not supported.
       xhr = null;
     }
+    xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8")
     return xhr;
-}
-
-function r(min, max) {
-    return Math.floor(Math.random() * (max - min + 1) + min)
-}
-
-function getOrderNumber() {
-    return "" + r(0, 9) + r(0, 9) + r(0, 9) + r(0, 9) + r(0, 9) + r(0, 9)
-}
-
-function l0(t) {
-    return ('0'+t).slice(-2)
 }
 
 function sendConfirmationEmail() {
@@ -187,30 +192,26 @@ function sendConfirmationEmail() {
         }
     }
 
-    let data = {
-        name1:  name1,
-        name2: name2,
-        email: email,
-        phoneNumber: phoneNumber,
-        address: address,
-        time: time,
-        order: order,
-        orderNumber: getOrderNumber(),
-        orderSum: priceTotal,
-        transport: [transportation[1],transportationPrice[transportation[0]]],
-        language: language
-    };
-
-    var url = 'https://looduslikud-taimed.000webhostapp.com/order';
+    userData.name1 = name1
+    userData.name2 = name2
+    userData.email = email
+    userData.phoneNumber = phoneNumber
+    userData.address = address
+    userData.time = time
+    userData.orderNumber = getOrderNumber()
+    userData.transport =  [transportation[1],transportationPrice[transportation[0]]]
+    userData.language = "EST"
+    
+    var url = 'http://192.168.0.56:8000/send-order';
     var xhr = createCORSRequest('POST', url);
     xhr.onreadystatechange = function() {
         if (xhr.readyState == 4 && xhr.status == 200) {
-            var response = JSON.parse(xhr.responseText)
-            console.log(response[0])
+            var response = xhr.responseText
+            console.log(response)
             if (response[0]=="success") {
                 orderReceipt = response[1]
                 localStorage.setItem('orderReceipt',orderReceipt)
-                window.location.replace("../order-done")
+                //window.location.replace("../order-done")
             }
         }
         else if (xhr.readyState == 4 && xhr.status != 200) {
@@ -218,7 +219,8 @@ function sendConfirmationEmail() {
             localStorage.setItem('orderError',orderError)
         }
 	}
-    xhr.send(JSON.stringify(data))
+    console.log(JSON.stringify(userData))
+    xhr.send(JSON.stringify(userData))
 }
 
 function displayReceipt() {
@@ -231,8 +233,21 @@ function displayError() {
     document.getElementById("error").innerHTML = error
 }
 
+function changePersonalData(name,value) {
+    userData[name] = value
+    localStorage.setItem('userData',JSON.stringify(userData))
+}
+
 window.addEventListener("load", function() {
     updateCart()
+
+    // Load user data
+    let ids = ["personal-data-name1","personal-data-name2","personal-data-phone","personal-data-email","personal-data-address"]
+    let fields = ["name1","name2","phoneNumber","email","address"]
+    for (let i=0;i<ids.length;i++) {
+        let input = document.getElementById(ids[i])
+        input.value = userData[fields[i]]
+    }
 
     // Select transportation
     let provider = transportation[0]
@@ -262,5 +277,5 @@ window.addEventListener("load", function() {
         buttonDPD.checked = false
         buttonOmniva.checked = false
     }
-    console.log("here")
 })
+
