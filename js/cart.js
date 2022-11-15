@@ -1,19 +1,19 @@
 function updateIncrementers() {
     /*Price*/
-    var ksItems = Object.keys(price)
-    for (var i=0; i<ksItems.length; i++) {
-        var item = price[ksItems[i]]
-        var ksParts = Object.keys(item)
-        for (var j=0; j<ksParts.length; j++) {
-            var n = ksItems[i]+"-price-"+ksParts[j]
-            var obj = document.getElementById(n)
+    let ksItems = Object.keys(price)
+    for (let i=0; i<ksItems.length; i++) {
+        let item = price[ksItems[i]]
+        let ksParts = Object.keys(item)
+        for (let j=0; j<ksParts.length; j++) {
+            let n = ksItems[i]+"-price-"+ksParts[j]
+            let obj = document.getElementById(n)
             obj.innerHTML = obj.innerHTML.replace("_", item[ksParts[j]])
         }
     }
     /*Quantity*/
-    var ksItems = Object.keys(quantity)
-    for (var i=0; i<ksItems.length; i++) {
-        var n = ksItems[i]+"-incrementer"
+    ksItems = Object.keys(quantity)
+    for (let i=0; i<ksItems.length; i++) {
+        let n = ksItems[i]+"-incrementer"
         document.getElementById(n).querySelector('input[type=number]').value = quantity[ksItems[i]]
     }
 }
@@ -56,10 +56,10 @@ function createCounter(name,value) {
 
 function updateCart() {
     language = userData.language
-    var objName = document.getElementById("products-name")
-    var objQuantity = document.getElementById("products-quantity")
-    var objPrice = document.getElementById("products-price")
-    var objTotal = document.getElementById("products-price-total")
+    let objName = document.getElementById("products-name")
+    let objQuantity = document.getElementById("products-quantity")
+    let objPrice = document.getElementById("products-price")
+    let objTotal = document.getElementById("products-price-total")
 
     objName.innerHTML = ""
     objQuantity.innerHTML = ""
@@ -68,19 +68,19 @@ function updateCart() {
 
     let priceTotal = 0
     let order = []
-    var ksItems = Object.keys(price)
-    for (var i=0; i<ksItems.length; i++) {
-        var item = ksItems[i]
-        var productQuantity = quantity[item]
+    let ksItems = Object.keys(price)
+    for (let i=0; i<ksItems.length; i++) {
+        let item = ksItems[i]
+        let productQuantity = quantity[item]
         if (productQuantity!=0) {
-            var productName = names[item][language]
-            var productPrice = price[item]
+            let productName = names[item][language]
+            let productPrice = price[item]
 
             priceTotal += productQuantity*productPrice
             order.push([productName,productQuantity,productPrice])
 
-            var p = document.createElement("p");
-            var text = document.createTextNode(productName)
+            let p = document.createElement("p");
+            let text = document.createTextNode(productName)
             p.appendChild(text)
             objName.appendChild(p)
 
@@ -99,8 +99,8 @@ function updateCart() {
     
     // Transport
     if (transportation[0]!="") {
-        var p = document.createElement("p");
-        var text = document.createTextNode("Transport ("+transportation[0]+")")
+        let p = document.createElement("p");
+        let text = document.createTextNode("Transport ("+transportation[0]+")")
         p.appendChild(text)
         objName.appendChild(p)
 
@@ -129,7 +129,7 @@ function selectTransportationType(ind) {
     else if (ind==1) {
         document.getElementById("dpd-pickup-point-select").style.display = "inline"
         document.getElementById("omniva-pickup-point-select").style.display = "none"
-        var select = document.getElementById("dpd-pickup-point-select")
+        let select = document.getElementById("dpd-pickup-point-select")
         transportation = ["DPD",select.options[select.selectedIndex].text,select.selectedIndex]
     }
     else {
@@ -144,7 +144,7 @@ function selectTransportationType(ind) {
 
 function selectTransportationDestination(ind) {
     if (ind==1) {
-        var select = document.getElementById("dpd-pickup-point-select")
+        let select = document.getElementById("dpd-pickup-point-select")
         transportation = ["DPD",select.options[select.selectedIndex].text,select.selectedIndex]
     }
     else {
@@ -156,7 +156,7 @@ function selectTransportationDestination(ind) {
 }
 
 function sendConfirmationCode() {
-    var email = document.getElementById("email-for-verification").value
+    let email = document.getElementById("email-for-verification").value
     if (email.includes("@")) {
         document.getElementById("verification-code-block").style.display = "block"
         document.getElementById("verification-wrong-email").style.display = "none"
@@ -167,7 +167,7 @@ function sendConfirmationCode() {
 }
 
 function checkConfirmationCode() {
-    var email = document.getElementById("email-for-verification").value
+    let email = document.getElementById("email-for-verification").value
     if (email.includes("@")) {
         document.getElementById("verification-code-block").style.display = "block"
         document.getElementById("verification-wrong-email").style.display = "none"
@@ -191,7 +191,7 @@ function l0(t) {
 }
 
 function createCORSRequest(method, url) {
-    var xhr = new XMLHttpRequest();
+    let xhr = new XMLHttpRequest();
     if ("withCredentials" in xhr) {
       // XHR for Chrome/Firefox/Opera/Safari.
       xhr.open(method, url, true);
@@ -209,16 +209,16 @@ function createCORSRequest(method, url) {
 
 function sendConfirmationEmail() {
 
-    var overlay = document.getElementById("overlay")
+    let overlay = document.getElementById("overlay")
     overlay.style.display = "flex"
 
-    var name1 = document.getElementById("personal-data-name1").value 
-    var name2 = document.getElementById("personal-data-name2").value
-    var email = document.getElementById("personal-data-email").value
-    var phoneNumber = document.getElementById("personal-data-phone").value
-    var address = document.getElementById("personal-data-address").value
-    var currentDate = new Date()
-    var time = currentDate.getDate() + "."
+    let name1 = document.getElementById("personal-data-name1").value 
+    let name2 = document.getElementById("personal-data-name2").value
+    let email = document.getElementById("personal-data-email").value
+    let phoneNumber = document.getElementById("personal-data-phone").value
+    let address = document.getElementById("personal-data-address").value
+    let currentDate = new Date()
+    let time = currentDate.getDate() + "."
                     + l0(currentDate.getMonth()+1)  + "." 
                     + currentDate.getFullYear() + " "  
                     + l0(currentDate.getHours()) + ":"  
@@ -257,12 +257,12 @@ function sendConfirmationEmail() {
 }
 
 function displayReceipt() {
-    var receipt = localStorage.getItem('orderReceipt')
+    let receipt = localStorage.getItem('orderReceipt')
     document.getElementById("receipt").innerHTML = receipt
 }
 
 function displayError() {
-    var error = localStorage.getItem('orderError')
+    let error = localStorage.getItem('orderError')
     document.getElementById("error").innerHTML = error
 }
 

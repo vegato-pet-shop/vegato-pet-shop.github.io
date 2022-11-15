@@ -89,7 +89,7 @@ let changeSize = function() {
 }
 
 function downloadOrder() {
-    var a = document.createElement("a")
+    let a = document.createElement("a")
     a.href = window.URL.createObjectURL(new Blob([orderText], {type: "text/plain"}))
     a.download = "order.html"
     a.click()

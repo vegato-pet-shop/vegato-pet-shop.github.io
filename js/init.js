@@ -1,29 +1,29 @@
 
-var quantity = {
+let quantity = {
     catFoodSmall: 0,
     catFoodBig: 0,
     dogFoodSmall: 0, 
     dogFoodBig: 0
 }
 
-var transportation = ["","",-1]
-var transportationPrice = {
+let transportation = ["","",-1]
+let transportationPrice = {
     "self-pickup": 0,
     DPD: 3,
     Omniva: 3.50
 }
 
-var price = {
+let price = {
     catFoodSmall: 10,
     catFoodBig: 10,
     dogFoodSmall: 10, 
     dogFoodBig: 10
 }
 
-var priceTotal = 0
-var order = []
-var orderReceipt = []
-var orderError = []
+let priceTotal = 0
+let order = []
+let orderReceipt = []
+let orderError = []
 
 let names = {
     catFoodSmall: {est: "VeggieAnimals kassitoit 2.5kg", rus: "VeggieAnimals кошачья еда 2.5kg", eng: "VeggieAnimals cat food 2.5kg"},
