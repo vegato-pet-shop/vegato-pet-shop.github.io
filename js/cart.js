@@ -209,6 +209,9 @@ function createCORSRequest(method, url) {
 
 function sendConfirmationEmail() {
 
+    var overlay = document.getElementById("overlay")
+    overlay.style.display = "flex"
+
     var name1 = document.getElementById("personal-data-name1").value 
     var name2 = document.getElementById("personal-data-name2").value
     var email = document.getElementById("personal-data-email").value
