@@ -27,6 +27,7 @@
     <!--Load javascript-->
     <script src="../js/init.js" type="text/javascript"></script>
     <script src="../js/script.js" type="text/javascript"></script>
+    <script src="../js/index.js" type="text/javascript"></script>
 </head>
 <body>
     <div id="background">
@@ -81,19 +82,20 @@
                     <div class="input-div">
                         <span>2.5 kg (xx EUR):</span>
                         <div id="cat-small-input" class="number-input">
-                            <button onclick="subtract(this,['catFoodSmall'])" class="minus"></button>
+                            <button onclick="subtract(this)" class="minus"></button>
                             <input id="cat-food-small-input" class="quantity" min="0" name="quantity" value="0" type="number">
-                            <button onclick="add(this,['catFoodSmall'])" class="plus"></button>
+                            <button onclick="add(this)" class="plus"></button>
                         </div>
                     </div>
                     <div>
                         <span>12.5 kg (xx EUR):</span>
                         <div id="cat-small-input" class="number-input">
-                            <button onclick="subtract(this,['catFoodBig'])" class="minus"></button>
+                            <button onclick="subtract(this)" class="minus"></button>
                             <input id="cat-food-big-input" class="quantity" min="0" name="quantity" value="0" type="number">
-                            <button onclick="add(this,['catFoodBig'])" class="plus"></button>
+                            <button onclick="add(this)" class="plus"></button>
                         </div>
                     </div>
+                    <button class="add-cart" onclick="addCart()">add to cart</button>
                 </div>
                 <div id="dog-food">
                     <img src="../img/dog.png" alt="dog">
@@ -112,11 +114,12 @@
                     <div>
                         <span>12.5 kg (xx EUR):</span>
                         <div id="cat-small-input" class="number-input">
-                            <button onclick="subtract(this,['dogFoodBig'])" class="minus"></button>
+                            <button onclick="subtract(this)" class="minus"></button>
                             <input id="dog-food-big-input" class="quantity" min="0" name="quantity" value="0" type="number">
-                            <button onclick="add(this,['dogFoodBig'])" class="plus"></button>
+                            <button onclick="add(this)" class="plus"></button>
                         </div>
                     </div>
+                    <button class="add-cart" onclick="addCart()">add to cart</button>
                 </div>
             </div>
             <hr>
@@ -130,17 +133,5 @@
         </div>
     </div>
     <footer></footer>
-    <script>
-        window.addEventListener("load", function() {
-            let input1 = document.getElementById("cat-food-big-input")
-            let input2 = document.getElementById("cat-food-small-input")
-            let input3 = document.getElementById("dog-food-small-input")
-            let input4 = document.getElementById("dog-food-big-input")
-            input1.value = quantity.catFoodBig
-            input2.value = quantity.catFoodSmall
-            input3.value = quantity.dogFoodSmall
-            input4.value = quantity.dogFoodBig
-        })
-    </script>
 </body>
 </html>

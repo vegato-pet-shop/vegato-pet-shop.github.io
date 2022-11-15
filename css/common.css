@@ -5,7 +5,6 @@
     --light-blue:#E2F7FF;
     --blue: #81C4DD;
     --dark-blue: #015878;
-    --vh: 1vh;
 }  
 
 svg {
@@ -31,7 +30,7 @@ body {
     justify-content: space-between;
     overflow-x: hidden;
     background: var(--light-orange);
-    min-height: calc(var(--vh, 1vh) * 100);
+    min-height: 100vh;
 }
 
 #wrapper {
@@ -159,7 +158,7 @@ h2 {
 
 h3 {
     font-family: 'Space Grotesk', sans-serif;;
-    font-size: 1.638rem
+    font-size: 1.6rem
 }
 
 h4 {
@@ -168,24 +167,24 @@ h4 {
 }
 
 span {
-    font-size: 1.638rem;
+    font-size: 1.6rem;
     height: auto;
     width: auto;
 }
 
 p {
     font-family: 'Space Grotesk', sans-serif;
-    font-size: 1.638rem;
+    font-size: 1.6rem;
 }
 
 label {
     font-family: 'Space Grotesk', sans-serif;
-    font-size: 1.638rem;
+    font-size: 1.6rem;
 }
 
 a {
     font-family: 'Space Grotesk', sans-serif;
-    font-size: 1.638rem;
+    font-size: 1.6rem;
     color: black;
 }
 
@@ -292,8 +291,6 @@ optgroup {
 /*-----------------------------------------------*/
 
 .number-input {
-    margin-top: -0.682rem;
-    margin-bottom: 1.365rem;
     border: 0.136rem solid #ddd;
     display: inline-flex;
 }
@@ -317,6 +314,11 @@ optgroup {
     cursor: pointer;
     margin: 0;
     position: relative;
+    background: var(--whitish);
+}
+
+.number-input button:active {
+    filter: brightness(90%);
 }
 
 .number-input button:after {
@@ -334,7 +336,7 @@ optgroup {
 }
 
 .number-input input[type=number] {
-    font-family: "Space Grotesk" sans-serif; 
+    font-family: "Space Grotesk", sans-serif; 
     max-width: 3.412rem;
     padding: 0.244rem;
     border: solid #ddd;

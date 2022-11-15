@@ -33,11 +33,23 @@
     overflow: hidden;
     border-top: 0.171rem solid;
     border-bottom: 0.171rem solid;
+    padding: 1.3rem 0;
 }
 
-#products-table p {
-    margin-bottom: 1.024rem;
-    margin-top: 1.024rem;
+#products-table > div {
+    display: grid;
+    grid-template-columns: auto;
+    row-gap: 1rem;
+}
+
+#products-quantity {
+    height: min-content;
+    margin-top: 0;
+}
+
+#products-quantity input {
+    font-size: 1.6rem;
+    font-weight: normal;
 }
 
 #dpd-div {
@@ -145,7 +157,7 @@
     width: 10.238rem;
     background: var(--whitish);
     border: 0.136rem solid black;
-    font-size: 1.638rem;
+    font-size: 1.6rem;
 }
 
 @media only screen and (min-height: 595px) {

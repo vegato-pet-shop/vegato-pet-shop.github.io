@@ -18,6 +18,42 @@ function updateIncrementers() {
     }
 }
 
+function createCounter(name,value) {
+
+    let div = document.createElement("div")
+    div.className = "number-input"
+
+    let subButton = document.createElement("button")
+    subButton.className = "minus"
+    subButton.onclick = () => {
+        subtract(subButton)
+        quantity[name] -= 1
+        changeTotal()
+        updateCart()
+    }
+
+    let addButton = document.createElement("button")
+    addButton.className = "plus"
+    addButton.onclick = () => {
+        add(addButton)
+        quantity[name] += 1
+        changeTotal()
+        updateCart()
+    }
+
+    let input = document.createElement("input")
+    input.className = "quantity"
+    input.min = 0
+    input.value = value
+    input.type = "number"
+
+    div.appendChild(subButton)
+    div.appendChild(input)
+    div.appendChild(addButton)
+
+    return div
+}
+
 function updateCart() {
     language = userData.language
     var objName = document.getElementById("products-name")
@@ -35,13 +71,13 @@ function updateCart() {
     var ksItems = Object.keys(price)
     for (var i=0; i<ksItems.length; i++) {
         var item = ksItems[i]
-        var productsQuantity = quantity[item]
-        if (productsQuantity!=0) {
+        var productQuantity = quantity[item]
+        if (productQuantity!=0) {
             var productName = names[item][language]
-            var productsPrice = price[item]
+            var productPrice = price[item]
 
-            priceTotal += productsQuantity*productsPrice
-            order.push([productName,productsQuantity,productsPrice])
+            priceTotal += productQuantity*productPrice
+            order.push([productName,productQuantity,productPrice])
 
             var p = document.createElement("p");
             var text = document.createTextNode(productName)
@@ -50,12 +86,11 @@ function updateCart() {
 
             p = document.createElement("p")
 
-            text = document.createTextNode(productsQuantity)
-            p.appendChild(text)
-            objQuantity.appendChild(p)
+            let counter = createCounter(item,productQuantity)
+            objQuantity.appendChild(counter)
 
             p = document.createElement("p")
-            text = document.createTextNode(productsPrice+" EUR")
+            text = document.createTextNode(productPrice+" EUR")
             p.appendChild(text)
             objPrice.appendChild(p)
         }
@@ -80,8 +115,8 @@ function updateCart() {
         priceTotal += transportationPrice[transportation[0]]
         p.appendChild(text)
         objPrice.appendChild(p)
-        objTotal.appendChild(document.createTextNode(priceTotal+" EUR"))
     }
+    objTotal.appendChild(document.createTextNode(priceTotal+" EUR"))
     userData.orderSum = priceTotal
 }
 
