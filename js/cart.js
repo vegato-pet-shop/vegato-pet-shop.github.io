@@ -200,7 +200,6 @@ function sendConfirmationEmail() {
     userData.time = time
     userData.orderNumber = getOrderNumber()
     userData.transport =  [transportation[1],transportationPrice[transportation[0]]]
-    userData.language = "EST"
     
     var url = 'http://192.168.0.56:8000/send-order';
     var xhr = createCORSRequest('POST', url);
@@ -219,7 +218,6 @@ function sendConfirmationEmail() {
             localStorage.setItem('orderError',orderError)
         }
 	}
-    console.log(JSON.stringify(userData))
     xhr.send(JSON.stringify(userData))
 }
 

@@ -35,6 +35,7 @@ document.addEventListener("load", fixMinHeight)
 function switchLanguage(newLanguage) {
     let url = window.location.href
     let splitUrl = url.split(userData.language)
-    console.log(newLanguage,splitUrl[1])
+    userData.language = newLanguage
+    localStorage.setItem('userData',JSON.stringify(userData))
     window.location.href = "/"+newLanguage+splitUrl[1]
 }
