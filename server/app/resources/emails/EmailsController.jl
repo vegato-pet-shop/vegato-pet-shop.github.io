@@ -32,7 +32,8 @@ function create_order_subject_message(order_data)
         subject = string("Vegato (order #",order_data["orderNumber"],")")
         transport_item = ["Transportation ("*order_data["transport"][1]*")","",order_data["transport"][3]]
     end
-
+    message = "Content-Type: text/html; Content-Transfer-Encoding: 7bit;"*message
+    
     pairs = map(x -> "\$"*x => order_data[x],["name1","name2","email","phoneNumber","address","time","orderNumber","orderSum"])
     transport = join(order_data["transport"][1:2]," ")
     order_with_transport = [order_data["order"]...,transport_item]
@@ -91,11 +92,11 @@ messageEst = open(joinpath(path,"messageEST.html")) do f
     read(f, String)
 end
 #messageEst = replace(messageEst,"\r\n" =>"", r"\s+" => " ")
-messageEng = open(joinpath(path,"messageEST.html")) do f
+messageEng = open(joinpath(path,"messageENG.html")) do f
     read(f, String)
 end
 #messageEng = replace(messageEng, "\r\n" =>"", r"\s+" => " ")
-messageRus = open(joinpath(path,"messageEST.html")) do f
+messageRus = open(joinpath(path,"messageRUS.html")) do f
     read(f, String)
 end
 #messageEng = replace(messageRus, "\r\n" =>"", r"\s+" => " ")

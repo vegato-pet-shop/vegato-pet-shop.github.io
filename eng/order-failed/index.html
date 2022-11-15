@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Vegato - vegan pet shop</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta property="og:title" content="Vegato - vegan pet shop">
+    <meta property="og:description" content="Vegan pet food for cats and dogs.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="">
+    <meta property="og:url" content="">
+
+    <!--Libraries-->
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js' crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <!--Icons-->
+    <link href="../../img/icons/favicon-32.png" rel="icon" sizes="32x32">
+
+    <!--Load fonts-->
+    <link href='https://fonts.googleapis.com/css?family=Space+Grotesk' rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@700&display=swap' rel="stylesheet">
+
+    <!--Load CSS-->
+    <link href="../../css/common.css" rel="stylesheet">
+    <link href="../../css/navbar.css" rel="stylesheet">
+    <link href="../../css/footer.css" rel="stylesheet">
+    <link href="../../css/order.css" rel="stylesheet">
+
+    <!--Load javascript-->
+    <script src="../../js/order_status.js" type="text/javascript"></script>
+</head>
+<body>
+    <div id="background">
+        <img src="../../img/blue-top.svg" id="blue-top" alt="blue-top">
+        <img src="../../img/orange-top.svg" id="orange-top" alt="orange-top">
+        <img src="../../img/blue-bottom.svg" id="blue-bottom" alt="blue-bottom">
+        <img src="../../img/orange-bottom.svg" id="orange-bottom" alt="orange-bottom">
+    </div>
+    
+    <div id="navbar">
+        <a href="../">
+            <img src="../../img/vegato_logo.png" id="navbar-logo" alt="vegato logo">
+        </a>
+        <ul>
+            <li class="navbar-li"><a href="../">home</a></li>
+            <li class="navbar-li"><a href="../cart">
+                <img src="../../img/cart.svg" id="cart-icon" alt="cart">
+                <div id="cart-counter"></div>
+            </a></li>
+            <li class="navbar-li dropdown">
+                <img src="../../img/globe.png" id="language-icon" alt="language">
+                <div class="dropdown-content">
+                    <button class="language-option" onclick="switchLanguage('est')">EST</button>
+                    <button class="language-option" onclick="switchLanguage('rus')">RUS</button>
+                    <button class="language-option" onclick="switchLanguage('eng')">ENG</button>
+                </div>
+            </li>
+        </ul>
+    </div> 
+
+    <div id="wrapper">
+        <div id="pane">
+            <h2>Order failed</h2>
+            <p>Something is wrong with our server. We could not receive your order. Please, download you order from this page and send to us at <a href='mailto:info@vegato-pet-shop.com'>info@vegato-pet-shop.com</a>.</p>
+            <button id="order-download" onclick="downloadOrder()">Click to download</button>
+            <iframe id="order-wrapper"></iframe>
+        </div>
+    </div>
+    <footer></footer>
+</body>
+</html>

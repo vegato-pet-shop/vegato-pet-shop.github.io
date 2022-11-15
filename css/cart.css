@@ -1,8 +1,8 @@
 #pane {
     position: relative;
     width: 100%;
-    margin-top: 3.412rem;
-    margin-bottom: 3.412rem;
+    margin-top: 3.4rem;
+    margin-bottom: 3.4rem;
     padding: 2.73rem 5.46rem;
     background: rgba(253, 251, 254, 0.74);
     border: 0.136rem solid black;
@@ -19,7 +19,7 @@
 
 #cart {
     margin-top: 1.365rem;
-    margin-bottom: 3.412rem;
+    margin-bottom: 3.4rem;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -158,6 +158,10 @@
     background: var(--whitish);
     border: 0.136rem solid black;
     font-size: 1.6rem;
+}
+
+#submit-order:active {
+    filter: brightness(90%);
 }
 
 @media only screen and (min-height: 595px) {

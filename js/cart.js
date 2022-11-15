@@ -234,23 +234,20 @@ function sendConfirmationEmail() {
     userData.address = address
     userData.time = time
     userData.orderNumber = getOrderNumber()
-    userData.transport =  [transportation[1],transportationPrice[transportation[0]]]
+    userData.transport =  [transportation[0],transportation[1],transportationPrice[transportation[0]]]
+
+    localStorage.setItem('orderData',JSON.stringify(userData))
     
-    var url = 'http://192.168.0.56:8000/send-order';
-    var xhr = createCORSRequest('POST', url);
+    let url = 'http://192.168.0.56:8000/send-order';
+    let xhr = createCORSRequest('POST', url);
     xhr.onreadystatechange = function() {
         if (xhr.readyState == 4 && xhr.status == 200) {
-            var response = xhr.responseText
-            console.log(response)
-            if (response[0]=="success") {
-                orderReceipt = response[1]
-                localStorage.setItem('orderReceipt',orderReceipt)
-                //window.location.replace("../order-done")
-            }
+            let response = xhr.responseText
+            window.location.href = "/"+userData.language+"/order-succeeded"
         }
         else if (xhr.readyState == 4 && xhr.status != 200) {
-            orderError = response[0]
-            localStorage.setItem('orderError',orderError)
+            let response = xhr.responseText
+            window.location.href = "/"+userData.language+"/order-failed"
         }
 	}
     xhr.send(JSON.stringify(userData))

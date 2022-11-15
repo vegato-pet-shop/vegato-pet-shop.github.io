@@ -14,8 +14,8 @@ using Genie
 Genie.loadapp(".")
 
 # Launch server
-if ENV["GENIE_ENV"]=="dev"
+#if ENV["GENIE_ENV"]=="dev"
     Genie.up()
-else
-    Genie.up(async=false)
-end
+#else
+    #Genie.up(async=false)
+#end

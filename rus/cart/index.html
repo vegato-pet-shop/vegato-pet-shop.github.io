@@ -1458,23 +1458,23 @@
             <div id="personal-data">
                 <div>
                     <label>Имя:</label>
-                    <input type="text" id="personal-data-name1" class="my-data-inputs">
+                    <input type="text" id="personal-data-name1" class="my-data-inputs" oninput="changePersonalData('name1',this.value)">
                 </div>
                 <div>
                     <label>Фамилия:</label>
-                    <input type="text" id="personal-data-name2" class="my-data-inputs">
+                    <input type="text" id="personal-data-name2" class="my-data-inputs" oninput="changePersonalData('name2',this.value)">
                 </div>
                 <div>
                     <label>Телефон:</label>
-                    <input type="number" id="personal-data-phone" class="my-data-inputs">
+                    <input type="number" id="personal-data-phone" class="my-data-inputs" oninput="changePersonalData('phoneNumber',this.value)">
                 </div>
                 <div>
                     <label>Эмайл:</label>
-                    <input type="email" id="personal-data-email" class="my-data-inputs">
+                    <input type="email" id="personal-data-email" class="my-data-inputs" oninput="changePersonalData('email',this.value)">
                 </div>
                 <div>
                     <label>Адрес:</label>
-                    <input type="text" id="personal-data-address" class="my-data-inputs">
+                    <input type="text" id="personal-data-address" class="my-data-inputs" oninput="changePersonalData('address',this.value)">
                 </div>
             </div>
             <button id="submit-order" onclick="sendConfirmationEmail()">Заказать</button>

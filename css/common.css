@@ -61,26 +61,26 @@ html {
         font-size: 10px;
     }
 }
+
 @media only screen and (max-width: 520px) {
     html {
         font-size: 8px;
     }
 }
-@media only screen and (max-width: 520px) {
-    html {
-        font-size: 8px;
-    }
-}
+
 @media only screen and (max-width: 420px) {
     html {
         font-size: 6px;
     }
 }
+
 @media only screen and (max-width: 315px) {
     html {
         font-size: 5px;
     }
 }
+
+
 /*---Background----------------------------------------------------------------------*/
 
 #background {
