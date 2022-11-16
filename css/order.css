@@ -26,6 +26,7 @@
 }
 
 #order-wrapper {
+    display: block;
     --zoom: calc(16/16);
     margin-top: 3rem;
     margin-bottom: 2rem;
