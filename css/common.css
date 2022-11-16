@@ -50,31 +50,31 @@ html {
     }
 }
 
-@media only screen and (max-width: 860px) {
+@media only screen and (max-width: 880px) {
     html {
         font-size: 12px;
     }
 }
 
-@media only screen and (max-width: 620px) {
+@media only screen and (max-width: 690px) {
     html {
         font-size: 10px;
     }
 }
 
-@media only screen and (max-width: 520px) {
+@media only screen and (max-width: 585px) {
     html {
         font-size: 8px;
     }
 }
 
-@media only screen and (max-width: 420px) {
+@media only screen and (max-width: 470px) {
     html {
         font-size: 6px;
     }
 }
 
-@media only screen and (max-width: 315px) {
+@media only screen and (max-width: 345px) {
     html {
         font-size: 5px;
     }

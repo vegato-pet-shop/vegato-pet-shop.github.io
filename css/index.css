@@ -34,26 +34,26 @@
 #dog-hero {
     position: relative;
     left: 12.285rem;
-    top: 2.047rem;
-    width: 5.46rem;
+    top: 2rem;
+    width: 5.5rem;
     z-index: 0;
     transform: rotate(10deg);
 }
 
 #hero-text {
-    margin-top: -3.412rem;
+    margin-top: -3.4rem;
 }
 
 #hero-text h1 {
-    font-size: 3.412rem;
+    font-size: 3.2rem;
     font-weight: 400;
-    line-height: 3.412rem;
+    line-height: 3.4rem;
 }
 
 #hero-text button {
     position: relative;
-    top: 1.365rem;
-    padding: 0.682rem 2rem;
+    top: 1.4rem;
+    padding: 0.7rem 2rem;
     background: var(--whitish);
     border: 0.136rem solid black;
     font-size: 1.6rem;
@@ -63,16 +63,7 @@
 @media only screen and (max-width: 859px) {
 
     #hero {
-        column-gap: 2.047rem;
-    }
-
-    #hero-text {
-        width: 21.84rem;
-    }
-
-    #hero-text h1 {
-        font-size: 2.7rem;
-        font-weight: 500;
+        column-gap: 2rem;
     }
 }
 
@@ -81,7 +72,7 @@
 #products {
     position: relative;
     width: 100%;
-    margin-bottom: 3.412rem;
+    margin-bottom: 3.4rem;
     padding: 2.73rem 0.0rem;
     background: rgba(253, 251, 254, 0.74);
     border: 0.136rem solid black;
@@ -90,7 +81,7 @@
 
 #products h2 {
     text-align: center;
-    padding-bottom: 0.682rem;
+    padding-bottom: 0.7rem;
     margin: auto;
     width: 13.65rem;
     border-bottom: 0.136rem solid black;
@@ -127,19 +118,19 @@
 
 #products-grid p {
     position: relative;
-    font-size: 1.365rem;
+    font-size: 1.4rem;
 }
 
 .input-div {
-    margin-top: 1.365rem;
+    margin-top: 1.4rem;
 }
 
 #products-grid span {
     position: relative;
     display: block;
     top: 0.375rem;
-    height: 3.412rem;
-    font-size: 1.365rem;
+    height: 3.4rem;
+    font-size: 1.4rem;
     font-family: "Space Grotesk";
 }
 
@@ -185,7 +176,7 @@
     display: block;
     margin: auto;
     margin-top: 1rem;
-    padding: 0.682rem 2rem;
+    padding: 0.7rem 2rem;
     background: var(--whitish);
     border: 0.136rem solid black;
     font-size: 1.6rem;
@@ -218,7 +209,7 @@
     margin-left: 10%;
     margin-right: 10%;
     text-align: center;
-    font-size: 2.047rem;
+    font-size: 2rem;
     padding: 2.73rem 0.0rem;
 }
 
@@ -226,8 +217,8 @@
 
 #labels {
     display: flex;
-    margin-top: 3.412rem;
-    margin-bottom: 2.047rem;
+    margin-top: 3.4rem;
+    margin-bottom: 2rem;
     justify-content: center;
 }
 
