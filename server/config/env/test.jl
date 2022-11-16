@@ -8,7 +8,11 @@ Genie.Configuration.config!(
   server_handle_static_files      = false,
   path_build                      = "build",
   format_julia_builds             = false,
-  format_html_output              = false
+  format_html_output              = false,
+  cors_headers                    = Dict(
+    "Access-Control-Allow-Origin" => "https://vegato-pet-shop.com",
+    "Access-Control-Allow-Headers" => "Content-Type",
+    "Access-Control-Allow-Methods" => "GET,POST,OPTIONS")
 )
 
 ENV["JULIA_REVISE"] = "auto"
