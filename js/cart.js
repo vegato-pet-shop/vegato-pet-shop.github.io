@@ -242,17 +242,20 @@ function sendConfirmationEmail() {
     localStorage.setItem('orderData',JSON.stringify(userData))
     
     let url = 'https://server.vegato-pet-shop.com/send-order'
-    let xhr = new XMLHttpRequest()
-    xhr.open('POST', url, true)
+    //let xhr = new XMLHttpRequest()
+    //xhr.open('POST', url, true)
+    let xhr = createCORSRequest('POST', url)
     xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8")
     xhr.onreadystatechange = function() {
         if (xhr.readyState == 4 && xhr.status == 200) {
             let response = xhr.responseText
-            window.location.href = "/"+userData.language+"/order-succeeded"
+            console.log("success")
+            //window.location.href = "/"+userData.language+"/order-succeeded"
         }
         else if (xhr.readyState == 4 && xhr.status != 200) {
+            console.log(xhr)
             let response = xhr.responseText
-            window.location.href = "/"+userData.language+"/order-failed"
+            //window.location.href = "/"+userData.language+"/order-failed"
         }
 	}
     xhr.send(JSON.stringify(userData))
