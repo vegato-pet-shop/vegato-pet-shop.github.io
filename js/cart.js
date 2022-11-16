@@ -241,8 +241,10 @@ function sendConfirmationEmail() {
 
     localStorage.setItem('orderData',JSON.stringify(userData))
     
-    let url = 'http://192.168.0.56:8000/send-order';
-    let xhr = createCORSRequest('POST', url);
+    let url = 'https://server.vegato-pet-shop.com/send-order'
+    let xhr = new XMLHttpRequest()
+    xhr.open('POST', url, true)
+    xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8")
     xhr.onreadystatechange = function() {
         if (xhr.readyState == 4 && xhr.status == 200) {
             let response = xhr.responseText

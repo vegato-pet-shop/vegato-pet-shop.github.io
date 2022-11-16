@@ -1,5 +1,4 @@
-
-ENV["GENIE_ENV"] = "prod"
+ENV["GENIE_ENV"] = "test"
 # Load our website project into Julia
 cd(@__DIR__)
 using Pkg
@@ -14,8 +13,9 @@ using Genie
 Genie.loadapp(".")
 
 # Launch server
-#if ENV["GENIE_ENV"]=="dev"
+if ENV["GENIE_ENV"]=="dev"
     Genie.up()
-#else
-    #Genie.up(async=false)
-#end
+else
+    Genie.up(async=false)
+end
+
