@@ -78,11 +78,12 @@ function setIframeHeight(iframe,zoom) {
 
 let changeSize = function() {
     let iframe = document.getElementById("order-wrapper")
-    let expr = getComputedStyle(iframe).getPropertyValue('--zoom').slice(5,-1)
+    let expr = getComputedStyle(iframe).getPropertyValue('--zoom')
+    expr = expr.replace("calc(","")
+    expr = expr.replace(")","")
     let splitStr = expr.split("/")
     let zoom = 1/(parseFloat(splitStr[0])/parseFloat(splitStr[1]))
     iframe.style.width = 100*zoom+"%"
-    //iframe.style.height = iframeHeight*zoom+"rem"
     let iframeBody = iframe.contentWindow.document.body
     let iframeBodyHeight = getComputedStyle(iframeBody).getPropertyValue('height')
     iframe.style.height = iframeBodyHeight
