@@ -26,10 +26,10 @@ let orderReceipt = []
 let orderError = []
 
 let names = {
-    catFoodSmall: {est: "VeggieAnimals kassitoit 2.5kg", rus: "VeggieAnimals кошачья еда 2.5kg", eng: "VeggieAnimals cat food 2.5kg"},
-    catFoodBig: {est: "VeggieAnimals kassitoit 12.5kg", rus: "VeggieAnimals кошачья еда 12.5kg", eng: "VeggieAnimals cat food 12.5kg"},
-    dogFoodSmall: {est: "VeggieAnimals koeratoit 2.5kg", rus: "VeggieAnimals собачья еда 2.5kg", eng: "VeggieAnimals dog food 2.5kg"},
-    dogFoodBig: {est: "VeggieAnimals koeratoit 12.5kg", rus: "VeggieAnimals собачья еда 12.5kg", eng: "VeggieAnimals dog food 12.5kg"},
+    catFoodSmall: {est: "VeggieAnimals kassitoit 2 kg", rus: "VeggieAnimals кошачья еда 2 кг", eng: "VeggieAnimals cat food 2 kg"},
+    catFoodBig: {est: "VeggieAnimals kassitoit 12.5 kg", rus: "VeggieAnimals кошачья еда 12.5 kg", eng: "VeggieAnimals cat food 12.5 kg"},
+    dogFoodSmall: {est: "VeggieAnimals koeratoit 2 kg", rus: "VeggieAnimals собачья еда 2 kg", eng: "VeggieAnimals dog food 2 kg"},
+    dogFoodBig: {est: "VeggieAnimals koeratoit 12.5 kg", rus: "VeggieAnimals собачья еда 12.5 kg", eng: "VeggieAnimals dog food 12.5 kg"},
 }
 
 let userData = {
