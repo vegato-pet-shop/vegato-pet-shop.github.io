@@ -47,7 +47,8 @@
 #hero-text button {
     position: relative;
     margin-top: 3rem;
-    padding: 0.7rem 2rem;
+    padding: 0.8rem 2rem;
+    padding-top: 0.6rem;
     background: var(--whitish);
     border: 0.14rem solid black;
     font-size: 1.6rem;
@@ -234,7 +235,7 @@
     display: block;
     top: 0.45rem;
     font-size: 1.2rem;
-    font-family: "Space Grotesk";
+    font-family: "Space Grotesk", sans-serif;
     color: var(--orange)
 }
 
@@ -247,7 +248,8 @@
     display: block;
     margin: auto;
     margin-top: 2rem;
-    padding: 0.7rem 2rem;
+    padding: 0.8rem 2rem;
+    padding-top: 0.6rem;
     background:hsl(25, 88%, 75%);
     border: 0.14rem solid black;
     border-radius: 3rem;
