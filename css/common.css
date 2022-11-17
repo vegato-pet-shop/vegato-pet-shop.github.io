@@ -339,7 +339,7 @@ optgroup {
     position: absolute;
     font-family: "Space Grotesk" sans-serif; 
     transform: translate(-50%, -50%) rotate(180deg);
-    font-size: 1.365rem;
+    font-size: 1.4rem;
 }
 .number-input button.plus:after {
     content: '+';

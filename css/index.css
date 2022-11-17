@@ -234,7 +234,7 @@
 .span-quantity {
     position: relative;
     display: block;
-    top: 0.35rem;
+    top: 0.45rem;
     font-size: 1.2rem;
     font-family: "Space Grotesk";
     color: var(--orange)
@@ -272,7 +272,61 @@
     }
 
     #products-grid>div:first-child {
-        margin-bottom: 10.238rem;
+        margin-bottom: 10rem;
+    }
+
+    #products-grid>div {
+        padding-bottom: 2.5rem;
+    }
+}
+
+@media only screen and (max-width: 470px) {
+    #products-grid>div {
+        padding: 1.7rem 7rem;
+        padding-bottom: 2.5rem;
+    }
+
+    #products-grid p {
+        position: relative;
+        font-size: calc(1.4rem*1.4);
+    }
+    
+    .price-total {
+        font-size: calc(1.4rem*1.4);
+    }
+    
+    .price-kg {
+        font-size: calc(1.4rem*1.4);
+    }
+
+    .price-kg {
+        font-size: calc(1rem*1.4);
+    }
+    
+    .span-quantity {
+        font-size: calc(1.2rem*1.4);
+    }
+    
+    .add-cart {
+        font-size: calc(1.6rem*1.4);
+    }
+
+    .number-input,.number-input * {
+        box-sizing: border-box;
+        width: calc(6.825rem*1.4);
+    }
+    .number-input button {
+        width: calc(2.047rem*1.4);
+        height: calc(2.047rem*1.4);
+    }
+    .number-input button:after {
+        font-size: calc(1.365rem*1.4);
+    }
+    .number-input input[type=number] {
+        max-width: calc(3.412rem*1.4);
+        padding: calc(0.244rem*1.4);
+        font-size: calc(1.024rem*1.4);
+        height: calc(2.047rem*1.4);
     }
 }
 
