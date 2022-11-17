@@ -35,7 +35,7 @@ body {
 
 #wrapper {
     position: relative;
-    width: 87%;
+    width: 95%;
     max-width: 81.9rem;
     margin: auto;
 }
@@ -44,42 +44,41 @@ html {
     font-size: 16px;
 }
 
-@media only screen and (max-width: 960px) {
+@media only screen and (max-width: 770px) {
     html {
         font-size: 14px;
     }
 }
 
-@media only screen and (max-width: 880px) {
+@media only screen and (max-width: 660px) {
     html {
         font-size: 12px;
     }
 }
 
-@media only screen and (max-width: 690px) {
+@media only screen and (max-width: 570px) {
     html {
         font-size: 10px;
     }
 }
 
-@media only screen and (max-width: 585px) {
+@media only screen and (max-width: 470px) {
     html {
         font-size: 8px;
     }
 }
 
-@media only screen and (max-width: 470px) {
+@media only screen and (max-width: 370px) {
+    html {
+        font-size: 7px;
+    }
+}
+
+@media only screen and (max-width: 278px) {
     html {
         font-size: 6px;
     }
 }
-
-@media only screen and (max-width: 345px) {
-    html {
-        font-size: 5px;
-    }
-}
-
 
 /*---Background----------------------------------------------------------------------*/
 
