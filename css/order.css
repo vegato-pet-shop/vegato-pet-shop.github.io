@@ -14,10 +14,12 @@
     text-align: center;
     padding-bottom: 0.682rem;
     margin: auto;
-    padding: 0 1rem;
+    padding: 0 2rem;
     width: max-content;
     border-bottom: 0.136rem solid black;
     margin-bottom: 2rem;
+    font-family: "Special";
+    font-size: 2rem;
 }
 
 #pane a {

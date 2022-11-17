@@ -138,6 +138,10 @@ html {
     font-family: "Space Grotesk"
 }
 
+@font-face {
+    font-family: "Special";
+    src: url("fonts/UnlimitedPie.otf") format("opentype");
+}
 
 /*---Text related------------------------------------------------------------------------------*/
 

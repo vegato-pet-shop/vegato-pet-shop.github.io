@@ -100,7 +100,18 @@ function updateCart() {
     // Transport
     if (transportation[0]!="") {
         let p = document.createElement("p");
-        let text = document.createTextNode("Transport ("+transportation[0]+")")
+        let language = userData.language
+        let languageText
+        if (language=="est") {
+            languageText = "Transport"
+        }
+        else if (language=="rus") {
+            languageText = "Транспорт"
+        }
+        else {
+            languageText = "Transport"
+        }
+        let text = document.createTextNode(languageText+" ("+transportation[0]+")")
         p.appendChild(text)
         objName.appendChild(p)
 
