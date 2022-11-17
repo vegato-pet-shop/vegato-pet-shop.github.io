@@ -144,7 +144,7 @@
 #products-grid>div {
     position: relative;
     background: var(--whitish);
-    padding: 1.7rem 4rem;
+    padding: 1.7rem 6rem;
     padding-bottom: 2.5rem;
     border: 0.136rem solid black;
     border-radius: 1.5rem;
@@ -266,7 +266,7 @@
     background:hsl(25, 88%, 55%);
 }
 
-@media only screen and (max-width: 1250px) {
+@media only screen and (max-width: 1300px) {
     #products-grid {
         flex-direction: column;
     }
