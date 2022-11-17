@@ -125,11 +125,19 @@
     margin-top: 1.4rem;
 }
 
-#products-grid span {
+.input-div > .span {
     position: relative;
     display: block;
-    top: 0.375rem;
-    height: 3.4rem;
+    font-family: "Space Grotesk";
+}
+
+.price-total {
+    font-size: 1.4rem;
+}
+
+.price-kg {
+    position: relative;
+    display: block;
     font-size: 1.4rem;
     font-family: "Space Grotesk";
 }
@@ -167,15 +175,24 @@
     filter: drop-shadow( 0.136rem 0.136rem 0.068rem rgba(0, 0, 0, 0.377));
 }
 
+.price-kg {
+    font-size: 1rem;
+}
+
 .number-input {
-    margin-bottom: 1rem;
+    margin-top: 0.75rem;
+    margin-bottom: 0rem;
+}
+
+.quantity {
+    pointer-events: none; 
 }
 
 .add-cart {
     position: relative;
     display: block;
     margin: auto;
-    margin-top: 1rem;
+    margin-top: 2rem;
     padding: 0.7rem 2rem;
     background: var(--whitish);
     border: 0.136rem solid black;

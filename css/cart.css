@@ -50,6 +50,7 @@
 #products-quantity input {
     font-size: 1.6rem;
     font-weight: normal;
+    pointer-events: none; 
 }
 
 #dpd-div {
