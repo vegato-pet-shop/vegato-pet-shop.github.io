@@ -199,10 +199,6 @@
     font-size: 1.6rem;
 }
 
-.add-cart:active {
-    filter: brightness(90%);
-}
-
 @media only screen and (max-width: 1250px) {
     #products-grid {
         flex-direction: column;
