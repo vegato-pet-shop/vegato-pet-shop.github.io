@@ -1,15 +1,6 @@
 
 /*---Hero----------------------------------------------------------*/
 
-#gradient {
-    position: absolute;
-    top: -4.778rem;
-    width: 100%;
-    height: 30.644rem;
-    z-index: -1;
-    opacity: 100%;
-}
-
 #hero {
     position: relative;
     display: grid;
@@ -33,7 +24,7 @@
     position: relative;
     width: calc(20.4rem*var(--scale));
     z-index: 2;
-    filter: drop-shadow( 0.136rem 0.136rem 0.068rem rgba(0, 0, 0, 0.377));
+    filter: drop-shadow( 0.14rem 0.14rem 0.068rem rgba(0, 0, 0, 0.377));
 }
 
 #dog-hero {
@@ -43,7 +34,7 @@
     width: calc(5.5rem*var(--scale));
     z-index: 0;
     transform: rotate(10deg);
-    filter: drop-shadow( 0.136rem 0.136rem 0.068rem rgba(0, 0, 0, 0.377));
+    filter: drop-shadow( 0.14rem 0.14rem 0.068rem rgba(0, 0, 0, 0.377));
 }
 
 #hero-text h1 {
@@ -58,7 +49,7 @@
     margin-top: 3rem;
     padding: 0.7rem 2rem;
     background: var(--whitish);
-    border: 0.136rem solid black;
+    border: 0.14rem solid black;
     font-size: 1.6rem;
     border-radius: 3rem;
 }
@@ -108,9 +99,9 @@
     position: relative;
     width: 100%;
     margin-bottom: 3.4rem;
-    padding: 2.73rem 0.0rem;
+    padding: 3rem 0.0rem;
     background: rgba(253, 251, 254, 0.74);
-    border: 0.136rem solid black;
+    border: 0.14rem solid black;
     border-radius: 3rem;
     z-index: 1;
 }
@@ -121,7 +112,7 @@
     width: min-content;
     margin: auto;
     padding: 0 2rem;
-    border-bottom: 0.136rem solid black;
+    border-bottom: 0.14rem solid black;
     font-family: "Special";
     font-size: 2rem;
 }
@@ -134,25 +125,31 @@
     justify-content: space-between;
     margin: auto;
     align-items: center;
-    margin-top: 8.19rem;
+    margin-top: 9rem;
     margin-left: 10%;
     margin-right: 10%;
-    margin-bottom: 6.825rem;
+    margin-bottom: 6.8rem;
 
 }
 
 #products-grid>div {
     position: relative;
     background: var(--whitish);
-    padding: 1.7rem 6rem;
-    padding-bottom: 2.5rem;
-    border: 0.136rem solid black;
+    border: 0.14rem solid black;
     border-radius: 1.5rem;
+    width: 30rem;
+}
+
+.product-card-wrapper {
+    position: relative;
+    width: max-content;
+    margin: 1.7rem auto;
+    margin-bottom: 2.5rem;
 }
 
 #products-grid h3 {
     position: relative;
-    font-size: 1.843rem;
+    font-size: 1.84rem;
     font-weight: 700;
 }
 
@@ -183,38 +180,39 @@
 }
 
 /* Animals on top */
-#products-grid>div>img:first-child {
+#cat-card, #dog-card {
     position: absolute;
     z-index: -5;
+    margin-top: -1.7rem
 }
 
 /* Cat on top */
-#cat-food>img:first-child {
+#cat-card {
     width: 8.872rem;
     margin-left: 1.5rem;
-    top: -6.825rem;
+    top: -6.8rem;
     left: 50%;
     transform: translateX(-50%);
-    filter: drop-shadow( 0.136rem 0.136rem 0.068rem rgba(0, 0, 0, 0.377));
+    filter: drop-shadow( 0.14rem 0.14rem 0.068rem rgba(0, 0, 0, 0.377));
 }
 
 /* Dog on top */
-#dog-food>img:first-child {
-    width: 6.825rem;
+#dog-card {
+    width: 6.8rem;
     margin-left: 0.5rem;
-    top: -6.484rem;
+    top: -6.5rem;
     left: 50%;
     transform: translateX(-50%);
-    filter: drop-shadow( 0.136rem 0.136rem 0.068rem rgba(0, 0, 0, 0.377));
+    filter: drop-shadow( 0.14rem 0.14rem 0.068rem rgba(0, 0, 0, 0.377));
 }
 
 /* Feed images */
-#products-grid>div>img:nth-child(2) {
+.feed-card {
     position: relative;
     display: block;
     width: 13.65rem;
     margin: auto;
-    filter: drop-shadow( 0.136rem 0.136rem 0.068rem rgba(0, 0, 0, 0.377));
+    filter: drop-shadow( 0.14rem 0.14rem 0.068rem rgba(0, 0, 0, 0.377));
 }
 
 .price-kg {
@@ -251,7 +249,7 @@
     margin-top: 2rem;
     padding: 0.7rem 2rem;
     background:hsl(25, 88%, 75%);
-    border: 0.136rem solid black;
+    border: 0.14rem solid black;
     border-radius: 3rem;
     font-size: 1.6rem;
 }
@@ -274,16 +272,11 @@
     #products-grid>div:first-child {
         margin-bottom: 10rem;
     }
-
-    #products-grid>div {
-        padding-bottom: 2.5rem;
-    }
 }
 
 @media only screen and (max-width: 470px) {
     #products-grid>div {
-        padding: 1.7rem 7rem;
-        padding-bottom: 2.5rem;
+        width: calc(30rem*1.4);;
     }
 
     #products-grid p {
@@ -313,7 +306,7 @@
 
     .number-input,.number-input * {
         box-sizing: border-box;
-        width: calc(6.825rem*1.4);
+        width: calc(6.8rem*1.4);
     }
     .number-input button {
         width: calc(2.047rem*1.4);
@@ -335,7 +328,7 @@
 #products hr {
     position: relative;
     margin: auto;
-    border-top: 0.136rem solid black;
+    border-top: 0.14rem solid black;
     width: 35%;
 }
 
@@ -358,5 +351,5 @@
 }
 
 #labels img {
-    width: 10.238rem;
+    width: 10rem;
 }

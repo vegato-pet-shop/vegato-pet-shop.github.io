@@ -74,72 +74,76 @@
             <h2>products</h2>
             <div id="products-grid" href="#products">
                 <div id="cat-food">
-                    <img src="../img/ginger_cat.png" alt="cat">
-                    <img src="../img/cat_food.svg" alt="cat food">
-                    <div class="description">
-                        <h3>Сухая еда для котов</h3>
-                        <p>богат питательными веществами</p>
-                        <p>подходит всем размерам</p>
+                    <div class="product-card-wrapper">
+                        <img src="../img/ginger_cat.png" id="cat-card" alt="cat">
+                        <img src="../img/cat_food.svg" class="feed-card" alt="cat food">
+                        <div class="description">
+                            <h3>Сухая еда для котов</h3>
+                            <p>богат питательными веществами</p>
+                            <p>подходит всем размерам</p>
+                        </div>
+                        <div class="input-div">
+                            <span class="span price-total">23 EUR (2 kg)</span>
+                            <span class="span price-kg">11.50 EUR/kg</span>
+                            <div id="cat-small-input" class="number-input">
+                                <button onclick="subtract(this)" class="minus"></button>
+                                <input id="cat-food-small-input" class="quantity" min="0" name="quantity" value="0" type="number">
+                                <button onclick="add(this)" class="plus"></button>
+                            </div>
+                            <div class="cart-quantity-wrapper">
+                                <span id="cat-food-small-quantity" class="span-quantity">0</span><span>&nbsp</span><span class="span-quantity">in cart</span>
+                            </div>
+                        </div>
+                        <div class="input-div">
+                            <span class="span price-total">87.50 EUR (12.5 kg)</span>
+                            <span class="span price-kg">7 EUR/kg</span>
+                            <div id="cat-small-input" class="number-input">
+                                <button onclick="subtract(this)" class="minus"></button>
+                                <input id="cat-food-big-input" class="quantity" min="0" name="quantity" value="0" type="number">
+                                <button onclick="add(this)" class="plus"></button>
+                            </div>
+                            <div class="cart-quantity-wrapper">
+                                <span id="cat-food-big-quantity" class="span-quantity">0</span><span>&nbsp</span><span class="span-quantity">in cart</span>
+                            </div>
+                        </div>
+                        <button class="add-cart" onclick="addCart('cat')">в корзину</button>
                     </div>
-                    <div class="input-div">
-                        <span class="span price-total">23 EUR (2 kg)</span>
-                        <span class="span price-kg">11.50 EUR/kg</span>
-                        <div id="cat-small-input" class="number-input">
-                            <button onclick="subtract(this)" class="minus"></button>
-                            <input id="cat-food-small-input" class="quantity" min="0" name="quantity" value="0" type="number">
-                            <button onclick="add(this)" class="plus"></button>
-                        </div>
-                        <div class="cart-quantity-wrapper">
-                            <span id="cat-food-small-quantity" class="span-quantity">0</span><span>&nbsp</span><span class="span-quantity">in cart</span>
-                        </div>
-                    </div>
-                    <div class="input-div">
-                        <span class="span price-total">87.50 EUR (12.5 kg)</span>
-                        <span class="span price-kg">7 EUR/kg</span>
-                        <div id="cat-small-input" class="number-input">
-                            <button onclick="subtract(this)" class="minus"></button>
-                            <input id="cat-food-big-input" class="quantity" min="0" name="quantity" value="0" type="number">
-                            <button onclick="add(this)" class="plus"></button>
-                        </div>
-                        <div class="cart-quantity-wrapper">
-                            <span id="cat-food-big-quantity" class="span-quantity">0</span><span>&nbsp</span><span class="span-quantity">in cart</span>
-                        </div>
-                    </div>
-                    <button class="add-cart" onclick="addCart('cat')">в корзину</button>
                 </div>
                 <div id="dog-food">
-                    <img src="../img/dog.png" alt="dog">
-                    <img src="../img/dog_food.svg" alt="dog food">
-                    <div class="description">
-                        <h3>Сухая еда для собак</h3>
-                        <p>богат питательными веществами</p>
-                        <p>подходит всем размерам</p>
+                    <div class="product-card-wrapper">
+                        <img src="../img/dog.png" id="dog-card" alt="dog">
+                        <img src="../img/dog_food.svg" class="feed-card" alt="dog food">
+                        <div class="description">
+                            <h3>Сухая еда для собак</h3>
+                            <p>богат питательными веществами</p>
+                            <p>подходит всем размерам</p>
+                        </div>
+                        <div class="input-div">
+                            <span class="span price-total">20 EUR (2 kg)</span>
+                            <span class="span price-kg">10 EUR/kg</span>
+                            <div id="cat-small-input" class="number-input">
+                                <button onclick="subtract(this,['dogFoodSmall'])" class="minus"></button>
+                                <input id="dog-food-small-input" class="quantity" min="0" name="quantity" value="0" type="number">
+                                <button onclick="add(this,['dogFoodSmall'])" class="plus"></button>
+                            </div>
+                            <div class="cart-quantity-wrapper">
+                                <span id="dog-food-small-quantity" class="span-quantity">0</span><span>&nbsp</span><span class="span-quantity">in cart</span>
+                            </div>
+                        </div>
+                        <div class="input-div">
+                            <span class="span price-total">75 EUR (12.5 kg)</span>
+                            <span class="span price-kg">6 EUR/kg</span>
+                            <div id="cat-small-input" class="number-input">
+                                <button onclick="subtract(this)" class="minus"></button>
+                                <input id="dog-food-big-input" class="quantity" min="0" name="quantity" value="0" type="number">
+                                <button onclick="add(this)" class="plus"></button>
+                            </div>
+                            <div class="cart-quantity-wrapper">
+                                <span id="dog-food-big-quantity" class="span-quantity">0</span><span>&nbsp</span><span class="span-quantity">in cart</span>
+                            </div>
+                        </div>
+                        <button class="add-cart" onclick="addCart('dog')">в корзину</button>
                     </div>
-                    <div class="input-div">
-                        <span class="span price-total">20 EUR (2 kg)</span>
-                        <span class="span price-kg">10 EUR/kg</span>
-                        <div id="cat-small-input" class="number-input">
-                            <button onclick="subtract(this,['dogFoodSmall'])" class="minus"></button>
-                            <input id="dog-food-small-input" class="quantity" min="0" name="quantity" value="0" type="number">
-                            <button onclick="add(this,['dogFoodSmall'])" class="plus"></button>
-                        </div>
-                        <div class="cart-quantity-wrapper">
-                            <span id="dog-food-small-quantity" class="span-quantity">0</span><span>&nbsp</span><span class="span-quantity">in cart</span>
-                        </div>
-                    </div>
-                    <div class="input-div">
-                        <span class="span price-total">75 EUR (12.5 kg)</span>
-                        <span class="span price-kg">6 EUR/kg</span>
-                        <div id="cat-small-input" class="number-input">
-                            <button onclick="subtract(this)" class="minus"></button>
-                            <input id="dog-food-big-input" class="quantity" min="0" name="quantity" value="0" type="number">
-                            <button onclick="add(this)" class="plus"></button>
-                        </div>
-                        <div class="cart-quantity-wrapper">
-                            <span id="dog-food-big-quantity" class="span-quantity">0</span><span>&nbsp</span><span class="span-quantity">in cart</span>
-                        </div>
-                    </div>
-                    <button class="add-cart" onclick="addCart('dog')">в корзину</button>
                 </div>
             </div>
             <hr>
