@@ -194,9 +194,19 @@
     margin: auto;
     margin-top: 2rem;
     padding: 0.7rem 2rem;
-    background: var(--whitish);
+    background:hsl(25, 88%, 75%);
     border: 0.136rem solid black;
     font-size: 1.6rem;
+}
+
+.add-cart:hover {
+    filter: brightness(100%);
+    background:hsl(25, 88%, 65%);
+}
+
+.add-cart:active {
+    filter: brightness(100%);
+    background:hsl(25, 88%, 55%);
 }
 
 @media only screen and (max-width: 1250px) {
