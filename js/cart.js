@@ -56,15 +56,9 @@ function createCounter(name,value) {
 
 function updateCart() {
     language = userData.language
-    let objName = document.getElementById("products-name")
-    let objQuantity = document.getElementById("products-quantity")
-    let objPrice = document.getElementById("products-price")
-    let objTotal = document.getElementById("products-price-total")
 
-    objName.innerHTML = ""
-    objQuantity.innerHTML = ""
-    objPrice.innerHTML = ""
-    objTotal.innerHTML = ""
+    let objProducts = document.getElementById("products-table")
+    objProducts.innerHTML = ""
 
     let priceTotal = 0
     let order = []
@@ -79,27 +73,27 @@ function updateCart() {
             priceTotal += productQuantity*productPrice
             order.push([productName,productQuantity,productPrice])
 
-            let p = document.createElement("p");
+            let p = document.createElement("p")
             let text = document.createTextNode(productName)
             p.appendChild(text)
-            objName.appendChild(p)
-
-            p = document.createElement("p")
+            objProducts.appendChild(p)
 
             let counter = createCounter(item,productQuantity)
-            objQuantity.appendChild(counter)
+            counter.className = counter.className+" "+"products-quantity"
+            objProducts.appendChild(counter)
 
             p = document.createElement("p")
-            text = document.createTextNode(productPrice+" EUR")
+            p.className = "products-price"
+            text = document.createTextNode(productPrice.toFixed(2)+" EUR")
             p.appendChild(text)
-            objPrice.appendChild(p)
+            objProducts.appendChild(p)
         }
     }
     userData.order = order
     
     // Transport
     if (transportation[0]!="") {
-        let p = document.createElement("p");
+
         let language = userData.language
         let languageText
         if (language=="est") {
@@ -111,22 +105,28 @@ function updateCart() {
         else {
             languageText = "Transport"
         }
+
+        let objProducts = document.createElement("div")
+
+        let p = document.createElement("p");
         let text = document.createTextNode(languageText+" ("+transportation[0]+")")
         p.appendChild(text)
-        objName.appendChild(p)
+        objProducts.appendChild(p)
 
         p = document.createElement("p")
 
         text = document.createTextNode("")
         p.appendChild(text)
-        objQuantity.appendChild(p)
+        objProducts.appendChild(p)
 
         p = document.createElement("p")
         text = document.createTextNode(transportationPrice[transportation[0]]+" EUR")
         priceTotal += transportationPrice[transportation[0]]
         p.appendChild(text)
-        objPrice.appendChild(p)
+        objProducts.appendChild(p)
     }
+
+    let objTotal = document.getElementById("products-price-total")
     objTotal.appendChild(document.createTextNode(priceTotal+" EUR"))
     userData.orderSum = priceTotal
 }

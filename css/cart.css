@@ -29,30 +29,30 @@
 }
 
 #products-table {
-    display: flex;
-    flex-direction: row;
+    display: grid;
+    grid-template-columns: auto auto max-content;
     justify-content: space-between;
     overflow: hidden;
     border-top: 0.171rem solid;
     border-bottom: 0.171rem solid;
     padding: 1.3rem 0;
-}
-
-#products-table > div {
-    display: grid;
-    grid-template-columns: auto;
     row-gap: 1rem;
+    column-gap: 1rem;
 }
 
-#products-quantity {
+.products-quantity {
     height: min-content;
     margin-top: -0.175rem;
 }
 
-#products-quantity input {
+.products-quantity input {
     font-size: 1.6rem;
     font-weight: normal;
     pointer-events: none; 
+}
+
+.products-price {
+    width: max-content;
 }
 
 #dpd-div {
