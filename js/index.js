@@ -1,12 +1,12 @@
 
 function addCart(type) {
     let productsCat = {
-        "cat-food-small-input" : "catFoodSmall",
-        "cat-food-big-input" : "catFoodBig",
+        "cat-food-small" : "catFoodSmall",
+        "cat-food-big" : "catFoodBig",
     }
     let productsDog = {
-        "dog-food-small-input" : "dogFoodSmall",
-        "dog-food-big-input" : "dogFoodBig",
+        "dog-food-small" : "dogFoodSmall",
+        "dog-food-big" : "dogFoodBig",
     }
     let products
     if (type=="cat") {
@@ -17,10 +17,25 @@ function addCart(type) {
     }
 
     for (const [cssID, name] of Object.entries(products)) {
-        let input = document.getElementById(cssID)
-        quantity[name] += parseInt(input.value)
-        input.value = 0
+        let input = document.getElementById(cssID+"-input")
+        quantity[name] = parseInt(input.value)
+        let number = document.getElementById(cssID+"-quantity")
+        number.innerHTML = quantity[name]
     }
     changeTotal()
 }
 
+window.addEventListener("load", function() {
+    let products = {
+        "cat-food-small" : "catFoodSmall",
+        "cat-food-big" : "catFoodBig",
+        "dog-food-small" : "dogFoodSmall",
+        "dog-food-big" : "dogFoodBig",
+    }
+    for (const [cssID, name] of Object.entries(products)) {
+        let input = document.getElementById(cssID+"-input")
+        input.value = quantity[name] 
+        let number = document.getElementById(cssID+"-quantity")
+        number.innerHTML = quantity[name]
+    }
+})

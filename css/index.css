@@ -184,6 +184,20 @@
     margin-bottom: 0rem;
 }
 
+.cart-quantity-wrapper {
+    display: inline-flex;
+    margin-left: 1.5rem;
+}
+
+.span-quantity {
+    position: relative;
+    display: block;
+    top: 0.35rem;
+    font-size: 1.2rem;
+    font-family: "Space Grotesk";
+    color: var(--orange)
+}
+
 .quantity {
     pointer-events: none; 
 }
