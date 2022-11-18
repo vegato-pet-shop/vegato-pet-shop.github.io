@@ -1,4 +1,4 @@
-User-agent: Googlebot-Image
+User-agent: *
 
 Disallow: /img/blue-bottom.svg
 Disallow: /img/blue-top.svg
@@ -7,3 +7,6 @@ Disallow: /img/orange-top.svg
 Disallow: /img/globe.png
 Disallow: /img/dog.png
 Disallow: /img/ginger_cat.png
+
+Disallow: /*/order-failed
+Disallow: /*/order-succeeded
