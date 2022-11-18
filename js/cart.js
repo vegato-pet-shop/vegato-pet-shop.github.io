@@ -93,7 +93,6 @@ function updateCart() {
     
     // Transport
     if (transportation[0]!="") {
-
         let language = userData.language
         let languageText
         if (language=="est") {
@@ -105,8 +104,6 @@ function updateCart() {
         else {
             languageText = "Transport"
         }
-
-        let objProducts = document.createElement("div")
 
         let p = document.createElement("p");
         let text = document.createTextNode(languageText+" ("+transportation[0]+")")
@@ -127,6 +124,7 @@ function updateCart() {
     }
 
     let objTotal = document.getElementById("products-price-total")
+    objTotal.innerHTML = ""
     objTotal.appendChild(document.createTextNode(priceTotal+" EUR"))
     userData.orderSum = priceTotal
 }
