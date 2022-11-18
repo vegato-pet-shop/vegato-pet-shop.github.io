@@ -1,9 +1,7 @@
 User-agent: *
 
-Disallow: /img/blue-bottom.svg
-Disallow: /img/blue-top.svg
-Disallow: /img/orange-bottom.svg
-Disallow: /img/orange-top.svg
+Disallow: /img/background_blue.svg
+Disallow: /img/background_orange.svg
 Disallow: /img/globe.png
 Disallow: /img/dog.png
 Disallow: /img/ginger_cat.png
