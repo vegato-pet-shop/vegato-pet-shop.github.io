@@ -1,6 +1,19 @@
 using XLSX, DataFrames
 cd(@__DIR__)
+
 function createFiles()
+
+    function fillData(html) 
+        # Add navbar
+        html = replace(html,"<navbar-component></navbar-component>"=>navbar)
+    
+        # Fix links
+        html = replace(html,"href=\"/cart"=>"href=\"/"*lang*"/cart")
+        html = replace(html,"location.href=\"/cats"=>"location.href=\"/"*lang*"/cats")
+        html = replace(html,"location.href=\"/dogs"=>"location.href=\"/"*lang*"/dogs")
+        return html
+    end
+
     translation = DataFrame(XLSX.readtable("src/translation.xlsx", "translation"))
 
     translation[:,1] .= (!).(ismissing.(translation[:,1]))
@@ -10,11 +23,14 @@ function createFiles()
 
     languages = Dict("est" => est, "rus" => rus, "eng"=> [])
 
+    navbar = open(joinpath("src/components/navbar.html")) do f
+        read(f, String)
+    end
 
     files = readdir("src")
     html_files = String[]
     for file in files
-        if length(file)>4 && (file[end-3:end]=="html" && file[1:5]!="index")
+        if length(file)>4 && (file[end-3:end]=="html")
             push!(html_files,file)
         end
     end
@@ -22,17 +38,13 @@ function createFiles()
 
     lang = "est"
     pairs = languages[lang]
-    file = html_files[1]
     for (lang,pairs) in languages
         #Load
         html = open(joinpath("src/index.html")) do f
             read(f, String)
         end
 
-        # Fix links
-        html = replace(html,"script src=\""=>"script src=\"../")
-        html = replace(html,"link href=\""=>"link href=\"../")
-        html = replace(html,"img src=\""=>"img src=\"../")
+        html = fillData(html)
 
         # Translate
         html = replace(html,pairs...)
@@ -50,11 +62,7 @@ function createFiles()
                 read(f, String)
             end
 
-            # Fix links
-            html = replace(html,"script src=\""=>"script src=\"../../")
-            html = replace(html,"link href=\""=>"link href=\"../../")
-            html = replace(html,"img src=\""=>"img src=\"../../")
-            html = replace(html,"a href=\""=>"a href=\"../")
+            html = fillData(html)
 
             # Translate
             if lang!="eng"
@@ -111,4 +119,4 @@ function vh_to_rem()
 end
 
 vh_to_rem() 
-=#S
+=#

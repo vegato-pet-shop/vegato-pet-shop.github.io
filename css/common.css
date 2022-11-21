@@ -225,10 +225,9 @@ label {
     font-size: 1.6rem;
 }
 
-a {
-    font-family: 'Space Grotesk', sans-serif;
+.text-link {
     font-size: 1.6rem;
-    color: black;
+    font-family: 'Space Grotesk', sans-serif;
 }
 
 a:link { text-decoration: none; }
@@ -412,5 +411,5 @@ optgroup {
 }
 
 #notice * {
-    font-size: 1.4rem;
+    font-size: 1.3rem;
 }

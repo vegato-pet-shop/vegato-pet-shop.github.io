@@ -65,7 +65,7 @@ footer p {
     height: 2.047rem;
     background: var(--pink);
     color: #ffffff;
-    font-family: "Space Grotesk";
+    font-family: "Space Grotesk", sans-serif;
     font-size: 1.365rem;
     border-radius: 0 0.205rem 0.205rem 0;
     filter: drop-shadow( 0.068rem 0.136rem 0.068rem rgb(0 0 0 / 0.4));

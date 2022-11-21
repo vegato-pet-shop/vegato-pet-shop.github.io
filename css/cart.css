@@ -184,7 +184,7 @@
 #overlay span {
     color: white;
     font-size: 3rem;
-    font-family: "Space Grotesk";
+    font-family: "Space Grotesk", sans-serif;
 }
 
 @media only screen and (min-height: 595px) {

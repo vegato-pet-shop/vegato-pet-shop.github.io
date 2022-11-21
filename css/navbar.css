@@ -20,12 +20,17 @@
     height: 100%;
 }
 
+#navbar ul li {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.4rem;
+}
+
 #navbar ul a {
     display: block;
-    font-family: 'Space Grotesk', sans-serif;
-    font-size: 1.577rem;
     text-decoration: none;
     text-align: center;
+    font-size: 1.4rem;
+    color: black;
 }
 
 #navbar ul li {
@@ -103,35 +108,35 @@
     width: 1.365rem;
     height: 1.365rem;
     border-radius: 3.412rem;
-    font-family: "Space Grotesk";
+    font-family: "Space Grotesk", sans-serif;
     font-size: 1.024rem;
     text-align: center;
     color: white;
     background: var(--orange);
 }
 
-/*---Dropdown---*/
-
-.dropdown {
-
-}
+/*---Dropdown-------------------------------------------------------------------*/
 
 .dropdown-content {
     display: none;
+    flex-direction: column;
+    justify-content: center;
     position: absolute;
     font-family: 'Space Grotesk', sans-serif;
     font-size: 1rem;
-    left: -1rem;
     top: 2.6rem;
     background-color: var(--whitish);
     box-shadow: 0 0.5rem 1rem 0 rgba(0,0,0,0.2);
+    width: min-content;
 }
 
 .dropdown-content button {
+    position: relative;
     font-size: 1.2rem;
     color: #353535;
-    width: 4rem;
-    padding: 0.7rem 1rem;
+    min-width: 4rem;
+    width: max-content;
+    padding: 0.7rem 0rem;
 }
 
 .dropdown-content button:hover {
@@ -139,5 +144,17 @@
 }
 
 .dropdown:hover .dropdown-content {
-    display: block;
+    display: flex;
+}
+
+/*---Language---*/
+
+.language.dropdown-content {
+    left: -1rem;
+}
+
+/*---Food---*/
+
+.food.dropdown-content {
+    left: 0rem;
 }

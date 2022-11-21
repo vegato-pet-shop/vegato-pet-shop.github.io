@@ -59,7 +59,7 @@ if (localStorage.getItem('userData')!=null && localStorage.getItem('userData')!=
     userData = JSON.parse(localStorage.getItem('userData'))
 }
 
-let callback = function() {
+let callbackInit = function() {
     let cartCounter = document.getElementById("cart-counter")
     cartCounter.innerHTML = sum(Object.values(quantity))
     let url = window.location.href
@@ -73,4 +73,4 @@ let callback = function() {
         userData.language = "eng"
     }
 }
-window.addEventListener("load", callback)
+window.addEventListener("load", callbackInit)

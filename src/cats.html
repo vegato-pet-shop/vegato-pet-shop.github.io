@@ -35,9 +35,9 @@
     <link href="/css/index.css" rel="stylesheet">
 
     <!--Load javascript-->
-    <script src="/js/init.js" type="text/javascript"></script>
-    <script src="/js/script.js" type="text/javascript"></script>
-    <script src="/js/index.js" type="text/javascript"></script>
+    <script src="js/init.js" type="text/javascript"></script>
+    <script src="js/script.js" type="text/javascript"></script>
+    <script src="js/index.js" type="text/javascript"></script>
 </head>
 <body>
     <div id="background">
@@ -55,26 +55,7 @@
         <p>We are still in the process of acquiring stock, but you are welcome to pre-order so we know that you are interested. We are going to contact you when stock is available to arrange payment.</p>
     </div>
     
-    <div id="navbar">
-    <a href="">
-        <img src="/img/vegato_logo.png" id="navbar-logo" alt="vegato logo">
-    </a>
-    <ul>
-        <li class="navbar-li"><a href="">HOME</a></li>
-        <li class="navbar-li"><a href="/est/cart">
-            <img src="/img/cart.svg" id="cart-icon" alt="cart">
-            <div id="cart-counter"></div>
-        </a></li>
-        <li class="navbar-li dropdown">
-            <img src="/img/globe.png" id="language-icon" alt="language">
-            <div class="language dropdown-content">
-                <button onclick="switchLanguage('est')">EST</button>
-                <button onclick="switchLanguage('rus')">RUS</button>
-                <button onclick="switchLanguage('eng')">ENG</button>
-            </div>
-        </li>
-    </ul>
-</div> 
+    <navbar-component></navbar-component>
 
     <div id="wrapper">
         <div id="hero">

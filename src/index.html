@@ -22,65 +22,46 @@
     </script>
 
     <!--Icons-->
-    <link href="img/icons/favicon-32.png" rel="icon" sizes="32x32">
+    <link href="/img/icons/favicon-32.png" rel="icon" sizes="32x32">
 
     <!--Load fonts-->
     <link href='https://fonts.googleapis.com/css?family=Space+Grotesk' rel="stylesheet">
     <link href='https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@700&display=swap' rel="stylesheet">
 
     <!--Load CSS-->
-    <link href="css/common.css" rel="stylesheet">
-    <link href="css/navbar.css" rel="stylesheet">
-    <link href="css/footer.css" rel="stylesheet">
-    <link href="css/index.css" rel="stylesheet">
+    <link href="/css/common.css" rel="stylesheet">
+    <link href="/css/navbar.css" rel="stylesheet">
+    <link href="/css/footer.css" rel="stylesheet">
+    <link href="/css/index.css" rel="stylesheet">
 
     <!--Load javascript-->
-    <script src="js/init.js" type="text/javascript"></script>
-    <script src="js/script.js" type="text/javascript"></script>
-    <script src="js/index.js" type="text/javascript"></script>
+    <script src="/js/init.js" type="text/javascript"></script>
+    <script src="/js/script.js" type="text/javascript"></script>
+    <script src="/js/index.js" type="text/javascript"></script>
 </head>
 <body>
     <div id="background">
-        <img src="img/background_blue.svg" alt="blue top">
-        <img src="img/background_orange.svg" alt="orange top">
-        <img src="img/background_orange.svg" alt="orange bottom">
-        <img src="img/background_blue.svg" alt="blue bottom">
-        <img src="img/paw_print.png" alt="paw print">
-        <img src="img/paw_print.png" alt="paw print">
-        <img src="img/paw_print.png" alt="paw print">
-        <img src="img/paw_print.png" alt="paw print">
+        <img src="/img/background_blue.svg" alt="blue top">
+        <img src="/img/background_orange.svg" alt="orange top">
+        <img src="/img/background_orange.svg" alt="orange bottom">
+        <img src="/img/background_blue.svg" alt="blue bottom">
+        <img src="/img/paw_print.png" alt="paw print">
+        <img src="/img/paw_print.png" alt="paw print">
+        <img src="/img/paw_print.png" alt="paw print">
+        <img src="/img/paw_print.png" alt="paw print">
     </div>
 
     <div id="notice">
         <p>We are still in the process of acquiring stock, but you are welcome to pre-order so we know that you are interested. We are going to contact you when stock is available to arrange payment.</p>
     </div>
     
-    <div id="navbar">
-        <a href="">
-            <img src="img/vegato_logo.png" id="navbar-logo" alt="vegato logo">
-        </a>
-        <ul>
-            <li class="navbar-li"><a href="">home</a></li>
-            <li class="navbar-li"><a href="cart">
-                <img src="img/cart.svg" id="cart-icon" alt="cart">
-                <div id="cart-counter"></div>
-            </a></li>
-            <li class="navbar-li dropdown">
-                <img src="img/globe.png" id="language-icon" alt="language">
-                <div class="dropdown-content">
-                    <button class="language-option" onclick="switchLanguage('est')">EST</button>
-                    <button class="language-option" onclick="switchLanguage('rus')">RUS</button>
-                    <button class="language-option" onclick="switchLanguage('eng')">ENG</button>
-                </div>
-            </li>
-        </ul>
-    </div> 
+    <navbar-component></navbar-component>
 
     <div id="wrapper">
         <div id="hero">
             <div id="hero-images">
-                <img src="img/dog.png" id="dog-hero" alt="dog-hero">
-                <img src="img/feed.png" id="feed-img" alt="feed">
+                <img src="/img/dog.png" id="dog-hero" alt="dog-hero">
+                <img src="/img/feed.png" id="feed-img" alt="feed">
             </div>
             <div id="hero-text">
                 <h1>Plant-based pet<br>food for optimal<br>health</h1>
@@ -93,8 +74,8 @@
             <div id="products-grid" href="#products">
                 <div id="cat-food">
                     <div class="product-card-wrapper">
-                        <img src="img/ginger_cat.png" id="cat-card" alt="cat">
-                        <img src="img/cat_food.svg" class="feed-card" alt="cat food">
+                        <img src="/img/ginger_cat.png" id="cat-card" alt="cat">
+                        <img src="/img/cat_food.svg" class="feed-card" alt="cat food">
                         <div class="description">
                             <h3>DRY FOOD FOR CATS</h3>
                             <p>nutritionally complete</p>
@@ -129,8 +110,8 @@
                 </div>
                 <div id="dog-food">
                     <div class="product-card-wrapper">
-                        <img src="img/dog.png" id="dog-card" alt="dog">
-                        <img src="img/dog_food.svg" class="feed-card" alt="dog food">
+                        <img src="/img/dog.png" id="dog-card" alt="dog">
+                        <img src="/img/dog_food.svg" class="feed-card" alt="dog food">
                         <div class="description">
                             <h3>DRY FOOD FOR DOGS</h3>
                             <p>nutritionally complete</p>
@@ -168,9 +149,9 @@
             <p id="formula-text">formula developed by specialized veterinarians based on european pet food industry federation guidelines.</p>
             <hr>
             <div id="labels">
-                <img src="img/vegan_label.png" alt="vegan label">
-                <img src="img/cruelty_free_label.png" alt="cruelty free label">
-                <img src="img/veterinary_label.png" alt="veterinary label">
+                <img src="/img/vegan_label.png" alt="vegan label">
+                <img src="/img/cruelty_free_label.png" alt="cruelty free label">
+                <img src="/img/veterinary_label.png" alt="veterinary label">
             </div>
         </div>
     </div>

@@ -165,7 +165,7 @@
 .input-div > .span {
     position: relative;
     display: block;
-    font-family: "Space Grotesk";
+    font-family: "Space Grotesk", sans-serif;
 }
 
 .price-total {
@@ -176,7 +176,7 @@
     position: relative;
     display: block;
     font-size: 1.4rem;
-    font-family: "Space Grotesk";
+    font-family: "Space Grotesk", sans-serif;
 }
 
 /* Animals on top */
