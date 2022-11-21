@@ -31,6 +31,7 @@
     text-align: center;
     font-size: 1.4rem;
     color: black;
+    padding-top: 0.1rem;
 }
 
 #navbar ul li {
@@ -53,7 +54,7 @@
     position: relative;
     width: 2.047rem;
     margin-bottom: -0.2rem;
-    padding-top: 0.3rem;
+    padding-top: 0.2rem;
 }
 
 #language-icon {
