@@ -128,6 +128,49 @@ html {
     margin-left: -30rem;
 }
 
+/*---Paws---*/
+
+#background>:nth-child(5) {
+    position: absolute;
+    width: 7rem;
+    top: 40rem;
+    left: 50%;
+    margin-left: -55rem;
+    transform: translateX(-50%) rotate(50deg);
+    opacity: 10%;
+}
+
+#background>:nth-child(6) {
+    position: absolute;
+    width: 7rem;
+    top: 60rem;
+    left: 50%;
+    margin-left: 50rem;
+    transform: translateX(-50%) rotate(-50deg);
+    opacity: 10%;
+}
+
+#background>:nth-child(7) {
+    position: absolute;
+    width: 7rem;
+    top: 38rem;
+    left: 50%;
+    margin-left: 50rem;
+    transform: translateX(-50%) rotate(-30deg);
+    opacity: 10%;
+}
+
+#background>:nth-child(8) {
+    position: absolute;
+    width: 7rem;
+    top: 65rem;
+    left: 50%;
+    margin-left: -45rem;
+    transform: translateX(-50%) rotate(65deg);
+    opacity: 10%;
+}
+
+
 /*---Fonts---------------------------------------------------------*/
 
 .Grotesk {
