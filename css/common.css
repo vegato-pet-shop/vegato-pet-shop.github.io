@@ -184,30 +184,6 @@ html {
 
 /*---Text related------------------------------------------------------------------------------*/
 
-b {
-    font-family: inherit;
-    font-size: inherit;
-}
-
-h1 {
-    font-family: "Space Grotesk", sans-serif;
-}
-
-h2 {
-    font-size: 2.73rem;
-    font-family: 'Space Grotesk', sans-serif;
-    font-weight: bold;
-}
-
-h3 {
-    font-family: 'Space Grotesk', sans-serif;;
-    font-size: 1.6rem
-}
-
-h4 {
-    font-family: 'Space Grotesk', sans-serif;;
-    font-size: 1.365rem
-}
 
 span {
     font-size: 1.6rem;
@@ -223,6 +199,26 @@ p {
 label {
     font-family: 'Space Grotesk', sans-serif;
     font-size: 1.6rem;
+}
+
+h1 {
+    font-family: "Space Grotesk", sans-serif;
+}
+
+h2 {
+    font-size: 2.7rem;
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: bold;
+}
+
+h3 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.6rem
+}
+
+h4 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.4rem
 }
 
 .text-link {
@@ -276,31 +272,36 @@ input, select {
 }
 
 input[type="text"] {
-    padding-left: 0.341rem;
+    padding-left: 0.34rem;
     -webkit-appearance: textfield;
     -moz-appearance: textfield;
     appearance: textfield;
-    font: 1.365rem 'Space Grotesk', sans-serif;
+    font: 1.4rem 'Space Grotesk', sans-serif;
     font-weight: normal;
     color: #353535;
 }
 
+input::placeholder {
+    padding-left: 0.34rem;
+    font: 1.4rem 'Space Grotesk', sans-serif;
+}
+
 input[type="email"] {
-    padding-left: 0.341rem;
+    padding-left: 0.34rem;
     -webkit-appearance: textfield;
     -moz-appearance: textfield;
     appearance: textfield;
-    font: 1.365rem 'Space Grotesk', sans-serif;
+    font: 1.4rem 'Space Grotesk', sans-serif;
     font-weight: normal;
     color: #353535;
 }
 
 input[type="password"] {
-    padding-left: 0.341rem;
+    padding-left: 0.34rem;
     -webkit-appearance: textfield;
     -moz-appearance: textfield;
     appearance: textfield;
-    font: 1.365rem 'Space Grotesk', sans-serif;
+    font: 1.4rem 'Space Grotesk', sans-serif;
     font-weight: normal;
     color: #353535;
 }
@@ -309,7 +310,7 @@ input[type="number"] {
     -webkit-appearance: textfield;
     -moz-appearance: textfield;
     appearance: textfield;
-    font: 1.365rem 'Space Grotesk', sans-serif;
+    font: 1.4rem 'Space Grotesk', sans-serif;
     font-weight: normal;
     color: #353535;
 }
@@ -321,14 +322,14 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 select {    
-    padding-left: 0.341rem;
+    padding-left: 0.34rem;
     -webkit-appearance: textfield;
     -moz-appearance: textfield;
     appearance: textfield;
-    font: 1.365rem 'Space Grotesk', sans-serif;
+    font: 1.4rem 'Space Grotesk', sans-serif;
     font-weight: normal;
     color: #353535;
-    font-size: 1.365rem;
+    font-size: 1.4rem;
     height: 2.047rem;
 }
 

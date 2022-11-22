@@ -21,6 +21,9 @@ function createFiles()
     navbar = open(joinpath("src/components/navbar.html")) do f
         read(f, String)
     end
+    footer = open(joinpath("src/components/footer.html")) do f
+        read(f, String)
+    end
 
     files = readdir("src")
     html_files = String[]
@@ -41,8 +44,10 @@ function createFiles()
 
         # Add navbar
         navbar_temp = fix_links(navbar,lang)
-        @info navbar_temp
         html = replace(html,"<navbar-component></navbar-component>"=>navbar_temp)
+
+        # Add footer
+        html = replace(html,"<footer-component></footer-component>"=>footer)
     
         # Translate
         html = replace(html,pairs...)
@@ -62,6 +67,9 @@ function createFiles()
 
             # Add navbar
             html = replace(html,"<navbar-component></navbar-component>"=>navbar_temp)
+
+            # Add footer
+            html = replace(html,"<footer-component></footer-component>"=>footer)
 
             # Translate
             if lang!="eng"

@@ -5,6 +5,7 @@ Disallow: /img/background_orange.svg
 Disallow: /img/globe.png
 Disallow: /img/dog.png
 Disallow: /img/ginger_cat.png
+Disallow: /img/paw_print.png
 
 Disallow: /*/order-failed
 Disallow: /*/order-succeeded

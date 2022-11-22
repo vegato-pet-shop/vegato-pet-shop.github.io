@@ -103,7 +103,6 @@
     padding: 3rem 0.0rem;
     background: rgba(253, 251, 254, 0.74);
     border: 0.14rem solid black;
-    border-radius: 3rem;
     z-index: 1;
 }
 
@@ -136,7 +135,6 @@
     position: relative;
     background: var(--whitish);
     border: 0.14rem solid black;
-    border-radius: 1.5rem;
     width: 30rem;
 }
 
