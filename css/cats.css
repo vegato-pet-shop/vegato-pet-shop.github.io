@@ -40,7 +40,7 @@
     display: grid;
     grid-template-columns: max-content max-content;
     justify-content: center;
-    grid-gap: 3rem;
+    grid-gap: 8rem;
     width: 90%;
     margin: 1.7rem auto;
     margin-bottom: 2.5rem;
@@ -251,4 +251,92 @@
 
 #labels img {
     width: 10rem;
+}
+
+/*---------------------------------------------------------*/
+
+#buttons-line {
+    width: max-content;
+    margin: auto;
+}
+
+#buttons-line * {
+    position: relative;
+    display: inline;
+    width: max-content;
+    margin-bottom: 3rem;
+    padding: 0.8rem 2rem;
+    background: var(--whitish);
+    border: 0.14rem solid black;
+    font-size: 1.6rem;
+}
+
+#buttons-line *:hover {
+    filter: brightness(100%);
+    background:hsl(25, 88%, 75%);
+}
+
+#buttons-line *:active {
+    filter: brightness(100%);
+    background:hsl(25, 88%, 55%);
+}
+
+#buttons-line> :nth-child(1){
+    border-radius: 3rem 0 0 3rem;
+}
+
+#buttons-line> :nth-child(2){
+    border-width: 0.14rem 0rem 0.14rem 0rem;
+}
+
+#buttons-line> :nth-child(3){
+    border-radius: 0rem 3rem 3rem 0rem;
+}
+
+#texts {
+    position: relative;
+    margin: auto;
+    width: 85%;
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+#texts > * {
+    display: none;
+}
+
+#texts h3 {
+    margin-bottom: 1rem;
+}
+
+#ingredients p {
+    margin-bottom: 1rem;
+}
+
+#ingredients p:first-of-type {
+    margin-bottom: 2rem;
+}
+
+#ingredients p:nth-of-type(4) {
+    margin-bottom: 2rem;
+}
+
+.no-margin {
+    margin-bottom: 1rem;
+}
+
+.no-margin * {
+    margin-bottom: 0rem;
+}
+
+#nutri-info p {
+    margin-bottom: 1rem;
+}
+
+#nutri-info>:nth-child(3), #nutri-info>:nth-child(5) {
+    margin-bottom: 2rem;
+}
+
+#uses p {
+    margin-bottom: 0rem;
 }

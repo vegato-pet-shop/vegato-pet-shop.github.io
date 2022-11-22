@@ -37,7 +37,7 @@
     <!--Load javascript-->
     <script src="/js/init.js" type="text/javascript"></script>
     <script src="/js/script.js" type="text/javascript"></script>
-    <script src="/js/index.js" type="text/javascript"></script>
+    <script src="/js/cats.js" type="text/javascript"></script>
 </head>
 <body>
     <div id="background">
@@ -97,8 +97,87 @@
                     </div>
                 </div>
             </div>
-            <div>
-                <button></button>
+            <div id="buttons-line">
+                <button onclick="changePane(0)">Ingredients</button>
+                <button onclick="changePane(1)">Nutritional information</button>
+                <button onclick="changePane(2)">Uses</button>
+            </div>
+            <div id="texts">
+                <div id="ingredients">
+                    <h3>Veterinary formula:</h3>
+                    <p>Ingredients: Corn protein, rice, corn, sunflower oil, peas, dehydrated potato, tapioca, rice bran, yeast, rice protein, wheat protein, vegetable hydrolysate (vegetarian palate), apple pulp, calcium carbonate, barley, algae oil, algae, dehydrated vegetables (pumpkin, alfalfa, carrot, plum, cranberry, parsley, sage, thyme, liquorice, canine rose, spirulina, oregano, mint, yucca schidigera (reduces the odor of pet stools), chicory (rich in FOS)), chloride, sodium chloride, monocalcium phosphate, plant extracts (citrus, grape peel, green tea, dandelion, aloe vera).</p>
+                    <p>Formula developed by specialised veterinarians based on FEDIAF guidelines.</p>
+                    <p>Complete food, no supplementation necessary.</p>
+                    <p>Contains optimal amounts of Taurine, Vitamin A, Vitamin B12 and Arachidonic Acid: Substances considered essential for cats, in addition to L-methionine, L-tryptophan and L-lysine.</p>
+
+                    <h3>Improves cats' lives:</h3>
+                    <p>Contains methionine and cranberries to protect the urinary system from infections and crystals.</p>
+                    <p>Contains antioxidant tocopherols.</p>
+                    <p>Contains chicory, rich in FOS. Contains L-tryptophan and L-lysine.</p>
+                    <p>Contains pumpkin, with healthy fibre to help regulate digestion.</p>
+                    <p>Contains tapioca, which strengthens bones and contains a lot of iron.</p>
+                    <p>Low-fat: suitable for neutered, overweight and obese animals.</p>
+                </div>
+                <div id="nutri-info">
+                    <h3>100% plant-based and natural:</h3>
+                    <p>Free from addictive substances, medicines, toxins and hormones contained in meat products.</p>
+                    <p>Free from chemical flavourings, it contains natural flavouring: with substances extracted directly from nature, without the harmful health consequences of chemical flavourings.</p>
+
+                    <h3>Vitamins, provitamins, trace elements and minerals per kg:</h3>
+                    <div class="no-margin">
+                        <p>Vitamin A 22000 UI</p>
+                        <p>Vitamin D3 1700 UI</p>
+                        <p>Vitamin E 180 mg</p>
+                        <p>Vitamin K3 3,10 mg</p>
+                        <p>Vitamin B1 8,99 mg</p>
+                        <p>Vitamin B2 12,40 mg</p>
+                        <p>Vitamin B3 84,88 mg</p>
+                        <p>Vitamin B5 33,76 mg</p>
+                        <p>Vitamin B6 8,27 mg</p>
+                        <p>Vitamin B7 0,21 mg</p>
+                        <p>Vitamin B9 2,07mg</p>
+                        <p>Vitamin B12 0,06 mg</p>
+                        <p>L-threonine 200 mg</p>
+                        <p>L-lysine monohydrochlorohydrate 750 mg</p>
+                        <p>L-tryptophan 100 mg</p>
+                        <p>DL-methionine 800 mg</p>
+                        <p>Taurine 1500 mg</p>
+                        <p>Iron (iron (II) sulphate, monohydrate) 75 mg</p>
+                        <p>Iodine (potassium iodide) 3,5 mg</p>
+                        <p>Copper (copper (II) sulphate pentahydrate) 10 mg</p>
+                        <p>Manganese (manganese sulphate monohydrate) 7,5 mg</p>
+                        <p>Zinc (zinc oxide 120 mg; amino acid zinc chelate hydrate) 25 mg</p>
+                        <p>Selenium (sodium selenite) 0,13 mg</p>
+                        <p>Technological additives: Tocopherol extracts from vegetable oils.</p>
+                    </div>
+
+                    <h3>Analytical Components:</h3>
+                    <div class="no-margin">
+                        <p>Crude Protein 28%</p>
+                        <p>Fats 12%</p>
+                        <p>Crude Fibre 3%</p>
+                        <p>Organic Matter or Ashes 6%</p>
+                        <p>Calcium 0,8%</p>
+                        <p>Phosphorus 0,75%</p>
+                        <p>EPA + DHA 0,09%</p>
+                        <p>Arachidonic acid 0,06%</p>
+                        <p>Metabolizable Energy 3690kcal/kg</p>
+                    </div>
+                </div>
+                <div id="uses">
+                    <h3>Uses:</h3>
+                    <p>Healthy cats, or cats that do not have specific nutritional needs.</p>
+                    <p>Obese cats that need to lose weight.</p>
+                    <p>Cats allergic or intolerant to animal products.</p>
+                    <p>Cats with skin problems.</p>
+                    <p>Cats with arthrosis.</p>
+                    <p>Cats with immune-compromised conditions.</p>
+                    <p>Neutered cats.</p>
+                    <p>Cats that have had crystalluria.</p>
+                    <p>Pregnant and lactating cats.</p>
+                    <p>For cats from 12 months.</p>
+                    <p>For all breeds and sizes.</p>
+                </div>
             </div>
         </div>
     </div>
