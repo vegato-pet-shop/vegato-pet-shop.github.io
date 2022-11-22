@@ -1,0 +1,259 @@
+#wrapper {
+    margin-top: 3.4rem;
+}
+
+/*---Products----------------------------------------------------------*/
+
+#products {
+    position: relative;
+    width: 100%;
+    margin-bottom: 3.4rem;
+    padding: 3rem 0.0rem;
+    background: rgba(253, 251, 254, 0.74);
+    border: 0.14rem solid black;
+    border-radius: 3rem;
+    z-index: 1;
+}
+
+#products h2 {
+    text-align: center;
+    padding-bottom: 0.7rem;
+    width: max-content;
+    margin: auto;
+    padding: 0 2rem;
+    border-bottom: 0.14rem solid black;
+    font-family: "Special";
+    font-size: 2rem;
+}
+
+/*---Feeds---*/
+
+#food {
+    position: relative;
+    margin: auto;
+    width: 90%;
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+    background: var(--whitish);
+    border: 0.14rem solid black;
+    border-radius: 1.5rem;
+}
+
+.product-card-wrapper {
+    position: relative;
+    display: grid;
+    grid-template-columns: max-content max-content;
+    justify-content: center;
+    grid-gap: 3rem;
+    width: 90%;
+    margin: 1.7rem auto;
+    margin-bottom: 2.5rem;
+}
+
+#food h3 {
+    position: relative;
+    font-size: 1.84rem;
+    font-weight: 700;
+}
+
+#food p {
+    position: relative;
+    font-size: 1.4rem;
+}
+
+.input-div {
+    margin-top: 1.4rem;
+}
+
+.input-div > .span {
+    position: relative;
+    display: block;
+    font-family: "Space Grotesk", sans-serif;
+}
+
+.price-total {
+    font-size: 1.4rem;
+}
+
+.price-kg {
+    position: relative;
+    display: block;
+    font-size: 1.4rem;
+    font-family: "Space Grotesk", sans-serif;
+}
+
+/* Animals on top */
+#cat-card, #dog-card {
+    position: absolute;
+    z-index: -5;
+    margin-top: -1.7rem
+}
+
+/* Cat on top */
+#cat-card {
+    width: 8.872rem;
+    margin-left: 1.5rem;
+    top: -6.8rem;
+    left: 50%;
+    transform: translateX(-50%);
+    filter: drop-shadow( 0.14rem 0.14rem 0.068rem rgba(0, 0, 0, 0.377));
+}
+
+/* Dog on top */
+#dog-card {
+    width: 6.8rem;
+    margin-left: 0.5rem;
+    top: -6.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    filter: drop-shadow( 0.14rem 0.14rem 0.068rem rgba(0, 0, 0, 0.377));
+}
+
+/* Feed images */
+.feed-card {
+    position: relative;
+    display: block;
+    width: 13.65rem;
+    margin: auto;
+    filter: drop-shadow( 0.14rem 0.14rem 0.068rem rgba(0, 0, 0, 0.377));
+}
+
+.price-kg {
+    font-size: 1rem;
+}
+
+.number-input {
+    margin-top: 0.75rem;
+    margin-bottom: 0rem;
+}
+
+.cart-quantity-wrapper {
+    display: inline-flex;
+    margin-left: 1.5rem;
+}
+
+.span-quantity {
+    position: relative;
+    display: block;
+    top: 0.45rem;
+    font-size: 1.2rem;
+    font-family: "Space Grotesk", sans-serif;
+    color: var(--orange)
+}
+
+.quantity {
+    pointer-events: none; 
+}
+
+.add-cart {
+    position: relative;
+    display: block;
+    margin: auto;
+    margin-top: 2rem;
+    padding: 0.8rem 2rem;
+    padding-top: 0.6rem;
+    background:hsl(25, 88%, 75%);
+    border: 0.14rem solid black;
+    border-radius: 3rem;
+    font-size: 1.6rem;
+}
+
+.add-cart:hover {
+    filter: brightness(100%);
+    background:hsl(25, 88%, 65%);
+}
+
+.add-cart:active {
+    filter: brightness(100%);
+    background:hsl(25, 88%, 55%);
+}
+
+@media only screen and (max-width: 1300px) {
+    #food {
+        flex-direction: column;
+    }
+
+    #food>div:first-child {
+        margin-bottom: 10rem;
+    }
+}
+
+@media only screen and (max-width: 470px) {
+    #food>div {
+        width: calc(30rem*1.4);;
+    }
+
+    #food p {
+        position: relative;
+        font-size: calc(1.4rem*1.4);
+    }
+    
+    .price-total {
+        font-size: calc(1.4rem*1.4);
+    }
+    
+    .price-kg {
+        font-size: calc(1.4rem*1.4);
+    }
+
+    .price-kg {
+        font-size: calc(1rem*1.4);
+    }
+    
+    .span-quantity {
+        font-size: calc(1.2rem*1.4);
+    }
+    
+    .add-cart {
+        font-size: calc(1.6rem*1.4);
+    }
+
+    .number-input,.number-input * {
+        box-sizing: border-box;
+        width: calc(6.8rem*1.4);
+    }
+    .number-input button {
+        width: calc(2.047rem*1.4);
+        height: calc(2.047rem*1.4);
+    }
+    .number-input button:after {
+        font-size: calc(1.365rem*1.4);
+    }
+    .number-input input[type=number] {
+        max-width: calc(3.412rem*1.4);
+        padding: calc(0.244rem*1.4);
+        font-size: calc(1.024rem*1.4);
+        height: calc(2.047rem*1.4);
+    }
+}
+
+/*---Formula---*/
+
+#products hr {
+    position: relative;
+    margin: auto;
+    border-top: 0.14rem solid black;
+    width: 35%;
+}
+
+#formula-text {
+    margin-left: 10%;
+    margin-right: 10%;
+    text-align: center;
+    font-size: 1.5rem;
+    padding: 2.73rem 0.0rem;
+    font-family: "Special";
+}
+
+/*---Labels---*/
+
+#labels {
+    display: flex;
+    margin-top: 3.4rem;
+    margin-bottom: 2rem;
+    justify-content: center;
+}
+
+#labels img {
+    width: 10rem;
+}

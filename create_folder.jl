@@ -3,14 +3,9 @@ cd(@__DIR__)
 
 function createFiles()
 
-    function fillData(html) 
-        # Add navbar
-        html = replace(html,"<navbar-component></navbar-component>"=>navbar)
-    
+    function fix_links(html,lang) 
         # Fix links
-        html = replace(html,"href=\"/cart"=>"href=\"/"*lang*"/cart")
-        html = replace(html,"location.href=\"/cats"=>"location.href=\"/"*lang*"/cats")
-        html = replace(html,"location.href=\"/dogs"=>"location.href=\"/"*lang*"/dogs")
+        html = replace(html,"href=\""=>"href=\"/"*lang)
         return html
     end
 
@@ -44,8 +39,11 @@ function createFiles()
             read(f, String)
         end
 
-        html = fillData(html)
-
+        # Add navbar
+        navbar_temp = fix_links(navbar,lang)
+        @info navbar_temp
+        html = replace(html,"<navbar-component></navbar-component>"=>navbar_temp)
+    
         # Translate
         html = replace(html,pairs...)
 
@@ -62,7 +60,8 @@ function createFiles()
                 read(f, String)
             end
 
-            html = fillData(html)
+            # Add navbar
+            html = replace(html,"<navbar-component></navbar-component>"=>navbar_temp)
 
             # Translate
             if lang!="eng"

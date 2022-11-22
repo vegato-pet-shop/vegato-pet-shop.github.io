@@ -6,6 +6,7 @@
     padding: 2.73rem 5.46rem;
     background: rgba(253, 251, 254, 0.74);
     border: 0.136rem solid black;
+    border-radius: 3rem;
     z-index: 1;
 }
 
