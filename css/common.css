@@ -132,42 +132,42 @@ html {
 
 #background>:nth-child(5) {
     position: absolute;
-    width: 7rem;
-    top: 40rem;
+    width: 3rem;
+    top: 25rem;
     left: 50%;
     margin-left: -55rem;
-    transform: translateX(-50%) rotate(50deg);
-    opacity: 10%;
+    transform: translateX(-50%) rotate(120deg);
+    opacity: 50%;
 }
 
 #background>:nth-child(6) {
     position: absolute;
-    width: 7rem;
-    top: 60rem;
+    width: 9rem;
+    top: 45rem;
+    margin-left: -6rem;
     left: 50%;
-    margin-left: 50rem;
-    transform: translateX(-50%) rotate(-50deg);
-    opacity: 10%;
+    transform: translateX(-50%) rotate(30deg);
+    opacity: 25%;
 }
 
 #background>:nth-child(7) {
     position: absolute;
-    width: 7rem;
-    top: 38rem;
+    width: 3rem;
+    top: 21rem;
     left: 50%;
-    margin-left: 50rem;
+    margin-left: 37rem;
     transform: translateX(-50%) rotate(-30deg);
-    opacity: 10%;
+    opacity: 50%;
 }
 
 #background>:nth-child(8) {
     position: absolute;
-    width: 7rem;
+    width: 6rem;
     top: 65rem;
     left: 50%;
-    margin-left: -45rem;
-    transform: translateX(-50%) rotate(65deg);
-    opacity: 10%;
+    margin-left: -43rem;
+    transform: translateX(-50%) rotate(-65deg);
+    opacity: 20%;
 }
 
 
