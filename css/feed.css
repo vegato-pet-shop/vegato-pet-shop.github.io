@@ -78,33 +78,6 @@
     font-family: "Space Grotesk", sans-serif;
 }
 
-/* Animals on top */
-#cat-card, #dog-card {
-    position: absolute;
-    z-index: -5;
-    margin-top: -1.7rem
-}
-
-/* Cat on top */
-#cat-card {
-    width: 8.872rem;
-    margin-left: 1.5rem;
-    top: -6.8rem;
-    left: 50%;
-    transform: translateX(-50%);
-    filter: drop-shadow( 0.14rem 0.14rem 0.068rem rgba(0, 0, 0, 0.377));
-}
-
-/* Dog on top */
-#dog-card {
-    width: 6.8rem;
-    margin-left: 0.5rem;
-    top: -6.5rem;
-    left: 50%;
-    transform: translateX(-50%);
-    filter: drop-shadow( 0.14rem 0.14rem 0.068rem rgba(0, 0, 0, 0.377));
-}
-
 /* Feed images */
 .feed-card {
     position: relative;
@@ -151,74 +124,22 @@
     border: 0.14rem solid black;
     border-radius: 3rem;
     font-size: 1.6rem;
+    filter: drop-shadow( 0.1rem 0.1rem 0.07rem rgba(0, 0, 0, 0.377));
 }
 
 .add-cart:hover {
-    filter: brightness(100%);
+    filter: drop-shadow( 0rem 0rem 0.2rem rgba(0, 0, 0, 0.377));
     background:hsl(25, 88%, 65%);
 }
 
 .add-cart:active {
-    filter: brightness(100%);
+    filter: drop-shadow( 0rem 0rem 0.2rem rgba(0, 0, 0, 0.377));
     background:hsl(25, 88%, 55%);
 }
 
-@media only screen and (max-width: 1300px) {
-    #food {
-        flex-direction: column;
-    }
-
-    #food>div:first-child {
-        margin-bottom: 10rem;
-    }
-}
-
-@media only screen and (max-width: 470px) {
-    #food>div {
-        width: calc(30rem*1.4);;
-    }
-
-    #food p {
-        position: relative;
-        font-size: calc(1.4rem*1.4);
-    }
-    
-    .price-total {
-        font-size: calc(1.4rem*1.4);
-    }
-    
-    .price-kg {
-        font-size: calc(1.4rem*1.4);
-    }
-
-    .price-kg {
-        font-size: calc(1rem*1.4);
-    }
-    
-    .span-quantity {
-        font-size: calc(1.2rem*1.4);
-    }
-    
-    .add-cart {
-        font-size: calc(1.6rem*1.4);
-    }
-
-    .number-input,.number-input * {
-        box-sizing: border-box;
-        width: calc(6.8rem*1.4);
-    }
-    .number-input button {
-        width: calc(2.047rem*1.4);
-        height: calc(2.047rem*1.4);
-    }
-    .number-input button:after {
-        font-size: calc(1.365rem*1.4);
-    }
-    .number-input input[type=number] {
-        max-width: calc(3.412rem*1.4);
-        padding: calc(0.244rem*1.4);
-        font-size: calc(1.024rem*1.4);
-        height: calc(2.047rem*1.4);
+@media only screen and (max-width: 600px) {
+    .product-card-wrapper {
+        grid-gap: 3rem;
     }
 }
 
@@ -258,6 +179,7 @@
 #buttons-line {
     width: max-content;
     margin: auto;
+    filter: drop-shadow( 0rem 0rem 0.2rem rgba(0, 0, 0, 0.377));
 }
 
 #buttons-line * {

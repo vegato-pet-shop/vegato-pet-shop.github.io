@@ -162,15 +162,16 @@
     border: 0.136rem solid black;
     border-radius: 3rem;
     font-size: 1.6rem;
+    filter: drop-shadow( 0rem 0rem 0.07rem rgba(0, 0, 0, 0.377));
 }
 
 #submit-order:hover {
-    filter: brightness(100%);
+    filter: drop-shadow( 0rem 0rem 0.2rem rgba(0, 0, 0, 0.377));
     background:hsl(25, 88%, 65%);
 }
 
 #submit-order:active {
-    filter: brightness(100%);
+    filter: drop-shadow( 0rem 0rem 0.2rem rgba(0, 0, 0, 0.377));
     background:hsl(25, 88%, 55%);
 }
 

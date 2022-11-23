@@ -53,6 +53,19 @@
     border: 0.14rem solid black;
     font-size: 1.6rem;
     border-radius: 3rem;
+    filter: drop-shadow( 0rem 0rem 0.2rem rgba(0, 0, 0, 0.377));
+}
+
+#hero-text button:hover {
+    filter: brightness(100%);
+    background:hsl(25, 88%, 65%);
+    filter: drop-shadow( 0rem 0rem 0.2rem rgba(0, 0, 0, 0.377));
+}
+
+#hero-text button:active {
+    filter: brightness(100%);
+    background:hsl(25, 88%, 55%);
+    filter: drop-shadow( 0rem 0rem 0.2rem rgba(0, 0, 0, 0.377));
 }
 
 @media only screen and (max-width: 1050px) {
@@ -251,16 +264,19 @@
     border: 0.14rem solid black;
     border-radius: 3rem;
     font-size: 1.6rem;
+    filter: drop-shadow( 0rem 0rem 0.2rem rgba(0, 0, 0, 0.377));
 }
 
 .add-cart:hover {
     filter: brightness(100%);
     background:hsl(25, 88%, 65%);
+    filter: drop-shadow( 0rem 0rem 0.2rem rgba(0, 0, 0, 0.377));
 }
 
 .add-cart:active {
     filter: brightness(100%);
     background:hsl(25, 88%, 55%);
+    filter: drop-shadow( 0rem 0rem 0.2rem rgba(0, 0, 0, 0.377));
 }
 
 @media only screen and (max-width: 1300px) {

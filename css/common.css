@@ -406,7 +406,7 @@ optgroup {
 #notice {
     background-color: var(--whitish);
     font-family: "Space grotesk", sans-serif;
-    border-bottom: 0.2rem black solid;
+    border-bottom: 0.1rem black solid;
     text-align: center;
     padding: 1rem 1rem;
 }

@@ -4,13 +4,6 @@
     </a>
     <ul>
         <li class="navbar-li"><a href="/">HOME</a></li>
-        <li class="navbar-li dropdown">
-            FOOD
-            <div class="food dropdown-content">
-                <button onclick='location.href="/cats"'>CATS</button>
-                <button onclick='location.href="/dogs"'>DOGS</button>
-            </div>
-        </li>
         <li class="navbar-li"><a href="/cart">
             <img src="/img/cart.svg" id="cart-icon" alt="cart">
             <div id="cart-counter"></div>
