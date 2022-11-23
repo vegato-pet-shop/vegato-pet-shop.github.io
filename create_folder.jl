@@ -11,7 +11,7 @@ function createFiles()
 
     translation = DataFrame(XLSX.readtable("src/translation.xlsx", "translation"))
 
-    translation[:,1] .= (!).(ismissing.(translation[:,1]))
+    translation[:,1] .= ismissing.(translation[:,1])
 
     est = map((x) -> x[1] ? x[2] => x[3] : ">"*x[2] => ">"*x[3], eachrow(translation[:,[1,2,4]]))
     rus = map((x) -> x[1] ? x[2] => x[3] : ">"*x[2] => ">"*x[3], eachrow(translation[:,[1,2,3]]))
