@@ -173,10 +173,6 @@ html {
 
 /*---Fonts---------------------------------------------------------*/
 
-.Grotesk {
-    font-family: "Space Grotesk"
-}
-
 @font-face {
     font-family: "Special";
     src: url("fonts/UnlimitedPie.otf") format("opentype");
@@ -192,38 +188,38 @@ span {
 }
 
 p {
-    font-family: 'Space Grotesk', sans-serif;
+    font-family: "Tahoma", sans-serif;
     font-size: 1.6rem;
 }
 
 label {
-    font-family: 'Space Grotesk', sans-serif;
+    font-family: "Tahoma", sans-serif;
     font-size: 1.6rem;
 }
 
 h1 {
-    font-family: "Space Grotesk", sans-serif;
+    font-family: "Tahoma", sans-serif;
 }
 
 h2 {
     font-size: 2.7rem;
-    font-family: 'Space Grotesk', sans-serif;
+    font-family: "Tahoma", sans-serif;
     font-weight: bold;
 }
 
 h3 {
-    font-family: 'Space Grotesk', sans-serif;
+    font-family: "Tahoma", sans-serif;
     font-size: 1.6rem
 }
 
 h4 {
-    font-family: 'Space Grotesk', sans-serif;
+    font-family: "Tahoma", sans-serif;
     font-size: 1.4rem
 }
 
 .text-link {
     font-size: 1.6rem;
-    font-family: 'Space Grotesk', sans-serif;
+    font-family: "Tahoma", sans-serif;
 }
 
 a:link { text-decoration: none; }
@@ -263,7 +259,7 @@ button:focus {
 
 
 input, select {
-    font-family: 'Space Grotesk', sans-serif;
+    font-family: "Tahoma", sans-serif;
     background-color: white;
     border-radius: 0.126rem;
     border-color: black;
@@ -276,14 +272,14 @@ input[type="text"] {
     -webkit-appearance: textfield;
     -moz-appearance: textfield;
     appearance: textfield;
-    font: 1.4rem 'Space Grotesk', sans-serif;
+    font: 1.4rem "Tahoma", sans-serif;
     font-weight: normal;
     color: #353535;
 }
 
 input::placeholder {
     padding-left: 0.34rem;
-    font: 1.4rem 'Space Grotesk', sans-serif;
+    font: 1.4rem "Tahoma", sans-serif;
 }
 
 input[type="email"] {
@@ -291,7 +287,7 @@ input[type="email"] {
     -webkit-appearance: textfield;
     -moz-appearance: textfield;
     appearance: textfield;
-    font: 1.4rem 'Space Grotesk', sans-serif;
+    font: 1.4rem "Tahoma", sans-serif;
     font-weight: normal;
     color: #353535;
 }
@@ -301,7 +297,7 @@ input[type="password"] {
     -webkit-appearance: textfield;
     -moz-appearance: textfield;
     appearance: textfield;
-    font: 1.4rem 'Space Grotesk', sans-serif;
+    font: 1.4rem "Tahoma", sans-serif;
     font-weight: normal;
     color: #353535;
 }
@@ -310,7 +306,7 @@ input[type="number"] {
     -webkit-appearance: textfield;
     -moz-appearance: textfield;
     appearance: textfield;
-    font: 1.4rem 'Space Grotesk', sans-serif;
+    font: 1.4rem "Tahoma", sans-serif;
     font-weight: normal;
     color: #353535;
 }
@@ -326,7 +322,7 @@ select {
     -webkit-appearance: textfield;
     -moz-appearance: textfield;
     appearance: textfield;
-    font: 1.4rem 'Space Grotesk', sans-serif;
+    font: 1.4rem "Tahoma", sans-serif;
     font-weight: normal;
     color: #353535;
     font-size: 1.4rem;
@@ -377,7 +373,7 @@ optgroup {
 .number-input button:after {
     display: inline-block;
     position: absolute;
-    font-family: "Space Grotesk" sans-serif; 
+    font-family: "Tahoma" sans-serif; 
     transform: translate(-50%, -50%) rotate(180deg);
     font-size: 1.4rem;
 }
@@ -389,7 +385,7 @@ optgroup {
 }
 
 .number-input input[type=number] {
-    font-family: "Space Grotesk", sans-serif; 
+    font-family: "Tahoma", sans-serif; 
     max-width: 3.412rem;
     padding: 0.244rem;
     border: solid #ddd;
@@ -405,7 +401,7 @@ optgroup {
 
 #notice {
     background-color: var(--whitish);
-    font-family: "Space grotesk", sans-serif;
+    font-family: "Tahoma", sans-serif;
     border-bottom: 0.1rem black solid;
     text-align: center;
     padding: 1rem 1rem;

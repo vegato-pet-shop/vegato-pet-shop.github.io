@@ -17,8 +17,7 @@
 #products h2 {
     text-align: center;
     padding-bottom: 0.7rem;
-    width: max-content;
-    white-space: nowrap;
+    width: fit-content;
     margin: auto;
     padding: 0 2rem;
     border-bottom: 0.14rem solid black;
@@ -37,7 +36,7 @@
 }
 
 #texts b {
-    font-family: 'Space Grotesk', sans-serif;
+    font-family: "Tahoma", sans-serif;
     font-size: 1.6rem;
 }
 
@@ -50,7 +49,7 @@
 }
 
 #texts li {
-    font-family: 'Space Grotesk', sans-serif;
+    font-family: "Tahoma", sans-serif;
     font-size: 1.6rem;
     margin-bottom: 0.5rem;
 }
@@ -64,7 +63,7 @@
 }
 
 #texts a {
-    font-family: 'Space Grotesk', sans-serif;
+    font-family: "Tahoma", sans-serif;
     font-size: 1.6rem;
     color: var(--orange)
 }

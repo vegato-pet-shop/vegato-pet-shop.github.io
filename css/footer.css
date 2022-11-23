@@ -28,13 +28,13 @@ footer {
 #copyright-container p {
     font-size: 0.9rem;
     color: white;
-    font-family: "Space Grotesk", sans-serif;
+    font-family: "Tahoma", sans-serif;
 }
 
 #copyright-container a {
     font-size: 1.1rem;
     color: white;
-    font-family: "Space Grotesk", sans-serif;
+    font-family: "Tahoma", sans-serif;
 }
 
 #newsletter-container {
@@ -61,7 +61,7 @@ footer {
 
 #newsletterEmailInput::placeholder {
     padding-left: 0.5rem;
-    font: 1.1rem 'Space Grotesk', sans-serif;
+    font: 1.1rem "Tahoma", sans-serif;
 }
 
 #newsletterEmailButton {
@@ -70,7 +70,7 @@ footer {
     height: 2rem;
     background: var(--orange);
     color: #ffffff;
-    font-family: "Space Grotesk", sans-serif;
+    font-family: "Tahoma", sans-serif;
     font-size: 1.2rem;
     border-radius: 0 1rem 1rem 0;
     filter: drop-shadow( 0.07rem 0.14rem 0.07rem rgb(0 0 0 / 0.4));

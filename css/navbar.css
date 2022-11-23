@@ -21,7 +21,7 @@
 }
 
 #navbar ul li {
-    font-family: 'Space Grotesk', sans-serif;
+    font-family: "Tahoma", sans-serif;
     font-size: 1.4rem;
 }
 
@@ -109,7 +109,7 @@
     width: 1.365rem;
     height: 1.365rem;
     border-radius: 3.412rem;
-    font-family: "Space Grotesk", sans-serif;
+    font-family: "Tahoma", sans-serif;
     font-size: 1.024rem;
     text-align: center;
     color: white;
@@ -123,7 +123,7 @@
     flex-direction: column;
     justify-content: center;
     position: absolute;
-    font-family: 'Space Grotesk', sans-serif;
+    font-family: "Tahoma", sans-serif;
     font-size: 1rem;
     top: 2.6rem;
     background-color: var(--whitish);
@@ -136,8 +136,8 @@
     font-size: 1.2rem;
     color: #353535;
     min-width: 4rem;
-    width: max-content;
-    padding: 0.7rem 0rem;
+    width: 100%;
+    padding: 0.7rem 0.5rem;
 }
 
 .dropdown-content button:hover {

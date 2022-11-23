@@ -65,7 +65,7 @@
 .input-div > .span {
     position: relative;
     display: block;
-    font-family: "Space Grotesk", sans-serif;
+    font-family: "Tahoma", sans-serif;
 }
 
 .price-total {
@@ -76,7 +76,7 @@
     position: relative;
     display: block;
     font-size: 1.4rem;
-    font-family: "Space Grotesk", sans-serif;
+    font-family: "Tahoma", sans-serif;
 }
 
 /* Feed images */
@@ -107,7 +107,7 @@
     display: block;
     top: 0.45rem;
     font-size: 1.2rem;
-    font-family: "Space Grotesk", sans-serif;
+    font-family: "Tahoma", sans-serif;
     color: var(--orange)
 }
 
