@@ -50,6 +50,8 @@ function createFiles()
         html = replace(html,"<footer-component></footer-component>"=>footer)
     
         # Translate
+        html = replace(html,"a href=\"/dogs"=>"a href=\"/"*lang*"/dogs")
+        html = replace(html,"a href=\"/cats"=>"a href=\"/"*lang*"/cats")
         html = replace(html,pairs...)
 
         # Save
@@ -72,6 +74,8 @@ function createFiles()
             html = replace(html,"<footer-component></footer-component>"=>footer)
 
             # Translate
+            html = replace(html,"a href=\"/dogs"=>"a href=\"/"*lang*"/dogs")
+            html = replace(html,"a href=\"/cats"=>"a href=\"/"*lang*"/cats")
             if lang!="eng"
                 html = replace(html,pairs...)
             end
