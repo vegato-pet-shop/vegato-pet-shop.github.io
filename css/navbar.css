@@ -141,7 +141,13 @@
 }
 
 .dropdown-content button:hover {
-    background-color: #cecece;
+    filter: brightness(100%);
+    background:hsl(25, 88%, 65%);
+}
+
+.dropdown-content button:active {
+    filter: brightness(100%);
+    background:var(--orange);
 }
 
 .dropdown:hover .dropdown-content {
