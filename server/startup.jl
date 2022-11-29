@@ -1,4 +1,3 @@
-ENV["GENIE_ENV"] = "test"
 # Load our website project into Julia
 cd(@__DIR__)
 using Pkg
