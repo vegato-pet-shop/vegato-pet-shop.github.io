@@ -152,6 +152,8 @@ function selectTransportationType(ind) {
 }
 
 function selectTransportationDestination(ind) {
+    let msg = document.getElementById("finish-form-msg")
+    msg.style.display = "none"
     if (ind==1) {
         let select = document.getElementById("dpd-pickup-point-select")
         transportation = ["DPD",select.options[select.selectedIndex].text,select.selectedIndex]
@@ -217,10 +219,6 @@ function createCORSRequest(method, url) {
 }
 
 function sendConfirmationEmail() {
-
-    let overlay = document.getElementById("overlay")
-    overlay.style.display = "flex"
-
     let name1 = document.getElementById("personal-data-name1").value 
     let name2 = document.getElementById("personal-data-name2").value
     let email = document.getElementById("personal-data-email").value
@@ -233,11 +231,20 @@ function sendConfirmationEmail() {
                     + l0(currentDate.getHours()) + ":"  
                     + l0(currentDate.getMinutes())
 
-    if (transportation==null || transportation[0]=="") {
-        if (document.getElementById("self-pickup").checked) {
-            transportation = ["self-pickup",document.getElementById("self-pickup-text").innerHTML.slice(0,-8)]
-        }
+    let msg = document.getElementById("finish-form-msg")
+    if (name1=="" || name2=="" || email=="" || email=="" || phoneNumber=="" || address=="") {
+        msg.style.display = "block"
+        msg.innerHTML = "Some form fields are empty"
+        return
     }
+    if (transportation[1]=="") {
+        msg.style.display = "block"
+        msg.innerHTML = "Select transportation"
+        return
+    }
+
+    let overlay = document.getElementById("overlay")
+    overlay.style.display = "flex"
 
     userData.name1 = name1
     userData.name2 = name2
@@ -247,7 +254,7 @@ function sendConfirmationEmail() {
     userData.time = time
     userData.orderNumber = getOrderNumber()
     userData.transport =  [transportation[0],transportation[1],transportationPrice[transportation[0]]]
-
+    
     localStorage.setItem('orderData',JSON.stringify(userData))
     
     let url = 'https://server.vegato-pet-shop.com/send-order'
@@ -265,6 +272,13 @@ function sendConfirmationEmail() {
         }
 	}
     xhr.send(JSON.stringify(userData))
+    quantity = {
+        catFoodSmall: 0,
+        catFoodBig: 0,
+        dogFoodSmall: 0, 
+        dogFoodBig: 0
+    }
+    localStorage.setItem('quantity',JSON.stringify(quantity))
 }
 
 function displayReceipt() {
@@ -278,6 +292,8 @@ function displayError() {
 }
 
 function changePersonalData(name,value) {
+    let msg = document.getElementById("finish-form-msg")
+    msg.style.display = "none"
     userData[name] = value
     localStorage.setItem('userData',JSON.stringify(userData))
 }

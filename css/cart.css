@@ -14,9 +14,7 @@
     margin: auto;
     width: max-content;
     padding: 0rem 2rem;
-    font-size: 2rem;
     border-bottom: 0.136rem solid black;
-    font-family: "Special";
 }
 
 #cart {
@@ -191,6 +189,16 @@
     color: white;
     font-size: 3rem;
     font-family: "Tahoma", sans-serif;
+}
+
+#finish-form-msg {
+    display: none;
+    margin: auto;
+    font-family: "Tahoma", sans-serif;
+    margin-bottom: 1rem;
+    width: fit-content;
+    color: red;
+    font-size: 1.5rem;
 }
 
 @media only screen and (min-height: 595px) {

@@ -41,7 +41,7 @@ let userData = {
     time: "",
     order: "",
     orderNumber: "",
-    orderSum: "",
+    orderSum: 0,
     transport: "",
     language: ""
 }

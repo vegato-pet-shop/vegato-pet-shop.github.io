@@ -60,11 +60,21 @@ html {
     html {
         font-size: 10px;
     }
+
+    #navbar ul li {
+        margin-left: 0.7rem;
+        margin-right: 0.7rem;
+    }
 }
 
 @media only screen and (max-width: 470px) {
     html {
         font-size: 8px;
+    }
+
+    #navbar ul li {
+        margin-left: 0.7rem;
+        margin-right: 0.7rem;
     }
 }
 
@@ -72,11 +82,21 @@ html {
     html {
         font-size: 7px;
     }
+
+    #navbar ul li {
+        margin-left: 0.7rem;
+        margin-right: 0.7rem;
+    }
 }
 
 @media only screen and (max-width: 278px) {
     html {
         font-size: 6px;
+    }
+
+    #navbar ul li {
+        margin-left: 0.7rem;
+        margin-right: 0.7rem;
     }
 }
 
@@ -175,7 +195,7 @@ html {
 
 @font-face {
     font-family: "Special";
-    src: url("fonts/UnlimitedPie.otf") format("opentype");
+    src: url("fonts/EBGaramond.ttf") format("truetype");
 }
 
 /*---Text related------------------------------------------------------------------------------*/
@@ -198,12 +218,12 @@ label {
 }
 
 h1 {
-    font-family: "Tahoma", sans-serif;
+    font-family: "Special", serif;
 }
 
 h2 {
-    font-size: 2.7rem;
-    font-family: "Tahoma", sans-serif;
+    font-family: "Special", serif;
+    font-size: 3rem;
     font-weight: bold;
 }
 
