@@ -19,11 +19,11 @@ end
 function create_order_subject_message(order_data)
     local message, subject, transport_item
     language = order_data["language"]
-    if language=="EST"
+    if language=="est"
         message = messageEst
         subject = string("Vegato (tellimus #",order_data["orderNumber"],")")
         transport_item = ["Transport ("*order_data["transport"][1]*")","",order_data["transport"][3]]
-    elseif language=="RUS"
+    elseif language=="rus"
         message = messageRus
         subject = string("Vegato (заказ #",order_data["orderNumber"],")")
         transport_item = ["Транспорт ("*order_data["transport"][1]*")","",order_data["transport"][3]]
