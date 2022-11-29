@@ -232,16 +232,48 @@ function sendConfirmationEmail() {
                     + l0(currentDate.getMinutes())
 
     let msg = document.getElementById("finish-form-msg")
-    if (name1=="" || name2=="" || email=="" || email=="" || phoneNumber=="" || address=="") {
+    
+    if (sum(Object.values(quantity))==0) {
         msg.style.display = "block"
-        msg.innerHTML = "Some form fields are empty"
+        if (userData.language=="est") {
+            msg.innerHTML = "Ostukorv on tühi."
+        }
+        else if (userData.language=="rus") {
+            msg.innerHTML = "Корзина пуста."
+        }
+        else {
+            msg.innerHTML = "Cart is empty."
+        }
         return
     }
     if (transportation[1]=="") {
         msg.style.display = "block"
-        msg.innerHTML = "Select transportation"
+        if (userData.language=="est") {
+            msg.innerHTML = "Vali transpordiviis."
+        }
+        else if (userData.language=="rus") {
+            msg.innerHTML = "Выберите способ доставки."
+        }
+        else {
+            msg.innerHTML = "Select transportation."
+        }
         return
     }
+    if (name1=="" || name2=="" || email=="" || email=="" || phoneNumber=="" || address=="") {
+        msg.style.display = "block"
+        msg.style.display = "block"
+        if (userData.language=="est") {
+            msg.innerHTML = "Mõned vormiväljad on tühjad."
+        }
+        else if (userData.language=="rus") {
+            msg.innerHTML = "Некоторые поля формы пустые."
+        }
+        else {
+            msg.innerHTML = "Some form fields are empty."
+        }
+        return
+    }
+
 
     let overlay = document.getElementById("overlay")
     overlay.style.display = "flex"
@@ -279,6 +311,7 @@ function sendConfirmationEmail() {
         dogFoodBig: 0
     }
     localStorage.setItem('quantity',JSON.stringify(quantity))
+    
 }
 
 function displayReceipt() {
