@@ -21,18 +21,18 @@ function create_order_subject_message(order_data)
     language = order_data["language"]
     if language=="est"
         message = messageEst
-        subject = string("Vegato (tellimus #",order_data["orderNumber"],")")
+        subject = string("Vegato (tellimus ",order_data["orderNumber"],")")
         transport_item = ["Transport ("*order_data["transport"][1]*")","",order_data["transport"][3]]
     elseif language=="rus"
         message = messageRus
-        subject = string("Vegato (заказ #",order_data["orderNumber"],")")
+        subject = string("Vegato (заказ ",order_data["orderNumber"],")")
         transport_item = ["Транспорт ("*order_data["transport"][1]*")","",order_data["transport"][3]]
     else
         message = messageEng
-        subject = string("Vegato (order #",order_data["orderNumber"],")")
+        subject = string("Vegato (order ",order_data["orderNumber"],")")
         transport_item = ["Transportation ("*order_data["transport"][1]*")","",order_data["transport"][3]]
     end
-    message = "Content-Type: text/html;\r\n Content-Transfer-Encoding: 7bit;\r\n"*message
+    message = "Content-Type: text/html;\r\n"*message
     
     pairs = map(x -> "\$"*x => order_data[x],["name1","name2","email","phoneNumber","address","time","orderNumber","orderSum"])
     transport = join(order_data["transport"][1:2]," ")
