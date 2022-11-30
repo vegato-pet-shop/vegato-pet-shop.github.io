@@ -15,9 +15,9 @@ let transportationPrice = {
 
 let price = {
     catFoodSmall: 23,
-    catFoodBig: 87.50,
+    catFoodBig: 93.75,
     dogFoodSmall: 20, 
-    dogFoodBig: 75
+    dogFoodBig: 83.75
 }
 
 let priceTotal = 0
