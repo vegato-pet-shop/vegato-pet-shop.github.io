@@ -32,7 +32,7 @@ function create_order_subject_message(order_data)
         subject = string("Vegato (order #",order_data["orderNumber"],")")
         transport_item = ["Transportation ("*order_data["transport"][1]*")","",order_data["transport"][3]]
     end
-    message = "Content-Type: text/html; Content-Transfer-Encoding: 7bit;"*message
+    message = "Content-Type: text/html;\r\n Content-Transfer-Encoding: 7bit;\r\n"*message
     
     pairs = map(x -> "\$"*x => order_data[x],["name1","name2","email","phoneNumber","address","time","orderNumber","orderSum"])
     transport = join(order_data["transport"][1:2]," ")
@@ -47,7 +47,6 @@ end
 function send_email(receiver,subject,message)
     url = "smtps://mail.privateemail.com:465"
     rcpt = ["<"*receiver*">","<info@vegato-pet-shop.com>"]
-    from = "<no-reply@vegato-pet-shop.com>"
 
     # Message body as RFC5322 within an IO
     to = [receiver]
