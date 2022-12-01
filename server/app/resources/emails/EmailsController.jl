@@ -13,7 +13,13 @@ end
 #--------------------------------------------------------------------
 
 function item(order)
-    return """<tr><td style="color: #737373; border: 1px solid #e4e4e4; padding: 12px; text-align: left; vertical-align: middle; font-family: 'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif; word-wrap: break-word;">$(order[1])</td><td style="color: #737373; border: 1px solid #e4e4e4; padding: 12px; text-align: left; vertical-align: middle; font-family: 'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif;">$(order[2])</td><td style="color: #737373; border: 1px solid #e4e4e4; padding: 12px; text-align: left; vertical-align: middle; font-family: 'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif;"><span>$(order[3]) <span>€</span></span></td></tr>"""
+    return """
+<tr>
+    <td style="color: #737373; border: 1px solid #e4e4e4; padding: 12px; text-align: left; vertical-align: middle; font-family: 'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif; word-wrap: break-word;">$(order[1])</td>
+    <td style="color: #737373; border: 1px solid #e4e4e4; padding: 12px; text-align: left; vertical-align: middle; font-family: 'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif;">$(order[2])</td>
+    <td style="color: #737373; border: 1px solid #e4e4e4; padding: 12px; text-align: left; vertical-align: middle; font-family: 'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif;"><span>$(order[3]) <span>€</span></span></td>
+</tr>
+"""
 end
 
 function create_order_subject_message(order_data)
@@ -32,7 +38,8 @@ function create_order_subject_message(order_data)
         subject = string("Vegato (order ",order_data["orderNumber"],")")
         transport_item = ["Transportation ("*order_data["transport"][1]*")","",order_data["transport"][3]]
     end
-    message = "Content-Type: text/html;\r\n"*message
+    
+    message = "Content-Type: text/html\r\n"*message
     
     pairs = map(x -> "\$"*x => order_data[x],["name1","name2","email","phoneNumber","address","time","orderNumber","orderSum"])
     transport = join(order_data["transport"][1:2]," ")
@@ -90,15 +97,15 @@ path = @__DIR__
 messageEst = open(joinpath(path,"messageEST.html")) do f
     read(f, String)
 end
-#messageEst = replace(messageEst,"\r\n" =>"", r"\s+" => " ")
+#messageEst = replace(messageEst, r"\s+" => " ")
 messageEng = open(joinpath(path,"messageENG.html")) do f
     read(f, String)
 end
-#messageEng = replace(messageEng, "\r\n" =>"", r"\s+" => " ")
+#messageEng = replace(messageEng, r"\s+" => " ")
 messageRus = open(joinpath(path,"messageRUS.html")) do f
     read(f, String)
 end
-#messageEng = replace(messageRus, "\r\n" =>"", r"\s+" => " ")
+#messageRus = replace(messageRus, r"\s+" => " ")
 
 end
 
