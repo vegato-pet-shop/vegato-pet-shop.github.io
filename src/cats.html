@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Vegato - vegan pet food</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta property="og:title" content="Vegato - vegan pet food">
+    <meta property="og:description" content="Vegan pet food for cats and dogs.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="img/icons/favicon.png">
+    <!--<meta property="og:url" content="">-->
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-W50M2BKNL1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-W50M2BKNL1');
+    </script>
+
+    <!--Icons-->
+    <link href="/img/icons/favicon-32.png" rel="icon" sizes="32x32">
+
+    <!--Load CSS-->
+    <link href="/css/common.css" rel="stylesheet">
+    <link href="/css/navbar.css" rel="stylesheet">
+    <link href="/css/footer.css" rel="stylesheet">
+    <link href="/css/feed.css" rel="stylesheet">
+
+    <!--Load javascript-->
+    <script src="/js/init.js" type="text/javascript"></script>
+    <script src="/js/script.js" type="text/javascript"></script>
+    <script src="/js/feed.js" type="text/javascript"></script>
+</head>
+<body>
+    <div id="background">
+        <img src="/img/background_blue.svg" alt="blue top">
+        <img src="/img/background_orange.svg" alt="orange top">
+        <img src="/img/background_orange.svg" alt="orange bottom">
+        <img src="/img/background_blue.svg" alt="blue bottom">
+        <img src="/img/paw_print.png" alt="paw print">
+        <img src="/img/paw_print.png" alt="paw print">
+        <img src="/img/paw_print.png" alt="paw print">
+        <img src="/img/paw_print.png" alt="paw print">
+    </div>
+
+    <div id="notice">
+        <p>We are still in the process of acquiring stock, but you are welcome to pre-order so we know that you are interested. We are going to contact you when stock is available to arrange payment.</p>
+    </div>
+    
+    <navbar-component></navbar-component>
+
+    <div id="wrapper">
+        <div id="products">
+            <h2>Cat food</h2>
+            <div id="food">
+                <div class="product-card-wrapper">
+                    <img src="/img/cat_food.svg" class="feed-card" alt="cat food">
+                    <div id="product-data">
+                        <div class="description">
+                            <h3>DRY FOOD FOR CATS</h3>
+                            <p>nutritionally complete</p>
+                            <p>for all sizes</p>
+                        </div>
+                        <div class="input-div">
+                            <span class="span price-total">23 EUR (2 kg)</span>
+                            <span class="span price-kg">11.50 EUR/kg</span>
+                            <div id="cat-small-input" class="number-input">
+                                <button onclick="subtract(this)" class="minus"></button>
+                                <input id="cat-food-small-input" class="quantity" min="0" name="quantity" value="0" type="number">
+                                <button onclick="add(this)" class="plus"></button>
+                            </div>
+                            <div class="cart-quantity-wrapper">
+                                <span id="cat-food-small-quantity" class="span-quantity">0</span><span>&nbsp</span><span class="span-quantity">in cart</span>
+                            </div>
+                        </div>
+                        <div class="input-div">
+                            <span class="span price-total">93.75 EUR (12.5 kg)</span>
+                            <span class="span price-kg">7.50 EUR/kg</span>
+                            <div id="cat-small-input" class="number-input">
+                                <button onclick="subtract(this)" class="minus"></button>
+                                <input id="cat-food-big-input" class="quantity" min="0" name="quantity" value="0" type="number">
+                                <button onclick="add(this)" class="plus"></button>
+                            </div>
+                            <div class="cart-quantity-wrapper">
+                                <span id="cat-food-big-quantity" class="span-quantity">0</span><span>&nbsp</span><span class="span-quantity">in cart</span>
+                            </div>
+                        </div>
+                        <button class="add-cart" onclick="addCart('cat')">add to cart</button>
+                    </div>
+                </div>
+            </div>
+            <div id="buttons-line">
+                <button onclick="changePane(0)">Ingredients</button>
+                <button onclick="changePane(1)">Nutritional information</button>
+                <button onclick="changePane(2)">Uses</button>
+            </div>
+            <div id="texts">
+                <div id="ingredients">
+                    <h3>Veterinary formula:</h3>
+                    <p>Ingredients: Corn protein, rice, corn, sunflower oil, peas, dehydrated potato, tapioca, rice bran, yeast, rice protein, wheat protein, vegetable hydrolysate (vegetarian palate), apple pulp, calcium carbonate, barley, algae oil, algae, dehydrated vegetables (pumpkin, alfalfa, carrot, plum, cranberry, parsley, sage, thyme, liquorice, canine rose, spirulina, oregano, mint, yucca schidigera (reduces the odor of pet stools), chicory (rich in FOS)), chloride, sodium chloride, monocalcium phosphate, plant extracts (citrus, grape peel, green tea, dandelion, aloe vera).</p>
+                    <p>Formula developed by specialised veterinarians based on FEDIAF guidelines.</p>
+                    <p>Complete food, no supplementation necessary.</p>
+                    <p>Contains optimal amounts of Taurine, Vitamin A, Vitamin B12 and Arachidonic Acid: Substances considered essential for cats, in addition to L-methionine, L-tryptophan and L-lysine.</p>
+
+                    <h3>Improves cats' lives:</h3>
+                    <p>Contains methionine and cranberries to protect the urinary system from infections and crystals.</p>
+                    <p>Contains antioxidant tocopherols.</p>
+                    <p>Contains chicory, rich in FOS. Contains L-tryptophan and L-lysine.</p>
+                    <p>Contains pumpkin, with healthy fibre to help regulate digestion.</p>
+                    <p>Contains tapioca, which strengthens bones and contains a lot of iron.</p>
+                    <p>Low-fat: suitable for neutered, overweight and obese animals.</p>
+                </div>
+                <div id="nutri-info">
+                    <h3>100% plant-based and natural:</h3>
+                    <p>Free from addictive substances, medicines, toxins and hormones contained in meat products.</p>
+                    <p>Free from chemical flavourings, it contains natural flavouring: with substances extracted directly from nature, without the harmful health consequences of chemical flavourings.</p>
+
+                    <h3>Vitamins, provitamins, trace elements and minerals per kg:</h3>
+                    <div class="no-margin">
+                        <p>Vitamin A 22000 UI</p>
+                        <p>Vitamin D3 1700 UI</p>
+                        <p>Vitamin E 180 mg</p>
+                        <p>Vitamin K3 3.10 mg</p>
+                        <p>Vitamin B1 8.99 mg</p>
+                        <p>Vitamin B2 12.40 mg</p>
+                        <p>Vitamin B3 84.88 mg</p>
+                        <p>Vitamin B5 33.76 mg</p>
+                        <p>Vitamin B6 8.27 mg</p>
+                        <p>Vitamin B7 0.21 mg</p>
+                        <p>Vitamin B9 2.07mg</p>
+                        <p>Vitamin B12 0.06 mg</p>
+                        <p>L-threonine 200 mg</p>
+                        <p>L-lysine monohydrochlorohydrate 750 mg</p>
+                        <p>L-tryptophan 100 mg</p>
+                        <p>DL-methionine 800 mg</p>
+                        <p>Taurine 1500 mg</p>
+                        <p>Iron (iron (II) sulphate, monohydrate) 75 mg</p>
+                        <p>Iodine (potassium iodide) 3.5 mg</p>
+                        <p>Copper (copper (II) sulphate pentahydrate) 10 mg</p>
+                        <p>Manganese (manganese sulphate monohydrate) 7.5 mg</p>
+                        <p>Zinc (zinc oxide 120 mg; amino acid zinc chelate hydrate) 25 mg</p>
+                        <p>Selenium (sodium selenite) 0.13 mg</p>
+                        <p>Technological additives: Tocopherol extracts from vegetable oils.</p>
+                    </div>
+
+                    <h3>Analytical Components:</h3>
+                    <div class="no-margin">
+                        <p>Crude protein 28%</p>
+                        <p>Fats 12%</p>
+                        <p>Crude fibre 3%</p>
+                        <p>Organic matter 6%</p>
+                        <p>Calcium 0.8%</p>
+                        <p>Phosphorus 0.75%</p>
+                        <p>EPA + DHA 0.09%</p>
+                        <p>Arachidonic acid 0.06%</p>
+                        <p>Metabolizable energy 3690kcal/kg</p>
+                    </div>
+                </div>
+                <div id="uses">
+                    <h3>Uses:</h3>
+                    <p>Healthy cats, or cats that do not have specific nutritional needs.</p>
+                    <p>Obese cats that need to lose weight.</p>
+                    <p>Cats allergic or intolerant to animal products.</p>
+                    <p>Cats with skin problems.</p>
+                    <p>Cats with arthrosis.</p>
+                    <p>Cats with immune-compromised conditions.</p>
+                    <p>Neutered cats.</p>
+                    <p>Cats that have had crystalluria.</p>
+                    <p>Pregnant and lactating cats.</p>
+                    <p>For all breeds and sizes.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer-component></footer-component>
+</body>
+</html>

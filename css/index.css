@@ -1,0 +1,374 @@
+
+/*---Hero----------------------------------------------------------*/
+
+#hero {
+    position: relative;
+    display: grid;
+    align-items: center;
+    justify-content: center;   
+    grid-template-columns: min-content max-content;
+    column-gap: 4.5rem;
+    margin: auto;
+    margin-top: 3rem;
+    margin-bottom: 2rem;
+    max-width: 52.552rem;
+}
+
+#hero-images {
+    position: relative;
+    top: -2rem;
+    --scale: 1;
+}
+
+#feed-img {
+    position: relative;
+    width: calc(20.4rem*var(--scale));
+    z-index: 2;
+    filter: drop-shadow( 0.14rem 0.14rem 0.068rem rgba(0, 0, 0, 0.377));
+}
+
+#dog-hero {
+    position: relative;
+    top: calc(5rem*var(--scale));
+    left: calc(13rem*var(--scale));
+    width: calc(5.5rem*var(--scale));
+    z-index: 0;
+    transform: rotate(10deg);
+    filter: drop-shadow( 0.14rem 0.14rem 0.068rem rgba(0, 0, 0, 0.377));
+}
+
+#hero-text h1 {
+    font-size: 4rem;
+    line-height: 2.5rem;
+    white-space: nowrap;
+}
+
+#hero-text button {
+    position: relative;
+    margin-top: 3rem;
+    padding: 0.8rem 2rem;
+    padding-top: 0.6rem;
+    background: var(--whitish);
+    border: 0.14rem solid black;
+    font-size: 1.6rem;
+    border-radius: 3rem;
+    filter: drop-shadow( 0rem 0rem 0.2rem rgba(0, 0, 0, 0.377));
+}
+
+#hero-text button:hover {
+    filter: brightness(100%);
+    background:hsl(25, 88%, 65%);
+    filter: drop-shadow( 0rem 0rem 0.2rem rgba(0, 0, 0, 0.377));
+}
+
+#hero-text button:active {
+    filter: brightness(100%);
+    background:hsl(25, 88%, 55%);
+    filter: drop-shadow( 0rem 0rem 0.2rem rgba(0, 0, 0, 0.377));
+}
+
+@media only screen and (max-width: 1050px) {
+    #hero {
+        column-gap: 2rem;
+    }
+}
+
+@media only screen and (max-width: 900px) {
+    #hero {
+        column-gap: 2rem;
+    }
+
+    #hero-text h1 {
+        font-size: 3.4rem;
+        line-height: 2.5rem;
+    }
+
+    #hero-images {
+        --scale: 0.89;
+    }
+
+    #hero-text button {
+        margin-top: 2rem;
+    }
+}
+
+@media only screen and (max-width: 840px) {
+    #hero {
+        column-gap: 2rem;
+    }
+    #hero-text h1 {
+        font-size: 3.3rem;
+    }
+    #hero-images {
+        --scale: 0.85;
+    }
+    #hero-text button {
+        margin-top: 1.5rem;
+    }
+}
+
+@media only screen and (max-width: 540px) {
+    #hero-text h1 {
+        line-height: 4rem;
+    }
+}
+
+/*---Products----------------------------------------------------------*/
+
+#products {
+    position: relative;
+    width: 100%;
+    margin-bottom: 3.4rem;
+    padding: 3rem 0.0rem;
+    background: rgba(253, 251, 254, 0.74);
+    border: 0.14rem solid black;
+    z-index: 1;
+}
+
+#products h2 {
+    text-align: center;
+    padding-bottom: 0.7rem;
+    width: min-content;
+    margin: auto;
+    padding: 0 2rem;
+    border-bottom: 0.14rem solid black;
+}
+
+/*---Feeds---*/
+
+#products-grid {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    margin: auto;
+    align-items: center;
+    margin-top: 9rem;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-bottom: 4rem;
+}
+
+#products-grid>div {
+    position: relative;
+    background: var(--whitish);
+    border: 0.14rem solid black;
+    width: 30rem;
+}
+
+.product-card-wrapper {
+    position: relative;
+    width: max-content;
+    margin: 1.7rem auto;
+    margin-bottom: 2.5rem;
+}
+
+#products-grid h3 {
+    position: relative;
+    font-size: 1.84rem;
+    font-weight: 700;
+}
+
+#products-grid p {
+    position: relative;
+    font-size: 1.4rem;
+}
+
+.input-div {
+    margin-top: 1.4rem;
+}
+
+.input-div > .span {
+    position: relative;
+    display: block;
+    font-family: "Tahoma", sans-serif;
+}
+
+.price-total {
+    font-size: 1.4rem;
+}
+
+.price-kg {
+    position: relative;
+    display: block;
+    font-size: 1.4rem;
+    font-family: "Tahoma", sans-serif;
+}
+
+/* Animals on top */
+#cat-card, #dog-card {
+    position: absolute;
+    z-index: -5;
+    margin-top: -1.7rem
+}
+
+/* Cat on top */
+#cat-card {
+    width: 8.872rem;
+    margin-left: 1.5rem;
+    top: -6.8rem;
+    left: 50%;
+    transform: translateX(-50%);
+    filter: drop-shadow( 0.14rem 0.14rem 0.068rem rgba(0, 0, 0, 0.377));
+}
+
+/* Dog on top */
+#dog-card {
+    width: 6.8rem;
+    margin-left: 0.5rem;
+    top: -6.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    filter: drop-shadow( 0.14rem 0.14rem 0.068rem rgba(0, 0, 0, 0.377));
+}
+
+/* Feed images */
+.feed-card {
+    position: relative;
+    display: block;
+    width: 13.65rem;
+    margin: auto;
+    filter: drop-shadow( 0.14rem 0.14rem 0.068rem rgba(0, 0, 0, 0.377));
+}
+
+.price-kg {
+    font-size: 1rem;
+}
+
+.number-input {
+    margin-top: 0.75rem;
+    margin-bottom: 0rem;
+}
+
+.cart-quantity-wrapper {
+    display: inline-flex;
+    margin-left: 1.5rem;
+}
+
+.span-quantity {
+    position: relative;
+    display: block;
+    top: 0.45rem;
+    font-size: 1.2rem;
+    font-family: "Tahoma", sans-serif;
+    color: var(--orange)
+}
+
+.quantity {
+    pointer-events: none; 
+}
+
+.add-cart {
+    position: relative;
+    display: block;
+    margin: auto;
+    margin-top: 2rem;
+    padding: 0.8rem 2rem;
+    padding-top: 0.6rem;
+    background:hsl(25, 88%, 75%);
+    border: 0.14rem solid black;
+    border-radius: 3rem;
+    font-size: 1.6rem;
+    filter: drop-shadow( 0rem 0rem 0.2rem rgba(0, 0, 0, 0.377));
+}
+
+.add-cart:hover {
+    filter: brightness(100%);
+    background:hsl(25, 88%, 65%);
+    filter: drop-shadow( 0rem 0rem 0.2rem rgba(0, 0, 0, 0.377));
+}
+
+.add-cart:active {
+    filter: brightness(100%);
+    background:hsl(25, 88%, 55%);
+    filter: drop-shadow( 0rem 0rem 0.2rem rgba(0, 0, 0, 0.377));
+}
+
+@media only screen and (max-width: 1300px) {
+    #products-grid {
+        flex-direction: column;
+    }
+
+    #products-grid>div:first-child {
+        margin-bottom: 10rem;
+    }
+}
+
+@media only screen and (max-width: 470px) {
+    #products-grid>div {
+        width: calc(30rem*1.4);;
+    }
+
+    #products-grid p {
+        position: relative;
+        font-size: calc(1.4rem*1.4);
+    }
+    
+    .price-total {
+        font-size: calc(1.4rem*1.4);
+    }
+    
+    .price-kg {
+        font-size: calc(1.4rem*1.4);
+    }
+
+    .price-kg {
+        font-size: calc(1rem*1.4);
+    }
+    
+    .span-quantity {
+        font-size: calc(1.2rem*1.4);
+    }
+    
+    .add-cart {
+        font-size: calc(1.6rem*1.4);
+    }
+
+    .number-input,.number-input * {
+        box-sizing: border-box;
+        width: calc(6.8rem*1.4);
+    }
+    .number-input button {
+        width: calc(2.047rem*1.4);
+        height: calc(2.047rem*1.4);
+    }
+    .number-input button:after {
+        font-size: calc(1.365rem*1.4);
+    }
+    .number-input input[type=number] {
+        max-width: calc(3.412rem*1.4);
+        padding: calc(0.244rem*1.4);
+        font-size: calc(1.024rem*1.4);
+        height: calc(2.047rem*1.4);
+    }
+}
+
+/*---Formula---*/
+
+#products hr {
+    position: relative;
+    margin: auto;
+    border-top: 0.14rem solid black;
+    width: 35%;
+}
+
+#formula-text {
+    margin-left: 10%;
+    margin-right: 10%;
+    text-align: center;
+    font-size: 2.5rem;
+    padding: 2.73rem 0.0rem;
+    font-family: "Special";
+}
+
+/*---Labels---*/
+
+#labels {
+    display: flex;
+    margin-top: 3.4rem;
+    margin-bottom: 2rem;
+    justify-content: center;
+}
+
+#labels img {
+    width: 10rem;
+}

@@ -1,0 +1,1479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Vegato - vegan pet food</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta property="og:title" content="Vegato - vegan pet food">
+    <meta property="og:description" content="Vegan pet food for cats and dogs.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="/img/icons/favicon.png">
+    <!--<meta property="og:url" content="">-->
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-W50M2BKNL1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-W50M2BKNL1');
+    </script>
+    
+    <!--Icons-->
+    <link href="/img/icons/favicon-32.png" rel="icon" sizes="32x32">
+
+    <!--Load CSS-->
+    <link href="/css/common.css" rel="stylesheet">
+    <link href="/css/navbar.css" rel="stylesheet">
+    <link href="/css/footer.css" rel="stylesheet">
+    <link href="/css/cart.css" rel="stylesheet">
+
+    <!--Load javascript-->
+    <script src="/js/init.js" type="text/javascript"></script>
+    <script src="/js/script.js" type="text/javascript"></script>
+    <script src="/js/cart.js" type="text/javascript"></script>
+</head>
+<body>
+    <div id="background">
+        <img src="/img/background_blue.svg" alt="blue top">
+        <img src="/img/background_orange.svg" alt="orange top">
+        <img src="/img/background_orange.svg" alt="orange bottom">
+        <img src="/img/background_blue.svg" alt="blue bottom">
+        <img src="/img/paw_print.png" alt="paw print">
+        <img src="/img/paw_print.png" alt="paw print">
+        <img src="/img/paw_print.png" alt="paw print">
+        <img src="/img/paw_print.png" alt="paw print">
+    </div>
+    
+    <div id="notice">
+        <p>We are still in the process of acquiring stock, but you are welcome to pre-order so we know that you are interested. We are going to contact you when stock is available to arrange payment.</p>
+    </div>
+
+    <navbar-component></navbar-component>
+
+    <div id="overlay"><span>Loading...</span></div>
+
+    <div id="wrapper">
+        <div id="pane">
+            <h2>Cart</h2>
+            <div id="cart">
+                <div id="products-table"></div>
+                <p id="products-price-total"></p>
+            </div>
+            <h2>Transportation</h2>
+            <div id="transport">
+                <div id="dpd-div" class="transport-type">
+                    <input id="dpd-radio-button" type="radio" name="group1" onclick="selectTransportationType(1)"></input>
+                    <div>
+                        <p>DPD parcel locker (3 EUR)</p>
+                        <select id="dpd-pickup-point-select" style="display: none;" onchange="selectTransportationDestination(1)">
+                            <option></option>
+                            <optgroup  label="Abja-Paluoja">
+                                <option  value="EE90105">Automaat Abja-Paluoja Konsum, Pärnu mnt 13, Abja-Paluoja 69403</option>
+                            </optgroup>
+                        
+                            <optgroup  label="Aegviidu">
+                                <option  value="EE90119">Automaat Aegviidu Raamatukogu, Piibe mnt 13, Aegviidu 74501</option>
+                            </optgroup>
+                        
+                            <optgroup  label="Ahja">
+                                <option  value="EE90136">Automaat Ahja Konsum, Tartu mnt 24a, Ahja 63710</option>
+                            </optgroup>
+                        
+                            <optgroup  label="Ahtme">
+                                <option  value="EE90039">Automaat Ahtme Maxima XX, Puru Tee 77, Ahtme 31023</option>
+                            
+                                <option  value="EE90209">Automaat Ahtme Maleva Grossi kaubad, Maleva 23, Ahtme 31021</option>
+                            </optgroup>
+                        
+                            <optgroup  label="Alatskivi">
+                                <option  value="EE90145">Automaat Alatskivi Konsum, Lossi 1a, Alatskivi 60201</option>
+                            </optgroup>
+                        
+                            <optgroup  label="Antsla">
+                                <option  value="EE90067">Automaat Antsla Konsum, F. R. Kreutzwaldi 4a, Antsla 66404</option>
+                            </optgroup>
+                        
+                            <optgroup  label="Aruküla">
+                                <option  value="EE90143">Automaat Aruküla Konsum, Tallinna mnt 8, Aruküla 75201</option>
+                            </optgroup>
+                        
+                            <optgroup  label="Aseri">
+                                <option  value="EE90169">Automaat Aseri Grossi kauplus, Tehase 23, Aseri 43401</option>
+                            </optgroup>
+                        
+                            <optgroup  label="Avinurme">
+                                <option  value="EE90120">Automaat Avinurme Konsum, Võidu 18, Avinurme 42101</option>
+                            </optgroup>
+                        
+                            <optgroup  label="Elva">
+                                <option  value="EE90049">Automaat Elva Maxima X, Valga mnt 5, Elva 61504</option>
+                            </optgroup>
+                        
+                            <optgroup  label="Haapsalu">
+                                <option  value="EE90021">Automaat Haapsalu Kaubamaja Konsum, Posti 41, Haapsalu 90507</option>
+                            
+                                <option  value="EE90122">Automaat Haapsalu Kastani keskus, Kuuse 28, Haapsalu 90509</option>
+                            </optgroup>
+                        
+                            <optgroup  label="Haljala">
+                                <option  value="EE90110">Automaat Haljala Grossi kauplus, Võsu mnt 5, Haljala 45301</option>
+                            </optgroup>
+                        
+                            <optgroup  label="Häädemeeste">
+                                <option  value="EE90257">Automaat Häädemeeste Konsum, Pärnu mnt 40, Häädemeeste 86001</option>
+                            </optgroup>
+                        
+                            <optgroup  label="Ihaste">
+                                <option  value="EE90159">Automaat Ihaste Konsum, Kasesalu tee 51, Ihaste 62220</option>
+                            </optgroup>
+                        
+                            <optgroup  label="Iisaku">
+                                <option  value="EE90111">Automaat Iisaku Grossi kauplus, Tartu mnt 55, Iisaku 41101</option>
+                            </optgroup>
+                        
+                            <optgroup  label="Imavere">
+                                <option  value="EE90079">Automaat Imavere Meie kauplus, Rukkilille, Imavere 72401</option>
+                            </optgroup>
+                        
+                            <optgroup  label="Järva-Jaani">
+                                <option  value="EE90196">Automaat Järva-Jaani Grossi kaubad, Lai 23, Järva-Jaani 73301</option>
+                            </optgroup>
+                        
+                            <optgroup  label="Järvakandi">
+                                <option  value="EE90112">Automaat Järvakandi Grossi kauplus, Turu 1, Järvakandi 79101</option>
+                            </optgroup>
+                        
+                            <optgroup  label="Jõgeva">
+                                <option  value="EE90032">Automaat Jõgeva Pae Konsum, Aia 33, Jõgeva 48304</option>
+                            
+                                <option  value="EE90220">Automaat Jõgeva Selver, Kesk 4, Jõgeva 48307</option>
+                            </optgroup>
+                        
+                            <optgroup  label="Jõhvi">
+                                <option  value="EE90048">Automaat Jõhvi Maxima XX, Rakvere 29, Jõhvi 41533</option>
+                            
+                                <option  value="EE90014">Automaat Jõhvi Tsentraal, Keskväljak 4, Jõhvi 41531</option>
+                            </optgroup>
+                        
+                            <optgroup  label="Jüri">
+                                <option  value="EE90250">Automaat Jüri Konsum, Aruküla tee 29, Jüri 75305</option>
+                            
+                                <option  value="EE90103">Automaat Jüri Grossi kauplus, Aruküla tee 7, Jüri 75301</option>
+                            </optgroup>
+                        
+                            <optgroup  label="Kadrina">
+                                <option  value="EE90109">Automaat Kadrina Grossi kauplus, Viru 9, Kadrina 45201</option>
+                            </optgroup>
+                        
+                            <optgroup  label="Kambja">
+                                <option  value="EE90133">Automaat Kambja Konsum, Kesk 2a, Kambja 62034</option>
+                            </optgroup>
+                        
+                            <optgroup  label="Kanepi">
+                                <option  value="EE90144">Automaat Kanepi kauplus, A. Weizenbergi 19, Kanepi 63101</option>
+                            </optgroup>
+                        
+                            <optgroup  label="Karksi-Nuia">
+                                <option  value="EE90066">Automaat Karksi-Nuia Konsum, Rahumäe 1, Karksi-Nuia 69103</option>
+                            </optgroup>
+                        
+                            <optgroup  label="Kehra">
+                                <option  value="EE90097">Automaat Kehra Grossi kauplus, Kose mnt 7, Kehra 74307</option>
+                            </optgroup>
+                        
+                            <optgroup  label="Kehtna">
+                                <option  value="EE90125">Automaat Kehtna kauplus, Lasteaia 12, Kehtna 79001</option>
+                            </optgroup>
+                        
+                            <optgroup  label="Keila">
+                                <option  value="EE90017">Automaat Keila Selver, Piiri 12, Keila 76610</option>
+                            
+                                <option  value="EE90170">Automaat Keila Maxima X, Tallinna mnt 25, Keila 76608</option>
+                            </optgroup>
+                        
+                            <optgroup  label="Keila-Joa">
+                                <option  value="EE90211">Automaat Keila-Joa kauplus, Lõokese tee 2, Keila-Joa 76701</option>
+                            </optgroup>
+                        
+                            <optgroup  label="Kihelkonna">
+                                <option  value="EE90249">Automaat Kihelkonna kauplus, Lümanda mnt 2, Kihelkonna 93416</option>
+                            </optgroup>
+                        
+                            <optgroup  label="Kiili">
+                                <option  value="EE90164">Automaat Kiili Maxima X, Vaela tee 4, Kiili 75401</option>
+                            </optgroup>
+                        
+                            <optgroup  label="Kilingi-Nõmme">
+                                <option  value="EE90154">Automaat Kilingi-Nõmme Konsum, Pärnu 37, Kilingi-Nõmme 86303</option>
+                            </optgroup>
+                        
+                            <optgroup  label="Kiviõli">
+                                <option  value="EE90084">Automaat Kiviõli K5 keskus, Metsa 2, Kiviõli 43125</option>
+                            </optgroup>
+                        
+                            <optgroup  label="Klooga">
+                                <option  value="EE90116">Automaat Klooga Kultuurikeskus, Aedlinna tee 3, Klooga 76703</option>
+                            </optgroup>
+                        
+                            <optgroup  label="Koeru">
+                                <option  value="EE90138">Automaat Koeru Konsum, Pärna pst 2, Koeru 73001</option>
+                            </optgroup>
+                        
+                            <optgroup  label="Kohila">
+                                <option  value="EE90100">Automaat Kohila Grossi kauplus, Viljandi mnt 3a, Kohila 79805</option>
+                            </optgroup>
+                        
+                            <optgroup  label="Kohtla-Järve">
+                                <option  value="EE90031">Automaat Kohtla-Järve Vironia, Järveküla tee 50, Kohtla-Järve 30321</option>
+                            
+                                <option  value="EE90140">Automaat Kohtla-Järve Virula keskus, Keskallee 1, Kohtla-Järve 30325</option>
+                            
+                                <option  value="EE90148">Automaat Kohtla-Järve mini-Rimi, Põhja allee 4, Kohtla-Järve 30323</option>
+                            </optgroup>
+                        
+                            <optgroup  label="Kose">
+                                <option  value="EE90029">Automaat Kose Grossi kauplus, Kodu 2, Kose 75101</option>
+                            </optgroup>
+                        
+                            <optgroup  label="Kose-Uuemõisa">
+                                <option  value="EE90239">Automaat Kose-Uuemõisa Grossi, Kesk 1, Kose-Uuemõisa 75102</option>
+                            </optgroup>
+                        
+                            <optgroup  label="Kunda">
+                                <option  value="EE90035">Automaat Kunda Grossi kauplus, Kasemäe 12, Kunda 44107</option>
+                            </optgroup>
+                        
+                            <optgroup  label="Kuressaare">
+                                <option  value="EE90037">Automaat Kuressaare Selver, Tallinna 67, Kuressaare 93815</option>
+                            
+                                <option  value="EE90095">Automaat Kuressaare Rae Konsum, Raekoja 10, Kuressaare 93814</option>
+                            
+                                <option  value="EE90228">Automaat Kuressaare mini-Rimi, Kihelkonna mnt 3, Kuressaare 93810</option>
+                            </optgroup>
+                        
+                            <optgroup  label="Kuusalu">
+                                <option  value="EE90106">Automaat Kuusalu Konsum, Kuusalu tee 13, Kuusalu 74601</option>
+                            </optgroup>
+                        
+                            <optgroup  label="Käina">
+                                <option  value="EE90118">Automaat Käina Konsum, Spordi 9, Käina 92101</option>
+                            </optgroup>
+                        
+                            <optgroup  label="Kärdla">
+                                <option  value="EE90060">Automaat Kärdla Selver, Rehemäe, Kärdla 92422</option>
+                            </optgroup>
+                        
+                            <optgroup  label="Laagri">
+                                <option  value="EE90007">Automaat Laagri Rimi, Pärnu mnt 556a, Laagri 76401</option>
+                            
+                                <option  value="EE90204">Automaat Laagri Veskimöldre keskus, Instituudi tee 132, Laagri 76401</option>
+                            </optgroup>
+                        
+                            <optgroup  label="Laulasmaa">
+                                <option  value="EE90201">Automaat Laulasmaa Selver ABC, Kloogaranna tee 26, Laulasmaa 76702</option>
+                            </optgroup>
+                        
+                            <optgroup  label="Leisi">
+                                <option  value="EE90131">Automaat Leisi kauplus, Mustjala mnt 5, Leisi 94202</option>
+                            </optgroup>
+                        
+                            <optgroup  label="Lihula">
+                                <option  value="EE90054">Automaat Lihula Ehituskeskus, Tallinna mnt 29, Lihula 90303</option>
+                            </optgroup>
+                        
+                            <optgroup  label="Liiva">
+                                <option  value="EE90043">Automaat Muhu Liiva Konsum, Liiva, Liiva 94701</option>
+                            </optgroup>
+                        
+                            <optgroup  label="Loksa">
+                                <option  value="EE90168">Automaat Loksa Grossi kauplus, Rohuaia 6, Loksa 74806</option>
+                            </optgroup>
+                        
+                            <optgroup  label="Loo">
+                                <option  value="EE90113">Automaat Loo Grossi kauplus, Saha tee 9, Loo 74201</option>
+                            </optgroup>
+                        
+                            <optgroup  label="Lähte">
+                                <option  value="EE90225">Automaat Lähte kauplus, Poe 4/1, Lähte 60502</option>
+                            </optgroup>
+                        
+                            <optgroup  label="Maardu">
+                                <option  value="EE90233">Automaat Maardu Pärli keskus, Nurga 3, Maardu 74113</option>
+                            
+                                <option  value="EE90025">Automaat Maardu Maxima XX, Keemikute 2, Maardu 74116</option>
+                            </optgroup>
+                        
+                            <optgroup  label="Muraste">
+                                <option  value="EE90129">Automaat Muraste Konsum, Lee tee 1, Muraste 76905</option>
+                            </optgroup>
+                        
+                            <optgroup  label="Mustla">
+                                <option  value="EE90077">Automaat Mustla Konsumi, Posti 52a, Mustla 69701</option>
+                            </optgroup>
+                        
+                            <optgroup  label="Mustvee">
+                                <option  value="EE90093">Automaat Mustvee Grossi kauplus, Tähe 9, Mustvee 49603</option>
+                            </optgroup>
+                        
+                            <optgroup  label="Muuga">
+                                <option  value="EE90217">Automaat Muuga Maxima, Muuga tee 108, Muuga 74117</option>
+                            </optgroup>
+                        
+                            <optgroup  label="Märjamaa">
+                                <option  value="EE90065">Automaat Märjamaa Maxima X, Kasti tee 1/3, Märjamaa 78302</option>
+                            </optgroup>
+                        
+                            <optgroup  label="Narva">
+                                <option  value="EE90020">Automaat Narva Kreenholmi Maxima XX, Kreenholmi 52, Narva 20104</option>
+                            
+                                <option  value="EE90033">Automaat Narva Prisma, Kangelaste prospekt 29, Narva 20607</option>
+                            
+                                <option  value="EE90085">Automaat Narva Tiimanni Maxima XX, Tiimanni 20, Narva 21004</option>
+                            
+                                <option  value="EE90013">Automaat Narva Astri keskus, Tallinna mnt 41, Narva 20605</option>
+                            
+                                <option  value="EE90152">Automaat Narva Pähklimäe 6a Grossi, Pähklimäe 6a, Narva 20605</option>
+                            
+                                <option  value="EE90153">Automaat Narva Megamarket, Rakvere 71, Narva 20607</option>
+                            
+                                <option  value="EE90161">Automaat Narva Fama Keskus, Fama põik 10, Narva 20303</option>
+                            </optgroup>
+                        
+                            <optgroup  label="Narva-Jõesuu">
+                                <option  value="EE90139">Automaat Narva-Jõesuu Konsum, J. Poska 26, Narva-Jõesuu 29023</option>
+                            </optgroup>
+                        
+                            <optgroup  label="Nõo">
+                                <option  value="EE90134">Automaat Nõo Konsum, Tartu 3a, Nõo 61601</option>
+                            </optgroup>
+                        
+                            <optgroup  label="Orissaare">
+                                <option  value="EE90117">Automaat Orissaare Konsum, Kuivastu mnt 28, Orissaare 94601</option>
+                            </optgroup>
+                        
+                            <optgroup  label="Otepää">
+                                <option  value="EE90068">Automaat Otepää Maxima, Valga mnt 1b, Otepää 67403</option>
+                            </optgroup>
+                        
+                            <optgroup  label="Paide">
+                                <option  value="EE90244">Automaat Paide Rimi, Aiavilja 2, Paide 72720</option>
+                            
+                                <option  value="EE90044">Automaat Paide Konsum, Keskväljak 15, Paide 72711</option>
+                            </optgroup>
+                        
+                            <optgroup  label="Paikuse">
+                                <option  value="EE90123">Automaat Paikuse Konsum, Pärnade pst 1, Paikuse 86602</option>
+                            </optgroup>
+                        
+                            <optgroup  label="Palamuse">
+                                <option  value="EE90253">Automaat Palamuse Konsum, Uus 14, Palamuse 49226</option>
+                            </optgroup>
+                        
+                            <optgroup  label="Paldiski">
+                                <option  value="EE90091">Automaat Paldiski Konsum, Rae 38, Paldiski 76805</option>
+                            </optgroup>
+                        
+                            <optgroup  label="Palivere">
+                                <option  value="EE90248">Automaat Palivere kauplus, Lähtru tee 2, Palivere 90802</option>
+                            </optgroup>
+                        
+                            <optgroup  label="Peetri">
+                                <option  value="EE90027">Automaat Peetri Selver, Veesaare 2, Peetri 75312</option>
+                            
+                                <option  value="EE90146">Automaat Peetri Keskus, Küti tee 4, Peetri 75312</option>
+                            </optgroup>
+                        
+                            <optgroup  label="Puhja">
+                                <option  value="EE90132">Automaat Puhja Konsum, Nooruse 2, Puhja 61301</option>
+                            </optgroup>
+                        
+                            <optgroup  label="Puka">
+                                <option  value="EE90254">Automaat Puka kauplus, Kooli 6, Puka 67217</option>
+                            </optgroup>
+                        
+                            <optgroup  label="Puurmani">
+                                <option  value="EE90163">Automaat Puurmani, Tallinna mnt 2, Puurmani 49014</option>
+                            </optgroup>
+                        
+                            <optgroup  label="Pärnu">
+                                <option  value="EE90232">Automaat Pärnu A1000 Market, Karja 6, Pärnu 80018</option>
+                            
+                                <option  value="EE90063">Automaat Pärnu Maksimarket, Haapsalu mnt 43, Pärnu 88317</option>
+                            
+                                <option  value="EE90016">Automaat Pärnu Maxima XXX, Riia mnt 131, Pärnu 80042</option>
+                            
+                                <option  value="EE90015">Automaat Pärnu Keskus, Lai 5, Pärnu 80011</option>
+                            
+                                <option  value="EE90094">Automaat Pärnu Kaubamajakas, Papiniidu 8, Pärnu 80010</option>
+                            
+                                <option  value="EE90176">Automaat Pärnu Ülejõe Selver, Tallinna mnt 93a, Pärnu 80041</option>
+                            
+                                <option  value="EE90206">Automaat Pärnu Oja Selver, Liblika 6, Pärnu 80040</option>
+                            
+                                <option  value="EE90208">Automaat Pärnu Jannseni Rimi, J. V. Jannseni 3, Pärnu 80032</option>
+                            </optgroup>
+                        
+                            <optgroup  label="Pärnu-Jaagupi">
+                                <option  value="EE90108">Automaat Pärnu-Jaagupi Grossi, Uus 20a, Pärnu-Jaagupi 87201</option>
+                            </optgroup>
+                        
+                            <optgroup  label="Põltsamaa">
+                                <option  value="EE90061">Automaat Põltsamaa Konsum, Kesk 2, Põltsamaa 48105</option>
+                            </optgroup>
+                        
+                            <optgroup  label="Põlva">
+                                <option  value="EE90245">Automaat Põlva bussijaam, Kesk 41, Põlva 63304</option>
+                            
+                                <option  value="EE90071">Automaat Põlva Selver, Jaama 12, Põlva 63303</option>
+                            </optgroup>
+                        
+                            <optgroup  label="Püssi">
+                                <option  value="EE90141">Automaat Püssi kauplus, Kooli 14a, Püssi 43222</option>
+                            </optgroup>
+                        
+                            <optgroup  label="Raasiku">
+                                <option  value="EE90130">Automaat Raasiku Konsum, Tallinna mnt 19/3, Raasiku 75203</option>
+                            </optgroup>
+                        
+                            <optgroup  label="Rakke">
+                                <option  value="EE90205">Automaat Rakke Meie kauplus, Fr. R. Faehlmanni tee 15, Rakke 46301</option>
+                            </optgroup>
+                        
+                            <optgroup  label="Rakvere">
+                                <option  value="EE90042">Automaat Rakvere Põhjakeskus, Haljala tee 4, Rakvere 44415</option>
+                            
+                                <option  value="EE90188">Automaat Rakvere kesklinna Rimi, E. Vilde tee 8, Rakvere 44310</option>
+                            
+                                <option  value="EE90212">Automaat Rakvere Raja Grossi kaubad, Ilu puiestee 2, Rakvere 44314</option>
+                            </optgroup>
+                        
+                            <optgroup  label="Rapla">
+                                <option  value="EE90036">Automaat Rapla Selver, Tallinna maantee 4, Rapla 79511</option>
+                            
+                                <option  value="EE90198">Automaat Rapla Jaama Hepa, Viljandi mnt 124, Rapla 79514</option>
+                            </optgroup>
+                        
+                            <optgroup  label="Riisipere">
+                                <option  value="EE90115">Automaat Riisipere Meie kauplus, Metsa 2, Riisipere 76202</option>
+                            </optgroup>
+                        
+                            <optgroup  label="Risti">
+                                <option  value="EE90247">Automaat Risti bussijaam, Tallinna mnt 3a, Risti 90901</option>
+                            </optgroup>
+                        
+                            <optgroup  label="Roobuka">
+                                <option  value="EE90235">Automaat Roobuka Meie kauplus, Roheluse tee 1, Roobuka 75516</option>
+                            </optgroup>
+                        
+                            <optgroup  label="Räpina">
+                                <option  value="EE90062">Automaat Räpina Maxima X, Pargi 1, Räpina 64504</option>
+                            </optgroup>
+                        
+                            <optgroup  label="Rõngu">
+                                <option  value="EE90137">Automaat Rõngu Pagar, Valga mnt 4, Rõngu 61001</option>
+                            </optgroup>
+                        
+                            <optgroup  label="Rõuge">
+                                <option  value="EE90160">Automaat Rõuge A ja O, Võru mnt 10, Rõuge 66201</option>
+                            </optgroup>
+                        
+                            <optgroup  label="Saku">
+                                <option  value="EE90028">Automaat Saku Selver, Üksnurme tee 2, Saku 75501</option>
+                            </optgroup>
+                        
+                            <optgroup  label="Salme">
+                                <option  value="EE90229">Automaat Salme Konsum, Sõrve mnt 2, Salme 93201</option>
+                            </optgroup>
+                        
+                            <optgroup  label="Saue">
+                                <option  value="EE90047">Automaat Saue Maxima X, Ladva 1a, Saue 76506</option>
+                            
+                                <option  value="EE90210">Automaat Saue Rimi, Keskuse 11, Saue 76505</option>
+                            </optgroup>
+                        
+                            <optgroup  label="Sauga">
+                                <option  value="EE90124">Automaat Sauga Konsum, Kuldnoka 1, Sauga 85008</option>
+                            </optgroup>
+                        
+                            <optgroup  label="Sillamäe">
+                                <option  value="EE90059">Automaat Sillamäe Maxima XX, Ak. Pavlovi 1, Sillamäe 40232</option>
+                            </optgroup>
+                        
+                            <optgroup  label="Sindi">
+                                <option  value="EE90064">Automaat Sindi Konsum, Jaama 8, Sindi 86705</option>
+                            </optgroup>
+                        
+                            <optgroup  label="Suure-Jaani">
+                                <option  value="EE90081">Automaat Suure-Jaani Konsum, Pärnu 3, Suure-Jaani 71502</option>
+                            </optgroup>
+                        
+                            <optgroup  label="Sõmeru">
+                                <option  value="EE90213">Automaat Sõmeru kauplus, Puiestee 6, Sõmeru 44201</option>
+                            </optgroup>
+                        
+                            <optgroup  label="Tabasalu">
+                                <option  value="EE90026">Automaat Tabasalu Rimi, Klooga Maantee 10b, Tabasalu 76901</option>
+                            </optgroup>
+                        
+                            <optgroup  label="Taebla">
+                                <option  value="EE90230">Automaat Taebla kauplus, Pargi 2, Taebla 90801</option>
+                            </optgroup>
+                        
+                            <optgroup  label="Tallinn">
+                                <option  value="EE90231">Automaat Tallinna Kopli Maxima X, Kopli 69b, Tallinn 10313</option>
+                            
+                                <option  value="EE90010">Automaat Tallinna Järve keskus, Pärnu mnt 238, Tallinn 11624</option>
+                            
+                                <option  value="EE90236">Automaat Tallinna Tehnikaülikool, Akadeemia tee 3, Tallinn 12616</option>
+                            
+                                <option  value="EE90018">Automaat Tallinna Linnamäe Maxima, Linnamäe tee 57, Tallinn 13911</option>
+                            
+                                <option  value="EE90238">Automaat Tallinna Kivila Grossi, Kivila 26, Tallinn 13917</option>
+                            
+                                <option  value="EE90240">Automaat Tallinna Rocca al Mare, Paldiski mnt 102, Tallinn 13522</option>
+                            
+                                <option  value="EE90098">Automaat Tallinna Kakumäe Selver, Rannamõisa tee 6, Tallinn 13516</option>
+                            
+                                <option  value="EE90242">Automaat Tallinna Jannseni Maxima, Vabaduse pst 128, Tallinn 10918</option>
+                            
+                                <option  value="EE90243">Automaat Tallinna Pääsküla Rimi, Pärnu mnt 453e, Tallinn 10916</option>
+                            
+                                <option  value="EE90002">Automaat Tallinna Kristiine keskus, Endla 45, Tallinn 10615</option>
+                            
+                                <option  value="EE90246">Automaat Tallinna Nõmme tee Maxima, Nõmme tee 23a, Tallinn 11312</option>
+                            
+                                <option  value="EE90080">Automaat Tallinna Kärberi Keskus, Kärberi 20, Tallinn 13919</option>
+                            
+                                <option  value="EE90030">Automaat Tallinna Arsenali keskus, Erika 14, Tallinn 10416</option>
+                            
+                                <option  value="EE90256">Automaat Tallinna Vilde tee Rimi, Vilde tee 101, Tallinn 12911</option>
+                            
+                                <option  value="EE90074">Automaat Tallinna Kolde Selver, Sõle 31, Tallinn 10321</option>
+                            
+                                <option  value="EE90102">Automaat Tallinna Paepargi Maxima, Paepargi 57, Tallinn 11417</option>
+                            
+                                <option  value="EE90022">Automaat Tallinna Tondi Selver, A. H. Tammsaare tee 62, Tallinn 11316</option>
+                            
+                                <option  value="EE90056">Automaat Tallinn Marienthali Selver, Mustamäe tee 16, Tallinn 10617</option>
+                            
+                                <option  value="EE90046">Automaat Tallinna Läänemere Selver, Läänemere tee 28, Tallinn 13913</option>
+                            
+                                <option  value="EE90090">Automaat Tallinna Akadeemia Konsum, Akadeemia tee 35, Tallinn 12618</option>
+                            
+                                <option  value="EE90058">Automaat Tallinna Sõpruse Rimi, Sõpruse pst 174, Tallinn 13424</option>
+                            
+                                <option  value="EE90072">Automaat Tallinna Põhja Rimi, Põhja pst 17, Tallinn 10414</option>
+                            
+                                <option  value="EE90051">Automaat Tallinna Lasnamäe Centrum, Mustakivi tee 13, Tallinn 13912</option>
+                            
+                                <option  value="EE90001">Automaat Tallinna Õismäe Maxima XX, Õismäe tee 46, Tallinn 13512</option>
+                            
+                                <option  value="EE90005">Automaat Tallinna Stroomi keskus, Tuulemaa 20, Tallinn 10315</option>
+                            
+                                <option  value="EE90004">Automaat Tallinna Mustika keskus, Karjavälja 4, Tallinn 12918</option>
+                            
+                                <option  value="EE90073">Automaat Tallinna Vineeri peatus, Pärnu mnt 67a, Tallinn 10134</option>
+                            
+                                <option  value="EE90087">Automaat Tallinna Vilde Maxima XX, E. Vilde tee 75/77, Tallinn 12911</option>
+                            
+                                <option  value="EE90023">Automaat Tallinna Telia WoHo, Mustamäe tee 3, Tallinn 10616</option>
+                            
+                                <option  value="EE90101">Automaat Tallinna Magdaleena, Pärnu mnt 106, Tallinn 11312</option>
+                            
+                                <option  value="EE90040">Automaat Tallinna Smuuli Maxima XX, J. Smuuli tee 9, Tallinn 13628</option>
+                            
+                                <option  value="EE90050">Automaat Tallinna Stockmann, Liivalaia 53, Tallinn 10145</option>
+                            
+                                <option  value="EE90092">Automaat Tallinna Paasiku Grossi, Paasiku 2a, Tallinn 13915</option>
+                            
+                                <option  value="EE90070">Automaat Tallinna Hiiu Rimi, Pärnu mnt 386, Tallinn 11612</option>
+                            
+                                <option  value="EE90006">Automaat Tallinn Viru bussiterminal, Viru väljak 4, Tallinn 10111</option>
+                            
+                                <option  value="EE90041">Automaat Tallinna Torupilli Selver, Vesivärava 37, Tallinn 10126</option>
+                            
+                                <option  value="EE90003">Automaat Tallinna Lasnamäe Prisma, Mustakivi tee 17, Tallinn 13912</option>
+                            
+                                <option  value="EE90009">Automaat Tallinna Magistrali keskus, Sõpruse pst 201/203, Tallinn 13419</option>
+                            
+                                <option  value="EE90057">Automaat Tallinna Idakeskus, Punane 16b, Tallinn 13619</option>
+                            
+                                <option  value="EE90008">Automaat Tallinna Haabersti Rimi, Haabersti 1, Tallinn 13517</option>
+                            
+                                <option  value="EE90195">Automaat Tallinna Kaja Maxima X, E. Vilde tee 124, Tallinn 12914</option>
+                            
+                                <option  value="EE90155">Automaat Tallinna Linnamäe Konsum, Linnamäe tee 3, Tallinn 13912</option>
+                            
+                                <option  value="EE90190">Automaat Tallinna Tähesaju Selver, Tähesaju tee 1, Tallinn 13917</option>
+                            
+                                <option  value="EE90192">Automaat Tallinna Pelgulinna Selver, Sõle 51, Tallinn 10318</option>
+                            
+                                <option  value="EE90181">Automaat Tallinna Mustamäe keskus, A. H. Tammsaare tee 104a, Tallinn 12918</option>
+                            
+                                <option  value="EE90167">Automaat Tallinna Pallasti Maxima, Pallasti 18, Tallinn 11414</option>
+                            
+                                <option  value="EE90182">Automaat Tallinna Sikupilli keskus, Tartu mnt 87, Tallinn 11412</option>
+                            
+                                <option  value="EE90178">Automaat Tallinna Telliskivi Rimi, Telliskivi 61, Tallinn 10412</option>
+                            
+                                <option  value="EE90197">Automaat Tallinna Mustakivi keskus, Mahtra 1, Tallinn 13811</option>
+                            
+                                <option  value="EE90173">Automaat Tallinna Pirita keskus, Merivälja tee 24, Tallinn 12112</option>
+                            
+                                <option  value="EE90183">Automaat Tallinna Kadaka Selver, Kadaka tee 56a, Tallinn 12915</option>
+                            
+                                <option  value="EE90171">Automaat Tallinna Keskturu parkla, Keldrimäe 9, Tallinn 10113</option>
+                            
+                                <option  value="EE90172">Automaat Tallinna Ülemiste keskus, Suur-Sõjamäe 4, Tallinn 11415</option>
+                            
+                                <option  value="EE90193">Automaat Tallinna Narva mnt Selver, Narva mnt 23, Tallinn 10120</option>
+                            
+                                <option  value="EE90180">Automaat Tallinna Kalevipoja Rimi, Kalevipoja põik 8, Tallinn 13625</option>
+                            
+                                <option  value="EE90177">Automaat Tallinna Raudalu Konsum, Viljandi mnt 41a, Tallinn 11218</option>
+                            
+                                <option  value="EE90151">Automaat Tallinna Järveotsa Grossi, Järveotsa tee 35b, Tallinn 13520</option>
+                            
+                                <option  value="EE90149">Automaat Tallinna Männiku Rimi, Männiku tee 100, Tallinn 11215</option>
+                            
+                                <option  value="EE90150">Automaat Tööstuse Rimi, Tööstuse 103, Tallinn 10416</option>
+                            
+                                <option  value="EE90166">Automaat Õismäe tee 88 Maxima X, Õismäe tee 88, Tallinn 13513</option>
+                            
+                                <option  value="EE90191">Automaat Tallinna Punane Selver, Punane 46, Tallinn 13619</option>
+                            
+                                <option  value="EE90199">Automaat Tallinna Kotka Selver, Kotka 12, Tallinn 11315</option>
+                            
+                                <option  value="EE90200">Automaat Tallinna Ristiku Selver, Telliskivi 24, Tallinn 10611</option>
+                            
+                                <option  value="EE90203">Automaat Tallinna Balti jaam, Toompuiestee 37, Tallinn 10149</option>
+                            
+                                <option  value="EE90202">Automaat Tallinna Nurmenuku keskus, Õismäe tee 1b, Tallinn 13514</option>
+                            
+                                <option  value="EE90184">Automaat Tallinna Pirita Selver, Rummu tee 4, Tallinn 11911</option>
+                            
+                                <option  value="EE90218">Automaat Tallinna Mähe Grossi, Randvere tee 115a, Tallinn 11913</option>
+                            
+                                <option  value="EE90222">Automaat Tallinna Ümera Maxima XX, Laagna tee 80, Tallinn 13817</option>
+                            
+                                <option  value="EE90223">Automaat Tallinna Nautica keskus, Ahtri 9, Tallinn 10151</option>
+                            </optgroup>
+                        
+                            <optgroup  label="Tammiste">
+                                <option  value="EE90207">Automaat Tammiste Konsum, Kellukese tee 2, Tammiste 85009</option>
+                            </optgroup>
+                        
+                            <optgroup  label="Tamsalu">
+                                <option  value="EE90162">Automaat Tamsalu Maxima X, Koidu 16, Tamsalu 46107</option>
+                            </optgroup>
+                        
+                            <optgroup  label="Tapa">
+                                <option  value="EE90052">Automaat Tapa Konsum, Kalmistu 3, Tapa 45108</option>
+                            
+                                <option  value="EE90227">Automaat Tapa Maxima X, Pikk 33, Tapa 45106</option>
+                            </optgroup>
+                        
+                            <optgroup  label="Tartu">
+                                <option  value="EE90096">Automaat Tartu Anne Maxima XX, Kalda tee 15, Tartu 50703</option>
+                            
+                                <option  value="EE90251">Automaat Tartu Rukkilille Selver, Friedebert Tuglase 14, Tartu 51014</option>
+                            
+                                <option  value="EE90252">Automaat Tartu Vahi Selver, Vahi 62, Tartu 50304</option>
+                            
+                                <option  value="EE90012">Automaat Tartu bussijaam, Turu 2, Tartu 51004</option>
+                            
+                                <option  value="EE90011">Automaat Tartu Anne Prisma, Nõlvaku 2, Tartu 50708</option>
+                            
+                                <option  value="EE90055">Automaat Tartu Veeriku Selver, Vitamiini 1, Tartu 50412</option>
+                            
+                                <option  value="EE90075">Automaat Tartu Riiamäe Alexela, Era 2, Tartu 51010</option>
+                            
+                                <option  value="EE90038">Automaat Tartu Raadi Maxima, Narva maantee 112, Tartu 50303</option>
+                            
+                                <option  value="EE90076">Automaat Tartu Rebase Rimi, Rebase 10, Tartu 50104</option>
+                            
+                                <option  value="EE90024">Automaat Tartu Ringtee Selver, Aardla 114, Tartu 50415</option>
+                            
+                                <option  value="EE90186">Automaat Tartu Eedeni keskus, Kalda tee 1c, Tartu 50703</option>
+                            
+                                <option  value="EE90157">Automaat Tartu Lembitu Konsum, Lembitu 2, Tartu 50406</option>
+                            
+                                <option  value="EE90187">Automaat Tartu Raadimõisa Konsum, Kaupmehe 2, Tartu 60532</option>
+                            
+                                <option  value="EE90185">Automaat Tartu Lõunakeskus, Ringtee 75, Tartu 50501</option>
+                            
+                                <option  value="EE90158">Automaat Tartu Sõbrakeskus, Võru 55 F, Tartu 50410</option>
+                            
+                                <option  value="EE90156">Automaat Tartu Ujula Konsum, Ujula 2, Tartu 51008</option>
+                            
+                                <option  value="EE90194">Automaat Tartu Aardla Selver, Võru 77, Tartu 50112</option>
+                            
+                                <option  value="EE90215">Automaat Tartu Märja Konsum, Aisa 2, Tartu 61406</option>
+                            
+                                <option  value="EE90214">Automaat Tartu Karete Konsum, Jalaka 34, Tartu 50109</option>
+                            
+                                <option  value="EE90219">Automaat Tartu Kivilinna Konsum, Jaama 173, Tartu 50605</option>
+                            
+                                <option  value="EE90226">Automaat Tartu Mõisavahe Konsum, Mõisavahe 34c, Tartu 50708</option>
+                            </optgroup>
+                        
+                            <optgroup  label="Tiskre">
+                                <option  value="EE90221">Automaat Tiskre Prisma, Liiva tee 61, Tiskre 76924</option>
+                            </optgroup>
+                        
+                            <optgroup  label="Turba">
+                                <option  value="EE90237">Automaat Turba kauplus, Jaama tee 8, Turba 76201</option>
+                            </optgroup>
+                        
+                            <optgroup  label="Tõrva">
+                                <option  value="EE90078">Automaat Tõrva Kevade keskus, Valga 3a, Tõrva 68601</option>
+                            </optgroup>
+                        
+                            <optgroup  label="Tõrvandi">
+                                <option  value="EE90135">Automaat Tõrvandi Konsum, Müürsepa 1, Tõrvandi 61715</option>
+                            </optgroup>
+                        
+                            <optgroup  label="Tõstamaa">
+                                <option  value="EE90175">Automaat Tõstamaa Food Market, Kalli mnt 1, Tõstamaa 88101</option>
+                            </optgroup>
+                        
+                            <optgroup  label="Türi">
+                                <option  value="EE90255">Automaat Türi Rimi, Paide 26, Türi 72211</option>
+                            
+                                <option  value="EE90034">Automaat Türi Konsum, Tallinna 4, Türi 72211</option>
+                            </optgroup>
+                        
+                            <optgroup  label="Uuemõisa">
+                                <option  value="EE90121">Automaat Uuemõisa Konsum, Tallinna mnt 84, Uuemõisa 90401</option>
+                            </optgroup>
+                        
+                            <optgroup  label="Vaida">
+                                <option  value="EE90128">Automaat Vaida A ja O, Vana-Vaida tee 3, Vaida 75302</option>
+                            </optgroup>
+                        
+                            <optgroup  label="Valga">
+                                <option  value="EE90241">Automaat Valga Maxima XX, Jaama pst 2b, Valga 68204</option>
+                            
+                                <option  value="EE90045">Automaat Valga Rimi, Riia 18, Valga 68203</option>
+                            </optgroup>
+                        
+                            <optgroup  label="Varstu">
+                                <option  value="EE90224">Automaat Varstu kauplus, Kesk 17, Varstu 66101</option>
+                            </optgroup>
+                        
+                            <optgroup  label="Vasalemma">
+                                <option  value="EE90165">Automaat Vasalemma Meie kauplus, Jaama põik 3, Vasalemma 76101</option>
+                            </optgroup>
+                        
+                            <optgroup  label="Vastseliina">
+                                <option  value="EE90127">Automaat Vastseliina Konsum, Võidu 21, Vastseliina 65201</option>
+                            </optgroup>
+                        
+                            <optgroup  label="Viimsi">
+                                <option  value="EE90019">Automaat Viimsi Selver, Sõpruse tee 15, Viimsi 74001</option>
+                            
+                                <option  value="EE90088">Automaat Viimsi Maxima X, Pargi tee 22, Viimsi 74001</option>
+                            
+                                <option  value="EE90147">Automaat Pärnamäe Keskus, Pärnamäe tee 4a, Viimsi 74008</option>
+                            </optgroup>
+                        
+                            <optgroup  label="Viiratsi">
+                                <option  value="EE90216">Automaat Viiratsi Konsum, Sakala 3b, Viiratsi 70101</option>
+                            </optgroup>
+                        
+                            <optgroup  label="Viljandi">
+                                <option  value="EE90069">Automaat Viljandi Männimäe Rimi, Riia mnt 13, Viljandi 71011</option>
+                            
+                                <option  value="EE90189">Automaat Viljandi bussijaam, Ilmarise 1, Viljandi 71007</option>
+                            
+                                <option  value="EE90179">Automaat Viljandi Maksimarket, Lääne 2, Viljandi 71013</option>
+                            </optgroup>
+                        
+                            <optgroup  label="Virtsu">
+                                <option  value="EE90234">Automaat Virtsu Konsum, Tallinna mnt 13, Virtsu 90101</option>
+                            </optgroup>
+                        
+                            <optgroup  label="Voka">
+                                <option  value="EE90142">Automaat Voka Grossi kauplus, Narva mnt 5, Voka 41701</option>
+                            </optgroup>
+                        
+                            <optgroup  label="Väike-Maarja">
+                                <option  value="EE90089">Automaat Väike-Maarja Konsum, Pikk 12, Väike-Maarja 46202</option>
+                            </optgroup>
+                        
+                            <optgroup  label="Vändra">
+                                <option  value="EE90082">Automaat Vändra Grossi kaubad, Pärnu-Paide mnt 26, Vändra 87701</option>
+                            </optgroup>
+                        
+                            <optgroup  label="Värska">
+                                <option  value="EE90174">Automaat Värska kauplus, Järvesuu 2a, Värska 64001</option>
+                            </optgroup>
+                        
+                            <optgroup  label="Vääna-Jõesuu">
+                                <option  value="EE90114">Automaat Vääna-Jõesuu Meie kauplus, Männiku, Vääna-Jõesuu 76909</option>
+                            </optgroup>
+                        
+                            <optgroup  label="Võhma">
+                                <option  value="EE90126">Automaat Võhma Konsum, Tallinna 26, Võhma 70602</option>
+                            </optgroup>
+                        
+                            <optgroup  label="Võru">
+                                <option  value="EE90053">Automaat Võru Maxima XX, Kooli 2, Võru 65606</option>
+                            
+                                <option  value="EE90083">Automaat Võru Maksimarket, Jüri 83, Võru 65607</option>
+                            </optgroup>
+                        
+                            <optgroup  label="Ülenurme">
+                                <option  value="EE90099">Automaat Ülenurme Konsum, Võru mnt 2, Ülenurme 61714</option>
+                            </optgroup>
+                        </select>
+                    </div>
+                </div>
+                <div id="omniva-div" class="transport-type">
+                    <input id="omniva-radio-button" type="radio" name="group1" onclick="selectTransportationType(2)"></input>
+                    <div>
+                        <p>Omniva parcel locker (3.50 EUR)</p>
+                        <select id="omniva-pickup-point-select" style="display: none;" onchange="selectTransportationDestination(2)">
+                            <option></option>
+                            <optgroup label="Viljandi maakond">
+                                <option value="96243">Abja Coop Konsumi pakiautomaat (Mulgi vald)</option>
+                            
+                                <option value="96110">Karksi-Nuia Coop Konsum pakiautomaat (Mulgi vald)</option>
+                            
+                                <option value="96266">Kolga-Jaani pakiautomaat (Viljandi vald)</option>
+                            
+                                <option value="96231">Suure-Jaani Tervisekoja pakiautomaat (Põhja-Sakala vald)</option>
+                            
+                                <option value="96032">Viljandi Bussijaama pakiautomaat (Viljandi linn)</option>
+                            
+                                <option value="96070">Viljandi Coop Maksimarketi pakiautomaat (Viljandi linn)</option>
+                            
+                                <option value="96063">Viljandi Männimäe Selveri pakiautomaat (Viljandi linn)</option>
+                            
+                                <option value="96313">Viljandi Tallinna 60 Maxima X pakiautomaat (Viljandi linn)</option>
+                            
+                                <option value="96312">Viljandi Vaksali Maxima X pakiautomaat (Viljandi linn)</option>
+                            
+                                <option value="96246">Võhma Bussijaama pakiautomaat (Põhja-Sakala vald)</option>
+                            </optgroup>
+                                                                            
+                            <optgroup label="Ida-Viru maakond">
+                                <option value="96142">Ahtme Grossi pakiautomaat (Kohtla-Järve linn)</option>
+                            
+                                <option value="96123">Ahtme Maxima XX pakiautomaat (Kohtla-Järve linn)</option>
+                            
+                                <option value="96189">Iisaku Grossi pakiautomaat (Alutaguse vald)</option>
+                            
+                                <option value="96191">Jõhvi Grossi pakiautomaat (Jõhvi vald)</option>
+                            
+                                <option value="96030">Jõhvi Jewe kaubanduskeskuse pakiautomaat (Jõhvi vald)</option>
+                            
+                                <option value="96089">Jõhvi Maxima XX pakiautomaat (Jõhvi vald)</option>
+                            
+                                <option value="96235">Jõhvi Pargi keskuse pakiautomaat (Jõhvi vald)</option>
+                            
+                                <option value="96176">Kiviõli Grossi pakiautomaat (Lüganuse vald)</option>
+                            
+                                <option value="96090">Kiviõli Maxima X pakiautomaat (Lüganuse vald)</option>
+                            
+                                <option value="96139">Kohtla-Järve Keskallee Maxima X pakiautomaat (Kohtla-Järve linn)</option>
+                            
+                                <option value="96307">Kohtla-Järve Mõisa tee Maxima X pakiautomaat (Kohtla-Järve linn)</option>
+                            
+                                <option value="96036">Kohtla-Järve Rimi pakiautomaat (Kohtla-Järve linn)</option>
+                            
+                                <option value="96093">Kohtla-Järve Vironia keskuse pakiautomaat (Kohtla-Järve linn)</option>
+                            
+                                <option value="96028">Narva Astri Keskuse pakiautomaat (Narva linn)</option>
+                            
+                                <option value="96072">Narva Fama keskuse pakiautomaat (Narva linn)</option>
+                            
+                                <option value="96218">Narva Kerese keskuse pakiautomaat (Narva linn)</option>
+                            
+                                <option value="96091">Narva Kreenholmi Maxima XX pakiautomaat (Narva linn)</option>
+                            
+                                <option value="96217">Narva Megamarketi pakiautomaat (Narva linn)</option>
+                            
+                                <option value="96125">Narva Prisma pakiautomaat (Narva linn)</option>
+                            
+                                <option value="96182">Narva Tiimani Maxima XX pakiautomaat (Narva linn)</option>
+                            
+                                <option value="96326">Narva-Jõesuu raamatukogu pakiautomaat (Narva-Jõesuu linn)</option>
+                            
+                                <option value="96054">Sillamäe Coop Maksimarketi pakiautomaat (Sillamäe linn)</option>
+                            
+                                <option value="96222">Sillamäe Viru pst Maxima X pakiautomaat (Sillamäe linn)</option>
+                            </optgroup>
+                                                                            
+                            <optgroup label="Võru maakond">
+                                <option value="96118">Antsla Coop Konsumi pakiautomaat (Antsla vald)</option>
+                            
+                                <option value="96255">Rõuge Bussijaama pakiautomaat (Rõuge vald)</option>
+                            
+                                <option value="96035">Võru Coop Maksimarketi pakiautomaat (Võru linn)</option>
+                            
+                                <option value="96064">Võru Maxima XX pakiautomaat (Võru linn)</option>
+                            
+                                <option value="96314">Võru kesklinna Circle K pakiautomaat (Võru linn)</option>
+                            </optgroup>
+                                                                            
+                            <optgroup label="Järva maakond">
+                                <option value="96230">Aravete Meie kaupluse pakiautomaat (Järva vald)</option>
+                            
+                                <option value="96157">Järva-Jaani Grossi pakiautomaat (Järva vald)</option>
+                            
+                                <option value="96147">Koeru Vallamaja pakiautomaat (Järva vald)</option>
+                            
+                                <option value="96260">Koigi pakiautomaat (Järva vald)</option>
+                            
+                                <option value="96207">Paide Hesburgeri pakiautomaat (Paide linn)</option>
+                            
+                                <option value="96037">Paide Selveri pakiautomaat (Paide linn)</option>
+                            
+                                <option value="96052">Türi Maxima X pakiautomaat (Türi vald)</option>
+                            </optgroup>
+                                                                            
+                            <optgroup label="Harju maakond">
+                                <option value="96204">Aruküla Coop Konsumi pakiautomaat  (Raasiku vald)</option>
+                            
+                                <option value="96206">Haabneeme Coop Konsumi pakiautomaat (Viimsi vald)</option>
+                            
+                                <option value="96249">Haiba Bussijaama pakiautomaat (Saue vald)</option>
+                            
+                                <option value="96079">Jüri Coop Konsumi pakiautomaat (Rae vald)</option>
+                            
+                                <option value="96188">Jüri Grossi pakiautomaat (Rae vald)</option>
+                            
+                                <option value="96114">Kehra Coop Konsumi pakiautomaat (Anija vald)</option>
+                            
+                                <option value="96172">Keila Grossi pakiautomaat (Keila linn)</option>
+                            
+                                <option value="96229">Keila Maxima X pakiautomaat (Keila linn)</option>
+                            
+                                <option value="96049">Keila Rõõmu kaubamaja pakiautomaat (Keila linn)</option>
+                            
+                                <option value="96155">Kiili Coop Konsumi pakiautomaat (Kiili vald)</option>
+                            
+                                <option value="96159">Kiisa Coop kaupluse pakiautomaat (Saku vald)</option>
+                            
+                                <option value="96096">Kose Grossi pakiautomaat (Kose vald)</option>
+                            
+                                <option value="96270">Kose-Uuemõisa pakiautomaat (Kose vald)</option>
+                            
+                                <option value="96160">Kostivere Meie kaupluse pakiautomaat (Jõelähtme vald)</option>
+                            
+                                <option value="96108">Kuusalu Coop Konsumi pakiautomaat (Kuusalu vald)</option>
+                            
+                                <option value="96067">Laagri Coop Maksimarketi pakiautomaat (Saue vald)</option>
+                            
+                                <option value="96200">Laagri Veskitammi Selver ABC pakiautomaat (Saue vald)</option>
+                            
+                                <option value="96183">Lagedi Keskusehoone pakiautomaat (Rae vald)</option>
+                            
+                                <option value="96245">Laulasmaa Selver ABC pakiautomaat (Lääne-Harju vald)</option>
+                            
+                                <option value="96278">Logistikakeskuse ajutine (aktiivne kuni 25.07.2022) pakiautomaat (Rae vald)</option>
+                            
+                                <option value="96134">Loksa Grossi pakiautomaat (Loksa linn)</option>
+                            
+                                <option value="96171">Loo Grossi pakiautomaat (Jõelähtme vald)</option>
+                            
+                                <option value="96300">Maardu Maxima X pakiautomaat (Maardu linn)</option>
+                            
+                                <option value="96081">Maardu Maxima XX pakiautomaat (Maardu linn)</option>
+                            
+                                <option value="96130">Maardu Pärli Keskuse pakiautomaat (Maardu linn)</option>
+                            
+                                <option value="96239">Muraste Coop Konsumi pakiautomaat  (Harku vald)</option>
+                            
+                                <option value="96228">Muuga Maxima X pakiautomaat (Maardu linn)</option>
+                            
+                                <option value="96250">Padise Keskuse tee pakiautomaat (Lääne-Harju vald)</option>
+                            
+                                <option value="96203">Paldiski Coop Konsumi pakiautomaat (Lääne-Harju vald)</option>
+                            
+                                <option value="96097">Paldiski Maxima X pakiautomaat (Lääne-Harju vald)</option>
+                            
+                                <option value="96234">Peetri Keskuse pakiautomaat (Rae vald)</option>
+                            
+                                <option value="96082">Peetri Selveri pakiautomaat (Rae vald)</option>
+                            
+                                <option value="96105">Raasiku Coop Konsumi pakiautomaat (Raasiku vald)</option>
+                            
+                                <option value="96273">Roobuka pakiautomaat (Saku vald)</option>
+                            
+                                <option value="96050">Saku Coop Ehituskeskuse pakiautomaat (Saku vald)</option>
+                            
+                                <option value="96301">Saku Selveri pakiautomaat (Saku vald)</option>
+                            
+                                <option value="96184">Saue Grossi pakiautomaat (Saue vald)</option>
+                            
+                                <option value="96055">Saue Kaubakeskuse pakiautomaat (Saue vald)</option>
+                            
+                                <option value="96071">Tabasalu Rimi pakiautomaat (Harku vald)</option>
+                            
+                                <option value="96003">Tallinna Akadeemia Coop Konsumi pakiautomaat (Tallinn)</option>
+                            
+                                <option value="96133">Tallinna Arsenali Keskuse pakiautomaat (Tallinn)</option>
+                            
+                                <option value="96001">Tallinna Balti Jaama pakiautomaat (Tallinn)</option>
+                            
+                                <option value="96258">Tallinna Balti Jaama turu pakiautomaat (Tallinn)</option>
+                            
+                                <option value="96219">Tallinna Coca-Cola Plaza pakiautomaat (Tallinn)</option>
+                            
+                                <option value="96216">Tallinna Ehitajate tee Grossi pakiautomaat (Tallinn)</option>
+                            
+                                <option value="96303">Tallinna Ehitajate tee Maxima XXX pakiautomaat (Tallinn)</option>
+                            
+                                <option value="96111">Tallinna Haabersti Rimi pakiautomaat (Tallinn)</option>
+                            
+                                <option value="96202">Tallinna Idakeskuse pakiautomaat (Tallinn)</option>
+                            
+                                <option value="96195">Tallinna Juhkentali Rimi pakiautomaat (Tallinn)</option>
+                            
+                                <option value="96016">Tallinna Järve Keskuse pakiautomaat (Tallinn)</option>
+                            
+                                <option value="96138">Tallinna Järveotsa Grossi pakiautomaat (Tallinn)</option>
+                            
+                                <option value="96018">Tallinna Kadaka Selveri pakiautomaat (Tallinn)</option>
+                            
+                                <option value="96015">Tallinna Kakumäe Selveri pakiautomaat (Tallinn)</option>
+                            
+                                <option value="96237">Tallinna Kari Grossipoe pakiautomaat (Tallinn)</option>
+                            
+                                <option value="96190">Tallinna Kivila Grossi pakiautomaat (Tallinn)</option>
+                            
+                                <option value="96069">Tallinna Kolde Rimi pakiautomaat (Tallinn)</option>
+                            
+                                <option value="96226">Tallinna Kollase keskuse pakiautomaat (Tallinn)</option>
+                            
+                                <option value="96007">Tallinna Kristiine Keskuse pakiautomaat (Tallinn)</option>
+                            
+                                <option value="96162">Tallinna Kärberi Keskuse pakiautomaat (Tallinn)</option>
+                            
+                                <option value="96041">Tallinna Lasnamäe Centrumi B pakiautomaat (Tallinn)</option>
+                            
+                                <option value="96066">Tallinna Lasnamäe Prisma pakiautomaat (Tallinn)</option>
+                            
+                                <option value="96180">Tallinna Lastekodu Grossi pakiautomaat (Tallinn)</option>
+                            
+                                <option value="96116">Tallinna Linnamäe Maxima XXX pakiautomaat (Tallinn)</option>
+                            
+                                <option value="96194">Tallinna Läänemere Rimi pakiautomaat (Tallinn)</option>
+                            
+                                <option value="96173">Tallinna Läänemere Selveri pakiautomaat (Tallinn)</option>
+                            
+                                <option value="96086">Tallinna Magdaleena pakiautomaat (Tallinn)</option>
+                            
+                                <option value="96056">Tallinna Magistrali Keskuse pakiautomaat (Tallinn)</option>
+                            
+                                <option value="96098">Tallinna Marienthali keskuse pakiautomaat (Tallinn)</option>
+                            
+                                <option value="96129">Tallinna Merimetsa Selveri pakiautomaat (Tallinn)</option>
+                            
+                                <option value="96010">Tallinna Mustakivi Keskuse pakiautomaat (Tallinn)</option>
+                            
+                                <option value="96141">Tallinna Mustamäe Keskuse pakiautomaat (Tallinn)</option>
+                            
+                                <option value="96115">Tallinna Mustika Keskuse pakiautomaat (Tallinn)</option>
+                            
+                                <option value="96236">Tallinna Männiku Rimi pakiautomaat (Tallinn)</option>
+                            
+                                <option value="96174">Tallinna Nautica Keskuse pakiautomaat (Tallinn)</option>
+                            
+                                <option value="96004">Tallinna Nurmenuku pakiautomaat (Tallinn)</option>
+                            
+                                <option value="96327">Tallinna Nõmme tee 23 Maxima X pakiautomaat (Tallinn)</option>
+                            
+                                <option value="96101">Tallinna Nõmme turu pakiautomaat (Tallinn)</option>
+                            
+                                <option value="96193">Tallinna Paasiku Grossi pakiautomaat (Tallinn)</option>
+                            
+                                <option value="96131">Tallinna Paepargi Maxima XX pakiautomaat (Tallinn)</option>
+                            
+                                <option value="96146">Tallinna Pallasti pakiautomaat (Tallinn)</option>
+                            
+                                <option value="96017">Tallinna Pelgulinna Selveri pakiautomaat (Tallinn)</option>
+                            
+                                <option value="96205">Tallinna Pirita Keskuse pakiautomaat (Tallinn)</option>
+                            
+                                <option value="96012">Tallinna Pirita Selveri pakiautomaat (Tallinn)</option>
+                            
+                                <option value="96083">Tallinna Punase Selveri pakiautomaat (Tallinn)</option>
+                            
+                                <option value="96304">Tallinna Pärnu mnt 390b Maxima X pakiautomaat (Tallinn)</option>
+                            
+                                <option value="96008">Tallinna Pääsküla RIMI pakiautomaat (Tallinn)</option>
+                            
+                                <option value="96181">Tallinna Põhja pst Neste pakiautomaat (Tallinn)</option>
+                            
+                                <option value="96084">Tallinna Raudalu Coop Konsumi pakiautomaat (Tallinn)</option>
+                            
+                                <option value="96005">Tallinna Rocca al Mare pakiautomaat (Tallinn)</option>
+                            
+                                <option value="96009">Tallinna Sikupilli pakiautomaat (Tallinn)</option>
+                            
+                                <option value="96080">Tallinna Smuuli Maxima XX pakiautomaat (Tallinn)</option>
+                            
+                                <option value="96140">Tallinna Solaris Keskuse pakiautomaat (Tallinn)</option>
+                            
+                                <option value="96057">Tallinna Stockmanni pakiautomaat (Tallinn)</option>
+                            
+                                <option value="96154">Tallinna Stroomi Keskuse pakiautomaat (Tallinn)</option>
+                            
+                                <option value="96166">Tallinna Sõle Rimi (Paavli 10) pakiautomaat (Tallinn)</option>
+                            
+                                <option value="96014">Tallinna Sõpruse Rimi pakiautomaat (Tallinn)</option>
+                            
+                                <option value="96306">Tallinna Sõpruse pst 171 Maxima X pakiautomaat (Tallinn)</option>
+                            
+                                <option value="96175">Tallinna Sütiste Maxima X pakiautomaat (Tallinn)</option>
+                            
+                                <option value="96323">Tallinna T1 Keskuse pakiautomaat (Tallinn)</option>
+                            
+                                <option value="96305">Tallinna Tammsaare Maxima XX pakiautomaat (Tallinn)</option>
+                            
+                                <option value="96214">Tallinna Tammsaare Ärikeskuse pakiautomaat (Tallinn)</option>
+                            
+                                <option value="96240">Tallinna Tatari Rimi pakiautomaat (Tallinn)</option>
+                            
+                                <option value="96058">Tallinna Telliskivi Rimi pakiautomaat (Tallinn)</option>
+                            
+                                <option value="96006">Tallinna Tondi Selveri pakiautomaat (Tallinn)</option>
+                            
+                                <option value="96153">Tallinna Tondi Ärikeskuse pakiautomaat (Tallinn)</option>
+                            
+                                <option value="96038">Tallinna Torupilli Selveri pakiautomaat (Tallinn)</option>
+                            
+                                <option value="96302">Tallinna Tähesaju Selveri pakiautomaat (Tallinn)</option>
+                            
+                                <option value="96185">Tallinna Tööstuse Rimi pakiautomaat (Tallinn)</option>
+                            
+                                <option value="96145">Tallinna Valdeku Maxima X pakiautomaat (Tallinn)</option>
+                            
+                                <option value="96132">Tallinna Valdeku Selver ABC pakiautomaat (Tallinn)</option>
+                            
+                                <option value="96215">Tallinna Vikerlase Rimi pakiautomaat (Tallinn)</option>
+                            
+                                <option value="96143">Tallinna Vilde tee Maxima XX pakiautomaat (Tallinn)</option>
+                            
+                                <option value="96104">Tallinna Viru Bussiterminali pakiautomaat (Tallinn)</option>
+                            
+                                <option value="96103">Tallinna Õismäe Maxima XX pakiautomaat (Tallinn)</option>
+                            
+                                <option value="96208">Tallinna Ülemiste City Selveri pakiautomaat (Tallinn)</option>
+                            
+                                <option value="96059">Tallinna Ümera Maxima XX pakiautomaat (Tallinn)</option>
+                            
+                                <option value="96223">Turba kaupluse pakiautomaat (Saue vald)</option>
+                            
+                                <option value="96244">Vaida Coop kaupluse pakiautomaat (Rae vald)</option>
+                            
+                                <option value="96013">Viimsi Kaubanduskeskuse pakiautomaat (Viimsi vald)</option>
+                            
+                                <option value="96124">Viimsi Pärnamäe Rimi pakiautomaat (Viimsi vald)</option>
+                            
+                                <option value="96209">Viimsi Rimi pakiautomaat (Viimsi vald)</option>
+                            
+                                <option value="96325">Vääna-Jõesuu kauplus Maksis pakiautomaat (Harku vald)</option>
+                            </optgroup>
+                                                                            
+                            <optgroup label="Lääne-Viru maakond">
+                                <option value="96211">Aseri Grossi pakiautomaat (Viru-Nigula vald)</option>
+                            
+                                <option value="96324">Haljala Grossi pakiautomaat (Haljala vald)</option>
+                            
+                                <option value="96117">Kadrina Coop Konsumi pakiautomaat (Kadrina vald)</option>
+                            
+                                <option value="96122">Kunda Grossi pakiautomaat (Viru-Nigula vald)</option>
+                            
+                                <option value="96248">Laekvere pakiautomaat (Vinni vald)</option>
+                            
+                                <option value="96268">Rakke pakiautomaat (Väike-Maarja vald)</option>
+                            
+                                <option value="96232">Rakvere Lilleoru kaupluse pakiautomaat (Rakvere linn)</option>
+                            
+                                <option value="96078">Rakvere Põhjakeskuse pakiautomaat (Rakvere vald)</option>
+                            
+                                <option value="96031">Rakvere Turutare pakiautomaat (Rakvere linn)</option>
+                            
+                                <option value="96167">Rakvere Vaala Keskuse pakiautomaat (Rakvere linn)</option>
+                            
+                                <option value="96251">Roela pakiautomaat (Vinni vald)</option>
+                            
+                                <option value="96120">Tamsalu Grossi pakiautomaat (Tapa vald)</option>
+                            
+                                <option value="96092">Tapa Grossi pakiautomaat (Tapa vald)</option>
+                            
+                                <option value="96308">Tapa Maxima X pakiautomaat (Tapa vald)</option>
+                            
+                                <option value="96149">Vinni Spordikompleksi pakiautomaat (Vinni vald)</option>
+                            
+                                <option value="96107">Väike-Maarja Grossi pakiautomaat (Väike-Maarja vald)</option>
+                            </optgroup>
+                                                                            
+                            <optgroup label="Pärnu maakond">
+                                <option value="96238">Audru osavallakeskuse pakiautomaat (Pärnu linn)</option>
+                            
+                                <option value="96233">Häädemeeste Coop Konsumi pakiautomaat (Häädemeeste vald)</option>
+                            
+                                <option value="96320">Kilingi-Nõmme Coop Konsumi pakiautomaat (Saarde vald)</option>
+                            
+                                <option value="96267">Koonga pakiautomaat (Lääneranna vald)</option>
+                            
+                                <option value="96247">Kõmsi pakiautomaat (Lääneranna vald)</option>
+                            
+                                <option value="96261">Lavassaare pakiautomaat (Pärnu linn)</option>
+                            
+                                <option value="96119">Lihula Coop Konsumi pakiautomaat (Lääneranna vald)</option>
+                            
+                                <option value="96265">Lõpe pakiautomaat (Lääneranna vald)</option>
+                            
+                                <option value="96158">Paikuse Coop Konsumi pakiautomaat (Pärnu linn)</option>
+                            
+                                <option value="96076">Pärnu Coop Maksimarketi pakiautomaat (Pärnu linn)</option>
+                            
+                                <option value="96026">Pärnu Jannseni Rimi pakiautomaat (Pärnu linn)</option>
+                            
+                                <option value="96040">Pärnu Kaubamajaka pakiautomaat (Pärnu linn)</option>
+                            
+                                <option value="96027">Pärnu Maxima XXX pakiautomaat (Pärnu linn)</option>
+                            
+                                <option value="96315">Pärnu Oja Selver ABC pakiautomaat (Pärnu linn)</option>
+                            
+                                <option value="96062">Pärnu Port Artur 2 pakiautomaat (Pärnu linn)</option>
+                            
+                                <option value="96197">Pärnu Tiina Coop Konsumi pakiautomaat (Pärnu linn)</option>
+                            
+                                <option value="96198">Pärnu Turu pakiautomaat (Pärnu linn)</option>
+                            
+                                <option value="96077">Pärnu Ülejõe Selveri pakiautomaat (Pärnu linn)</option>
+                            
+                                <option value="96109">Pärnu-Jaagupi Grossi pakiautomaat (Põhja-Pärnumaa vald)</option>
+                            
+                                <option value="96148">Sauga Coop Konsumi pakiautomaat (Tori vald)</option>
+                            
+                                <option value="96316">Sindi Maxima X pakiautomaat (Tori vald)</option>
+                            
+                                <option value="96252">Tammiste Coop Konsumi pakiautomaat (Tori vald)</option>
+                            
+                                <option value="96253">Tori pakiautomaat (Tori vald)</option>
+                            
+                                <option value="96269">Tõstamaa pakiautomaat (Pärnu linn)</option>
+                            
+                                <option value="96263">Varbla pakiautomaat (Lääneranna vald)</option>
+                            
+                                <option value="96264">Virtsu pakiautomaat (Lääneranna vald)</option>
+                            
+                                <option value="96168">Vändra Coop Konsumi pakiautomaat (Põhja-Pärnumaa vald)</option>
+                            </optgroup>
+                                                                            
+                            <optgroup label="Tartu maakond">
+                                <option value="96179">Elva Arbimäe Coop Konsumi pakiautomaat (Elva vald)</option>
+                            
+                                <option value="96047">Elva Turuplatsi Coop Konsumi pakiautomaat (Elva vald)</option>
+                            
+                                <option value="96170">Ihaste Coop Konsumi pakiautomaat (Luunja vald)</option>
+                            
+                                <option value="96242">Kambja Coop Konsumi pakiautomaat (Kambja vald)</option>
+                            
+                                <option value="96169">Kõrveküla Coop kaupluse pakiautomaat (Tartu vald)</option>
+                            
+                                <option value="96271">Luunja pakiautomaat (Luunja vald)</option>
+                            
+                                <option value="96152">Nõo vallamaja pakiautomaat (Nõo vald)</option>
+                            
+                                <option value="96150">Puhja Coop Konsumi pakiautomaat (Elva vald)</option>
+                            
+                                <option value="96151">Rõngu Coop Konsumi pakiautomaat (Elva vald)</option>
+                            
+                                <option value="96212">Tabivere Saadjärve Coop kaupluse pakiautomaat (Tartu vald)</option>
+                            
+                                <option value="96310">Tartu Aardla Selveri pakiautomaat (Tartu linn)</option>
+                            
+                                <option value="96319">Tartu Anne 40 Maxima X pakiautomaat (Tartu linn)</option>
+                            
+                                <option value="96126">Tartu Anne Selveri pakiautomaat (Tartu linn)</option>
+                            
+                                <option value="96020">Tartu Eedeni pakiautomaat (Tartu linn)</option>
+                            
+                                <option value="96241">Tartu Ilmatsalu Maxima X pakiautomaat (Tartu linn)</option>
+                            
+                                <option value="96213">Tartu Jaamamõisa Selveri pakiautomaat (Tartu linn)</option>
+                            
+                                <option value="96187">Tartu Karete Coop Konsumi pakiautomaat (Tartu linn)</option>
+                            
+                                <option value="96061">Tartu Kesklinna Keskuse pakiautomaat (Tartu linn)</option>
+                            
+                                <option value="96068">Tartu Kivilinna Coop Konsumi pakiautomaat (Tartu linn)</option>
+                            
+                                <option value="96165">Tartu Kvartali Keskuse pakiautomaat (Tartu linn)</option>
+                            
+                                <option value="96074">Tartu Lembitu Coop Konsumi pakiautomaat (Tartu linn)</option>
+                            
+                                <option value="96019">Tartu Lõunakeskuse pakiautomaat (Tartu linn)</option>
+                            
+                                <option value="96127">Tartu Raadi Maxima XX pakiautomaat (Tartu linn)</option>
+                            
+                                <option value="96087">Tartu Rebase Rimi pakiautomaat (Tartu linn)</option>
+                            
+                                <option value="96088">Tartu Ringtee Selveri pakiautomaat (Tartu linn)</option>
+                            
+                                <option value="96136">Tartu Saare Maxima X pakiautomaat (Tartu linn)</option>
+                            
+                                <option value="96021">Tartu Sõbrakeskuse pakiautomaat (Tartu linn)</option>
+                            
+                                <option value="96039">Tartu Tasku keskuse pakiautomaat (Tartu linn)</option>
+                            
+                                <option value="96321">Tartu Tuglase Rimi pakiautomaat (Tartu linn)</option>
+                            
+                                <option value="96022">Tartu Ujula Coop Konsumi pakiautomaat (Tartu linn)</option>
+                            
+                                <option value="96309">Tartu Vahi Selveri pakiautomaat (Tartu linn)</option>
+                            
+                                <option value="96060">Tartu Veeriku Selveri pakiautomaat (Tartu linn)</option>
+                            
+                                <option value="96178">Tõrvandi Coop Konsumi pakiautomaat (Kambja vald)</option>
+                            
+                                <option value="96177">Ülenurme Coop Konsumi pakiautomaat (Kambja vald)</option>
+                            </optgroup>
+                                                                            
+                            <optgroup label="Lääne maakond">
+                                <option value="96128">Haapsalu Kastani pakiautomaat (Haapsalu linn)</option>
+                            
+                                <option value="96033">Haapsalu Kaubamaja pakiautomaat (Haapsalu linn)</option>
+                            
+                                <option value="96196">Risti Coop kaupluse pakiautomaat (Lääne-Nigula vald)</option>
+                            
+                                <option value="96262">Taebla Bussijaama pakiautomaat (Lääne-Nigula vald)</option>
+                            
+                                <option value="96164">Uuemõisa Coop Konsumi pakiautomaat (Haapsalu linn)</option>
+                            
+                                <option value="91999">Vormsi pakiväljastus (Vormsi vald)</option>
+                            </optgroup>
+                                                                            
+                            <optgroup label="Rapla maakond">
+                                <option value="96224">Järvakandi Kandi Konsumi pakiautomaat (Kehtna vald)</option>
+                            
+                                <option value="96259">Kaiu Huvikooli pakiautomaat (Rapla vald)</option>
+                            
+                                <option value="96221">Kehtna Coop kaupluse pakiautomaat (Kehtna vald)</option>
+                            
+                                <option value="96094">Kohila Coop Konsumi pakiautomaat (Kohila vald)</option>
+                            
+                                <option value="96051">Märjamaa Maxima X pakiautomaat (Märjamaa vald)</option>
+                            
+                                <option value="96220">Rapla Coop Konsumi pakiautomaat (Rapla vald)</option>
+                            
+                                <option value="96043">Rapla Maxima X pakiautomaat (Rapla vald)</option>
+                            </optgroup>
+                                                                            
+                            <optgroup label="Jõgeva maakond">
+                                <option value="96044">Jõgeva Postkontori pakiautomaat (Jõgeva vald)</option>
+                            
+                                <option value="96163">Mustvee Coop Konsumi pakiautomaat (Mustvee vald)</option>
+                            
+                                <option value="96257">Palamuse pakiautomaat (Jõgeva vald)</option>
+                            
+                                <option value="96048">Põltsamaa Selveri pakiautomaat (Põltsamaa vald)</option>
+                            
+                                <option value="96121">Torma Coop kaupluse pakiautomaat (Jõgeva vald)</option>
+                            </optgroup>
+                                                                            
+                            <optgroup label="Põlva maakond">
+                                <option value="96254">Kanepi Vallamaja pakiautomaat (Kanepi vald)</option>
+                            
+                                <option value="96045">Põlva Kaubamaja pakiautomaat (Põlva vald)</option>
+                            
+                                <option value="96201">Põlva Meie Ostumarketi pakiautomaat (Põlva vald)</option>
+                            
+                                <option value="96073">Põlva Selveri pakiautomaat (Põlva vald)</option>
+                            
+                                <option value="96186">Räpina Coop Konsumi pakiautomaat (Räpina vald)</option>
+                            
+                                <option value="96095">Räpina Maxima X pakiautomaat (Räpina vald)</option>
+                            
+                                <option value="96322">Vastse-Kuuste Coop kaupluse pakiautomaat (Põlva vald)</option>
+                            
+                                <option value="96272">Veriora pakiautomaat (Räpina vald)</option>
+                            </optgroup>
+                                                                            
+                            <optgroup label="Saare maakond">
+                                <option value="96277">Kummeli Coop Konsumi pakiautomaat (Saaremaa vald)</option>
+                            
+                                <option value="96034">Kuressaare Maxima XX pakiautomaat (Saaremaa vald)</option>
+                            
+                                <option value="96065">Kuressaare Smuuli Coop Konsumi pakiautomaat (Saaremaa vald)</option>
+                            
+                                <option value="96276">Kärla pakiautomaat (Saaremaa vald)</option>
+                            
+                                <option value="96274">Leisi pakiautomaat (Saaremaa vald)</option>
+                            
+                                <option value="96161">Muhu Liiva Alexela pakiautomaat (Muhu vald)</option>
+                            
+                                <option value="96106">Orissaare Coop Konsumi pakiautomaat (Saaremaa vald)</option>
+                            
+                                <option value="96199">Saaremaa Kaubamaja pakiautomaat (Saaremaa vald)</option>
+                            
+                                <option value="96318">Salme Coop Konsumi pakiautomaat (Saaremaa vald)</option>
+                            
+                                <option value="96275">Valjala pakiautomaat (Saaremaa vald)</option>
+                            </optgroup>
+                                                                            
+                            <optgroup label="Hiiu maakond">
+                                <option value="96156">Käina Coop Konsumi pakiautomaat (Hiiumaa vald)</option>
+                            
+                                <option value="96046">Kärdla Hiiu Coop Konsumi pakiautomaat (Hiiumaa vald)</option>
+                            
+                                <option value="96210">Kärdla Tormi Coop Konsumi pakiautomaat (Hiiumaa vald)</option>
+                            </optgroup>
+                                                                            
+                            <optgroup label="Valga maakond">
+                                <option value="96137">Otepää Maxima X pakiautomaat (Otepää vald)</option>
+                            
+                                <option value="96256">Puka pakiautomaat (Otepää vald)</option>
+                            
+                                <option value="96053">Tõrva Maxima X pakiautomaat (Tõrva vald)</option>
+                            
+                                <option value="96042">Valga Maxima XX pakiautomaat (Valga vald)</option>
+                            
+                                <option value="96227">Valga Siili Coop Konsumi pakiautomaat (Valga vald)</option>
+                            </optgroup>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <h2>My data</h2>
+            <div id="personal-data">
+                <div>
+                    <label>Name:</label>
+                    <input type="text" id="personal-data-name1" class="my-data-inputs" oninput="changePersonalData('name1',this.value)">
+                </div>
+                <div>
+                    <label>Family name:</label>
+                    <input type="text" id="personal-data-name2" class="my-data-inputs" oninput="changePersonalData('name2',this.value)">
+                </div>
+                <div>
+                    <label>Phone number:</label>
+                    <input type="number" id="personal-data-phone" class="my-data-inputs" oninput="changePersonalData('phoneNumber',this.value)">
+                </div>
+                <div>
+                    <label>Email:</label>
+                    <input type="email" id="personal-data-email" class="my-data-inputs" oninput="changePersonalData('email',this.value)">
+                </div>
+                <div>
+                    <label>Address:</label>
+                    <input type="text" id="personal-data-address" class="my-data-inputs" oninput="changePersonalData('address',this.value)">
+                </div>
+            </div>
+            <span id="finish-form-msg"></span>
+            <button id="submit-order" onclick="sendConfirmationEmail()">order</button>
+        </div>
+    </div>
+    <footer-component></footer-component>
+</body>
+</html>

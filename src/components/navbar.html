@@ -1,0 +1,28 @@
+<div id="navbar">
+    <a href="/">
+        <img src="/img/vegato_logo.png" id="navbar-logo" alt="vegato logo">
+    </a>
+    <ul>
+        <li class="navbar-li"><a href="/">HOME</a></li>
+        <li class="navbar-li dropdown">
+            FEED
+            <div class="food dropdown-content">
+                <button onclick='location.href="/cats"'>CATS</button>
+                <button onclick='location.href="/dogs"'>DOGS</button>
+            </div>
+        </li>
+        <li class="navbar-li"><a href="/why">WHY</a></li>
+        <li class="navbar-li"><a href="/cart">
+            <img src="/img/cart.svg" id="cart-icon" alt="cart">
+            <div id="cart-counter"></div>
+        </a></li>
+        <li class="navbar-li dropdown">
+            <img src="/img/globe.png" id="language-icon" alt="language">
+            <div class="language dropdown-content">
+                <button onclick="switchLanguage('est')">EST</button>
+                <button onclick="switchLanguage('rus')">RUS</button>
+                <button onclick="switchLanguage('eng')">ENG</button>
+            </div>
+        </li>
+    </ul>
+</div> 

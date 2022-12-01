@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Vegato – vegan lemmikloomatoit</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta property="og:title" content="Vegato – vegan lemmikloomatoit">
+    <meta property="og:description" content="Vegan lemmikloomatoit kassidele ja koertele.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="img/icons/favicon.png">
+    <!--<meta property="og:url" content="">-->
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-W50M2BKNL1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-W50M2BKNL1');
+    </script>
+
+    <!--Icons-->
+    <link href="/img/icons/favicon-32.png" rel="icon" sizes="32x32">
+
+    <!--Load CSS-->
+    <link href="/css/common.css" rel="stylesheet">
+    <link href="/css/navbar.css" rel="stylesheet">
+    <link href="/css/footer.css" rel="stylesheet">
+    <link href="/css/index.css" rel="stylesheet">
+
+    <!--Load javascript-->
+    <script src="/js/init.js" type="text/javascript"></script>
+    <script src="/js/script.js" type="text/javascript"></script>
+</head>
+<body>
+    <div id="background">
+        <img src="/img/background_blue.svg" alt="blue top">
+        <img src="/img/background_orange.svg" alt="orange top">
+        <img src="/img/background_orange.svg" alt="orange bottom">
+        <img src="/img/background_blue.svg" alt="blue bottom">
+        <img src="/img/paw_print.png" alt="paw print">
+        <img src="/img/paw_print.png" alt="paw print">
+        <img src="/img/paw_print.png" alt="paw print">
+        <img src="/img/paw_print.png" alt="paw print">
+    </div>
+
+    <div id="notice">
+        <p>Me veel oleme kauba soetamise etapis, kuid olete teretulnud ette tellima! Nii me teame, et olete huvitatud. Kauba lattu jõudmisel võtame teiega tasumise osas kindlasti ühendust!</p>
+    </div>
+    
+    <div id="navbar">
+    <a href="/est/">
+        <img src="/img/vegato_logo.png" id="navbar-logo" alt="vegato logo">
+    </a>
+    <ul>
+        <li class="navbar-li"><a href="/est/">ESILEHT</a></li>
+        <li class="navbar-li dropdown">
+            TOIT
+            <div class="food dropdown-content">
+                <button onclick='location.href="/est/cats"'>KASSID</button>
+                <button onclick='location.href="/est/dogs"'>KOERAD</button>
+            </div>
+        </li>
+        <li class="navbar-li"><a href="/est/why">MIKS</a></li>
+        <li class="navbar-li"><a href="/est/cart">
+            <img src="/img/cart.svg" id="cart-icon" alt="cart">
+            <div id="cart-counter"></div>
+        </a></li>
+        <li class="navbar-li dropdown">
+            <img src="/img/globe.png" id="language-icon" alt="language">
+            <div class="language dropdown-content">
+                <button onclick="switchLanguage('est')">EST</button>
+                <button onclick="switchLanguage('rus')">RUS</button>
+                <button onclick="switchLanguage('eng')">ENG</button>
+            </div>
+        </li>
+    </ul>
+</div> 
+
+    <div id="wrapper">
+        <div id="hero">
+            <div id="hero-images">
+                <img src="/img/dog.png" id="dog-hero" alt="dog-hero">
+                <img src="/img/feed.png" id="feed-img" alt="feed">
+            </div>
+            <div id="hero-text">
+                <h1>Taimne<br>lemmikloomatoit<br>optimaalseks<br>terviseks</h1>
+                <button onclick="location.href='#products'">osta kohe</button>
+            </div>
+        </div>
+
+        <div id="products">
+            <h2>Tooted</h2>
+            <div id="products-grid" href="#products">
+                <div id="cat-food">
+                    <div class="product-card-wrapper">
+                        <img src="/img/ginger_cat.png" id="cat-card" alt="cat">
+                        <a href="/est/cats"><img src="/img/cat_food.svg" class="feed-card" alt="cat food"></a>
+                        <div class="description">
+                            <h3>KUIVTOIT KASSIDELE</h3>
+                            <p>toitainerikas</p>
+                            <p>sobib igale suurusele</p>
+                        </div>
+                        <div class="input-div">
+                            <span class="span price-total">23 EUR (2 kg)</span>
+                            <span class="span price-kg">11.50 EUR/kg</span>
+                            <div id="cat-small-input" class="number-input">
+                                <button onclick="subtract(this)" class="minus"></button>
+                                <input id="cat-food-small-input" class="quantity" min="0" name="quantity" value="0" type="number">
+                                <button onclick="add(this)" class="plus"></button>
+                            </div>
+                            <div class="cart-quantity-wrapper">
+                                <span id="cat-food-small-quantity" class="span-quantity">0</span><span>&nbsp</span><span class="span-quantity">ostukorvis</span>
+                            </div>
+                        </div>
+                        <div class="input-div">
+                            <span class="span price-total">93.75 EUR (12.5 kg)</span>
+                            <span class="span price-kg">7.50 EUR/kg</span>
+                            <div id="cat-small-input" class="number-input">
+                                <button onclick="subtract(this)" class="minus"></button>
+                                <input id="cat-food-big-input" class="quantity" min="0" name="quantity" value="0" type="number">
+                                <button onclick="add(this)" class="plus"></button>
+                            </div>
+                            <div class="cart-quantity-wrapper">
+                                <span id="cat-food-big-quantity" class="span-quantity">0</span><span>&nbsp</span><span class="span-quantity">ostukorvis</span>
+                            </div>
+                        </div>
+                        <button class="add-cart" onclick="addCart('cat')">lisa ostukorvi</button>
+                    </div>
+                </div>
+                <div id="dog-food">
+                    <div class="product-card-wrapper">
+                        <img src="/img/dog.png" id="dog-card" alt="dog">
+                        <a href="/est/dogs"><img src="/img/dog_food.svg" class="feed-card" alt="dog food"></a>
+                        <div class="description">
+                            <h3>KUIVTOIT KOERTELE</h3>
+                            <p>toitainerikas</p>
+                            <p>sobib igale suurusele</p>
+                        </div>
+                        <div class="input-div">
+                            <span class="span price-total">20 EUR (2 kg)</span>
+                            <span class="span price-kg">10 EUR/kg</span>
+                            <div id="cat-small-input" class="number-input">
+                                <button onclick="subtract(this,['dogFoodSmall'])" class="minus"></button>
+                                <input id="dog-food-small-input" class="quantity" min="0" name="quantity" value="0" type="number">
+                                <button onclick="add(this,['dogFoodSmall'])" class="plus"></button>
+                            </div>
+                            <div class="cart-quantity-wrapper">
+                                <span id="dog-food-small-quantity" class="span-quantity">0</span><span>&nbsp</span><span class="span-quantity">ostukorvis</span>
+                            </div>
+                        </div>
+                        <div class="input-div">
+                            <span class="span price-total">83.75 EUR (12.5 kg)</span>
+                            <span class="span price-kg">6.70 EUR/kg</span>
+                            <div id="cat-small-input" class="number-input">
+                                <button onclick="subtract(this)" class="minus"></button>
+                                <input id="dog-food-big-input" class="quantity" min="0" name="quantity" value="0" type="number">
+                                <button onclick="add(this)" class="plus"></button>
+                            </div>
+                            <div class="cart-quantity-wrapper">
+                                <span id="dog-food-big-quantity" class="span-quantity">0</span><span>&nbsp</span><span class="span-quantity">ostukorvis</span>
+                            </div>
+                        </div>
+                        <button class="add-cart" onclick="addCart('dog')">lisa ostukorvi</button>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <p id="formula-text">Loomaarstide poolt välja töötatud valem, mis põhineb euroopa lemmikloomatoidutööstuse föderatsiooni juhistel.</p>
+            <hr>
+            <div id="labels">
+                <img src="/img/vegan_label.png" alt="vegan label">
+                <img src="/img/cruelty_free_label.png" alt="cruelty free label">
+                <img src="/img/veterinary_label.png" alt="veterinary label">
+            </div>
+        </div>
+    </div>
+    <footer>
+    <div id="footer-content-container">
+        <div id="footer-grid-content-container">
+            <div id="copyright-container">
+                <img src="/img/vegato_logo_white.png" id="footer-logo" alt="vegato logo">
+                <p>Copyright © 2022 Vegato TÜ</p>
+                <a href="mailto:info@vegato-pet-shop.com">info@vegato-pet-shop.com</a>
+            </div>
+            <div id="newsletter-container">
+                <h4>subscribe to our newsletter</h4>
+                <input id="newsletterEmailInput" type="text" placeholder="Add your email">
+                <button id="newsletterEmailButton">sign up</button>
+            </div>
+        </div>
+    </div>
+</footer>
+</body>
+</html>

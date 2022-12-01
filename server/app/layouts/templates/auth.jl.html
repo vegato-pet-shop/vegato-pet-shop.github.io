@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Chiron - The Ultimate Health</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta property="og:title" content="Chiron - The Ultimate Health">
+    <meta property="og:description" content="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eu placerat leo. Proin hendrerit sem ipsum, quis laoreet mauris vulputate in. Curabitur vestibulum neque eleifend, sodales orci sit amet, volutpat massa. Morbi vitae ex at eros aliquam auctor.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://images.saymedia-content.com/.image/ar_4:3%2Cc_fill%2Ccs_srgb%2Cfl_progressive%2Cq_auto:eco%2Cw_1200/MTc2Mjk3MzgwNzA5NDc1NTAx/the-centaur-chiron-in-greek-mythology.jpg">
+    <meta property="og:url" content="">
+
+    <!--Load fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Space+Grotesk" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap" rel="stylesheet">
+
+    <!--Load CSS-->
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/footer.css">
+
+    <!--Load javascript-->
+
+    <!--Load libraries-->
+    <script type = 'module' src='js/libraries/authTools.js'></script>
+</head>
+<body>
+    <loadscreen-component></loadscreen-component>
+
+    <% if authenticated() %>
+        <navbar-logged></navbar-logged>
+    <% else %>
+        <navbar-not-logged></navbar-not-logged>
+    <% end %>
+
+    <cloud-generator></cloud-generator>
+
+    <%@yield%>
+
+    <% if authenticated() %>
+        <footer-logged></footer-logged>
+    <% else %>
+        <footer-not-logged></footer-not-logged>
+    <% end %>
+</body>
+</html>

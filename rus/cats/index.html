@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Vegato - растительный корм</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta property="og:title" content="Vegato - растительный корм">
+    <meta property="og:description" content="Растительный корм для котов и собак.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="img/icons/favicon.png">
+    <!--<meta property="og:url" content="">-->
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-W50M2BKNL1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-W50M2BKNL1');
+    </script>
+
+    <!--Icons-->
+    <link href="/img/icons/favicon-32.png" rel="icon" sizes="32x32">
+
+    <!--Load CSS-->
+    <link href="/css/common.css" rel="stylesheet">
+    <link href="/css/navbar.css" rel="stylesheet">
+    <link href="/css/footer.css" rel="stylesheet">
+    <link href="/css/feed.css" rel="stylesheet">
+
+    <!--Load javascript-->
+    <script src="/js/init.js" type="text/javascript"></script>
+    <script src="/js/script.js" type="text/javascript"></script>
+    <script src="/js/feed.js" type="text/javascript"></script>
+</head>
+<body>
+    <div id="background">
+        <img src="/img/background_blue.svg" alt="blue top">
+        <img src="/img/background_orange.svg" alt="orange top">
+        <img src="/img/background_orange.svg" alt="orange bottom">
+        <img src="/img/background_blue.svg" alt="blue bottom">
+        <img src="/img/paw_print.png" alt="paw print">
+        <img src="/img/paw_print.png" alt="paw print">
+        <img src="/img/paw_print.png" alt="paw print">
+        <img src="/img/paw_print.png" alt="paw print">
+    </div>
+
+    <div id="notice">
+        <p>Мы еще находимся на этапе закупки товара, но вы можете сделать предзаказ! Таким образом мы будем знать, что вы заинтересованы, и свяжемся с вами, когда у нас будет товар, чтобы договориться об оплате.</p>
+    </div>
+    
+    <div id="navbar">
+    <a href="/rus/">
+        <img src="/img/vegato_logo.png" id="navbar-logo" alt="vegato logo">
+    </a>
+    <ul>
+        <li class="navbar-li"><a href="/rus/">ГЛАВНАЯ</a></li>
+        <li class="navbar-li dropdown">
+            КОРМ
+            <div class="food dropdown-content">
+                <button onclick='location.href="/rus/cats"'>КОТЫ</button>
+                <button onclick='location.href="/rus/dogs"'>СОБАКИ</button>
+            </div>
+        </li>
+        <li class="navbar-li"><a href="/rus/why">ПОЧЕМУ</a></li>
+        <li class="navbar-li"><a href="/rus/cart">
+            <img src="/img/cart.svg" id="cart-icon" alt="cart">
+            <div id="cart-counter"></div>
+        </a></li>
+        <li class="navbar-li dropdown">
+            <img src="/img/globe.png" id="language-icon" alt="language">
+            <div class="language dropdown-content">
+                <button onclick="switchLanguage('est')">EST</button>
+                <button onclick="switchLanguage('rus')">RUS</button>
+                <button onclick="switchLanguage('eng')">ENG</button>
+            </div>
+        </li>
+    </ul>
+</div> 
+
+    <div id="wrapper">
+        <div id="products">
+            <h2>Корм для котов</h2>
+            <div id="food">
+                <div class="product-card-wrapper">
+                    <img src="/img/cat_food.svg" class="feed-card" alt="cat food">
+                    <div id="product-data">
+                        <div class="description">
+                            <h3>СУХОЙ КОРМ ДЛЯ КОТОВ</h3>
+                            <p>богат питательными веществами</p>
+                            <p>подходит всем размерам</p>
+                        </div>
+                        <div class="input-div">
+                            <span class="span price-total">23 EUR (2 kg)</span>
+                            <span class="span price-kg">11.50 EUR/kg</span>
+                            <div id="cat-small-input" class="number-input">
+                                <button onclick="subtract(this)" class="minus"></button>
+                                <input id="cat-food-small-input" class="quantity" min="0" name="quantity" value="0" type="number">
+                                <button onclick="add(this)" class="plus"></button>
+                            </div>
+                            <div class="cart-quantity-wrapper">
+                                <span id="cat-food-small-quantity" class="span-quantity">0</span><span>&nbsp</span><span class="span-quantity">в корзине</span>
+                            </div>
+                        </div>
+                        <div class="input-div">
+                            <span class="span price-total">93.75 EUR (12.5 kg)</span>
+                            <span class="span price-kg">7.50 EUR/kg</span>
+                            <div id="cat-small-input" class="number-input">
+                                <button onclick="subtract(this)" class="minus"></button>
+                                <input id="cat-food-big-input" class="quantity" min="0" name="quantity" value="0" type="number">
+                                <button onclick="add(this)" class="plus"></button>
+                            </div>
+                            <div class="cart-quantity-wrapper">
+                                <span id="cat-food-big-quantity" class="span-quantity">0</span><span>&nbsp</span><span class="span-quantity">в корзине</span>
+                            </div>
+                        </div>
+                        <button class="add-cart" onclick="addCart('cat')">в корзину</button>
+                    </div>
+                </div>
+            </div>
+            <div id="buttons-line">
+                <button onclick="changePane(0)">Ингредиенты</button>
+                <button onclick="changePane(1)">Пищевая ценность</button>
+                <button onclick="changePane(2)">Показания</button>
+            </div>
+            <div id="texts">
+                <div id="ingredients">
+                    <h3>Ветеринарная формула</h3>
+                    <p>Состав: Кукурузный белок, рис, кукуруза, подсолнечное масло, горох, обезвоженный картофель, тапиока, рисовые отруби, дрожжи, рисовый белок, пшеничный белок, растительный гидролизат (вегетарианский вкус), яблочная мякоть, карбонат кальция, ячмень, масло водорослей, водоросли, обезвоженные овощи (тыква, люцерна, морковь, слива, клюква, петрушка, шалфей, тимьян, лакрица, собачья роза, спирулина, орегано, мята, юкка Шидигера (уменьшает запах экскрементов питомца), цикорий (богатый источник ФОС)), хлорид, хлорид натрия, монокальцийфосфат, растительные экстракты ( цитрусовые, кожура винограда, зеленый чай, одуванчик, алоэ вера).</p>
+                    <p>Формула разработана ветеринарами на основе рекомендаций европейской федерации производителей кормов для домашних животных (FEDIAF).</p>
+                    <p>Полноценное питание, никаких добавок не требуется.</p>
+                    <p>Содержит оптимальное количество таурина, витамина А, витамина В12 и арахидоновой кислоты: веществ, считающихся незаменимыми для котов, в дополнение к L-метионину, L-триптофану и L-лизину.</p>
+
+                    <h3>Улучшает жизни котов:</h3>
+                    <p>Содержит метионин и клюкву для защиты мочевыделительной системы от инфекций и кристаллов.</p>
+                    <p>Содержит антиоксидантные токоферолы.</p>
+                    <p>Содержит цикорий, богатый ФОС. Содержит L-триптофан и L-лизин.</p>
+                    <p>Содержит тыкву со здоровой клетчаткой, которая помогает регулировать пищеварение.</p>
+                    <p>Содержит тапиоку, которая укрепляет кости и содержит много железа.</p>
+                    <p>С низким содержанием жира: подходит для кастрированных животных, животных с избыточным весом и ожирением.</p>
+                </div>
+                <div id="nutri-info">
+                    <h3>100% растительный и натуральный:</h3>
+                    <p>Не содержит вызывающих привыкание веществ, лекарств, токсинов и гормонов, содержащихся в мясных продуктах.</p>
+                    <p>Не содержит химических ароматизаторов, содержит натуральные ароматизаторы: вещества, извлеченные непосредственно из природы, без вредных последствий для здоровья, связанных с химическими ароматизаторами.</p>
+
+                    <h3>Витамины, провитамины, микроэлементы и минералы на кг:</h3>
+                    <div class="no-margin">
+                        <p>Vitamin A 22000 UI</p>
+                        <p>Vitamin D3 1700 UI</p>
+                        <p>Vitamin E 180 мг</p>
+                        <p>Vitamin K3 3.10 мг</p>
+                        <p>Vitamin B1 8.99 мг</p>
+                        <p>Vitamin B2 12.40 мг</p>
+                        <p>Vitamin B3 84.88 мг</p>
+                        <p>Vitamin B5 33.76 мг</p>
+                        <p>Vitamin B6 8.27 мг</p>
+                        <p>Vitamin B7 0.21 мг</p>
+                        <p>Vitamin B9 2.07mg</p>
+                        <p>Vitamin B12 0.06 мг</p>
+                        <p>L-threonine 200 мг</p>
+                        <p>L-lysine monohydrochlorohydrate 750 мг</p>
+                        <p>L-tryptophan 100 мг</p>
+                        <p>DL-methionine 800 мг</p>
+                        <p>Taurine 1500 мг</p>
+                        <p>Iron (iron (II) sulphate, monohydrate) 75 мг</p>
+                        <p>Iodine (potassium iodide) 3.5 мг</p>
+                        <p>Copper (copper (II) sulphate pentahydrate) 10 мг</p>
+                        <p>Manganese (manganese sulphate monohydrate) 7.5 мг</p>
+                        <p>Zinc (zinc oxide 120 мг; amino acid zinc chelate hydrate) 25 мг</p>
+                        <p>Selenium (sodium selenite) 0.13 мг</p>
+                        <p>Technological additives: Tocopherol extracts from vegetable oils.</p>
+                    </div>
+
+                    <h3>Аналитические компоненты:</h3>
+                    <div class="no-margin">
+                        <p>Сырой белок 28%</p>
+                        <p>Жиры 12%</p>
+                        <p>Сырая клетчатка 3%</p>
+                        <p>Органические вещества 6%</p>
+                        <p>Кальций 0.8%</p>
+                        <p>Фосфор 0.75%</p>
+                        <p>ЭПК + ДГК 0.09%</p>
+                        <p>Арахидоновая кислота 0.06%</p>
+                        <p>Метаболизируемая энергия 3690ккал/кг</p>
+                    </div>
+                </div>
+                <div id="uses">
+                    <h3>Подходит для: </h3>
+                    <p>Здоровые коты, у которых нет особых потребностей в питании.</p>
+                    <p>Тучные коты, которым необходимо похудеть.</p>
+                    <p>Коты с аллергией или непереносимостью продуктов животного происхождения.</p>
+                    <p>Коты с проблемами кожи.</p>
+                    <p>Коты с артрозом.</p>
+                    <p>Коты с ослабленным иммунитетом.</p>
+                    <p>Кастрированные коты.</p>
+                    <p>Коты, у которых была кристаллурия.</p>
+                    <p>Беременные и кормящие кошки.</p>
+                    <p>Для всех пород и размеров.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+    <div id="footer-content-container">
+        <div id="footer-grid-content-container">
+            <div id="copyright-container">
+                <img src="/img/vegato_logo_white.png" id="footer-logo" alt="vegato logo">
+                <p>Copyright © 2022 Vegato TÜ</p>
+                <a href="mailto:info@vegato-pet-shop.com">info@vegato-pet-shop.com</a>
+            </div>
+            <div id="newsletter-container">
+                <h4>subscribe to our newsletter</h4>
+                <input id="newsletterEmailInput" type="text" placeholder="Add your email">
+                <button id="newsletterEmailButton">sign up</button>
+            </div>
+        </div>
+    </div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Vegato - vegan pet food</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta property="og:title" content="Vegato - vegan pet food">
+    <meta property="og:description" content="Vegan pet food for cats and dogs.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="img/icons/favicon.png">
+    <!--<meta property="og:url" content="">-->
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-W50M2BKNL1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-W50M2BKNL1');
+    </script>
+
+    <!--Icons-->
+    <link href="/img/icons/favicon-32.png" rel="icon" sizes="32x32">
+
+    <!--Load fonts-->
+    <link href='https://fonts.googleapis.com/css?family=Space+Grotesk' rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@700&display=swap' rel="stylesheet">
+
+    <!--Load CSS-->
+    <link href="/css/common.css" rel="stylesheet">
+    <link href="/css/navbar.css" rel="stylesheet">
+    <link href="/css/footer.css" rel="stylesheet">
+    <link href="/css/why.css" rel="stylesheet">
+
+    <!--Load javascript-->
+    <script src="/js/init.js" type="text/javascript"></script>
+    <script src="/js/script.js" type="text/javascript"></script>
+</head>
+<body>
+    <div id="background">
+        <img src="/img/background_blue.svg" alt="blue top">
+        <img src="/img/background_orange.svg" alt="orange top">
+        <img src="/img/background_orange.svg" alt="orange bottom">
+        <img src="/img/background_blue.svg" alt="blue bottom">
+        <img src="/img/paw_print.png" alt="paw print">
+        <img src="/img/paw_print.png" alt="paw print">
+        <img src="/img/paw_print.png" alt="paw print">
+        <img src="/img/paw_print.png" alt="paw print">
+    </div>
+
+    <div id="notice">
+        <p>We are still in the process of acquiring stock, but you are welcome to pre-order so we know that you are interested. We are going to contact you when stock is available to arrange payment.</p>
+    </div>
+    
+    <div id="navbar">
+    <a href="/eng/">
+        <img src="/img/vegato_logo.png" id="navbar-logo" alt="vegato logo">
+    </a>
+    <ul>
+        <li class="navbar-li"><a href="/eng/">HOME</a></li>
+        <li class="navbar-li dropdown">
+            FEED
+            <div class="food dropdown-content">
+                <button onclick='location.href="/eng/cats"'>CATS</button>
+                <button onclick='location.href="/eng/dogs"'>DOGS</button>
+            </div>
+        </li>
+        <li class="navbar-li"><a href="/eng/why">WHY</a></li>
+        <li class="navbar-li"><a href="/eng/cart">
+            <img src="/img/cart.svg" id="cart-icon" alt="cart">
+            <div id="cart-counter"></div>
+        </a></li>
+        <li class="navbar-li dropdown">
+            <img src="/img/globe.png" id="language-icon" alt="language">
+            <div class="language dropdown-content">
+                <button onclick="switchLanguage('est')">EST</button>
+                <button onclick="switchLanguage('rus')">RUS</button>
+                <button onclick="switchLanguage('eng')">ENG</button>
+            </div>
+        </li>
+    </ul>
+</div> 
+
+    <div id="wrapper">
+        <div id="products">
+            <div id="texts">
+                <h2>Why plant-based?</h2>
+                <p>Conventional meat-based pet food uses ingredients not suited for human consumption. This means that there are much less regulations in place which results in <b>wide-spread contamination</b> with toxic compounds such as:</p>
+                <ul>
+                    <li>An ongoing and increasing contamination with toxic elements. <b>Heavy metals</b> including arsenic, cadmium, nickel, lead, antimony, <b>radioactive elements</b> such as uranium and thorium and other elements such as beryllium routinely go way above safe limits. [1,2]</li>
+                    <li>Endocrine disrupting compounds such as PCBs and PBDEs. [5]</li>
+                    <li>Nitrate and nitrite used in meat processing are routinely <b>two to three times the safety limit</b>. [2] Chronic exposure can result in cardiac and thyroid diseases as well as cancer. [4]</li>
+                    <li><b>Mycotoxin contamination</b> above safe limits of all products irrespective of marketing channels. The long-term exposure to mycotoxins is implicated in numerous clinical conditions such as vomiting, reduced immunity and cancer. [3]</li>
+                </ul>
+                <p>VeggieAnimals plant-based pet food is formulated from human grade ingredients which ensures that your pet is kept as healthy as possible and does not suffer needlessly from contaminants.</p>
+                <img src="/img/feed_arrangement.jpg" id="feed-arrangement" alt="feed arrangement">
+                <p><b>References:</b></p>
+                <ol>
+                    <li>Atkins, P., Restivo, T., & Lockerman, B. (2021). Heavy Metals in Pet Food: Changes in Heavy Metal Contamination in Pet Food Over the Past Decade. Spectroscopy Online. <a href="https://www.spectroscopyonline.com/view/heavy-metals-in-pet-food-changes-over-the-past-decade">https://www.spectroscopyonline.com/view/heavy-metals-in-pet-food-changes-over-the-past-decade</a></li>
+                    <li>Abd-Elhakim, Y. M., El Sharkawy, N. I., & Moustafa, G. G. (2016). An investigation of selected chemical contaminants in commercial pet foods in Egypt. Journal of Veterinary Diagnostic Investigation, 28(1), 70–75. <a href="https://doi.org/10.1177/1040638715624733">https://doi.org/10.1177/1040638715624733</a></li>
+                    <li>Singh, S. D., Baijnath, S., & Chuturgoon, A. A. (2017). A comparison of mycotoxin contamination of premium and grocery brands of pelleted cat food in South Africa. Journal of the South African Veterinary Association, 88. <a href="https://doi.org/10.4102/jsava.v88i0.1480">https://doi.org/10.4102/jsava.v88i0.1480</a></li>
+                    <li>Hemopet (2020). How Do Nitrates and Nitrites Affect Our Companion Dogs? <a href="https://hemopet.org/how-do-nitrates-nitrites-affect-dogs">https://hemopet.org/how-do-nitrates-nitrites-affect-dogs</a></li>
+                    <li>Braouezec, C., Enriquez, B., Blanchard, M., Chevreuil, M., & Teil, M. J. (2016). Cat serum contamination by phthalates, PCBs, and PBDEs versus food and indoor air. Environmental Science and Pollution Research, 23(10), 9574–9584. <a href="https://doi.org/10.1007/s11356-016-6063-0">https://doi.org/10.1007/s11356-016-6063-0</a></li>
+                </ol>
+            </div> 
+        </div>
+    </div>
+    <footer>
+    <div id="footer-content-container">
+        <div id="footer-grid-content-container">
+            <div id="copyright-container">
+                <img src="/img/vegato_logo_white.png" id="footer-logo" alt="vegato logo">
+                <p>Copyright © 2022 Vegato TÜ</p>
+                <a href="mailto:info@vegato-pet-shop.com">info@vegato-pet-shop.com</a>
+            </div>
+            <div id="newsletter-container">
+                <h4>subscribe to our newsletter</h4>
+                <input id="newsletterEmailInput" type="text" placeholder="Add your email">
+                <button id="newsletterEmailButton">sign up</button>
+            </div>
+        </div>
+    </div>
+</footer>
+</body>
+</html>

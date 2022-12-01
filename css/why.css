@@ -1,0 +1,76 @@
+#wrapper {
+    margin-top: 3.4rem;
+}
+
+/*---Products----------------------------------------------------------*/
+
+#products {
+    position: relative;
+    width: 100%;
+    margin-bottom: 3.4rem;
+    padding: 3rem 0.0rem;
+    background: var(--whitish);
+    border: 0.14rem solid black;
+    z-index: 1;
+}
+
+#products h2 {
+    text-align: center;
+    padding-bottom: 0.7rem;
+    width: fit-content;
+    margin: auto;
+    padding: 0 2rem;
+    border-bottom: 0.14rem solid black;
+}
+
+/*---------------------------------------------------------*/
+
+#texts {
+    position: relative;
+    margin: auto;
+    width: 85%;
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+#texts b {
+    font-family: "Tahoma", sans-serif;
+    font-size: 1.6rem;
+}
+
+#texts ul, #texts ol {
+    margin-left: 2rem;
+}
+
+#texts ul{
+    margin-bottom: 1rem;
+}
+
+#texts li {
+    font-family: "Tahoma", sans-serif;
+    font-size: 1.6rem;
+    margin-bottom: 0.5rem;
+}
+
+#texts h2 {
+    margin-bottom: 1.5rem;
+}
+
+#texts p {
+    margin-bottom: 1rem;
+}
+
+#texts a {
+    font-family: "Tahoma", sans-serif;
+    font-size: 1.6rem;
+    color: var(--orange)
+}
+
+#feed-arrangement {
+    display: block;
+    position: relative;
+    max-width: 30rem;
+    margin: auto;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}

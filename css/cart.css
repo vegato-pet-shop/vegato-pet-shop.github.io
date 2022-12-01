@@ -1,0 +1,218 @@
+#pane {
+    position: relative;
+    width: 100%;
+    margin-top: 3.4rem;
+    margin-bottom: 3.4rem;
+    padding: 2.73rem 5.46rem;
+    background: rgba(253, 251, 254, 0.74);
+    border: 0.136rem solid black;
+    z-index: 1;
+}
+
+#pane h2 {
+    text-align: center;
+    margin: auto;
+    width: max-content;
+    padding: 0rem 2rem;
+    border-bottom: 0.136rem solid black;
+}
+
+#cart {
+    margin-top: 1.365rem;
+    margin-bottom: 3.4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+}
+
+#products-table {
+    display: grid;
+    grid-template-columns: auto auto max-content;
+    justify-content: space-between;
+    overflow: hidden;
+    border-top: 0.171rem solid;
+    border-bottom: 0.171rem solid;
+    padding: 1.3rem 0;
+    row-gap: 1rem;
+    column-gap: 1rem;
+}
+
+.products-quantity {
+    height: min-content;
+    margin-top: -0.175rem;
+}
+
+.products-quantity input {
+    font-size: 1.6rem;
+    font-weight: normal;
+    pointer-events: none; 
+}
+
+.products-price {
+    width: max-content;
+}
+
+#dpd-div {
+    position: relative;
+    margin-bottom: 1.365rem;
+}
+
+#products-price-total {
+    margin-top: 1.024rem;
+    text-align: right;
+}
+
+#dpd-pickup-point-select {
+    display: block;
+    width: 27.3rem;
+    margin-top: 0.682rem;
+}
+
+#omniva-pickup-point-select {
+    display: block;
+    width: 27.3rem;
+    margin-top: 0.682rem;
+}
+
+#transport {
+    margin-top: 1.365rem;
+    margin-bottom: 3.412rem;
+}
+
+.transport-type {
+    display: flex;
+    flex-direction: row;
+}
+
+.transport-type input {
+    margin-top: 0.0rem;
+    margin-right: 1.365rem;
+    width: 1.365rem;
+    accent-color: var(-dark-blue);
+}
+
+.transport-type select {
+    width: 13.65rem;
+}
+
+#personal-data {
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-columns: min-content min-content;
+    grid-template-rows: auto auto auto;
+    column-gap: 3rem;
+    margin-top: 1.365rem;
+    margin-bottom: 2.047rem;
+}
+
+#personal-data label {
+    display: block;
+}
+
+.my-data-inputs {
+    margin-bottom: 0.682rem;
+    width: 13rem;
+    height: 2.73rem;
+    font-size: 1.365rem;
+}
+
+#personal-data-email {
+    width: 22rem;
+}
+
+#personal-data-address {
+    width: 22rem;
+}
+
+#email-for-verification {
+    display: inline;
+}
+
+#verification-wrong-email {
+    color: red;
+    margin-left: 0.682rem;
+    font-size: 1.024rem;
+}
+
+#verify-email {
+    display: block;
+}
+
+#verification-code {
+    display: block;
+    margin-bottom: 0.682rem;
+}
+
+#verify-code {
+    display: block;
+}
+
+#submit-order {
+    position: relative;
+    display: block;
+    margin: auto;
+    margin-top: 0.0rem;
+    margin-bottom: 2rem;
+    padding: 0.8rem 2rem;
+    width: 10rem;
+    background:hsl(25, 88%, 75%);
+    border: 0.136rem solid black;
+    border-radius: 3rem;
+    font-size: 1.6rem;
+    filter: drop-shadow( 0rem 0rem 0.07rem rgba(0, 0, 0, 0.377));
+}
+
+#submit-order:hover {
+    filter: drop-shadow( 0rem 0rem 0.2rem rgba(0, 0, 0, 0.377));
+    background:hsl(25, 88%, 65%);
+}
+
+#submit-order:active {
+    filter: drop-shadow( 0rem 0rem 0.2rem rgba(0, 0, 0, 0.377));
+    background:hsl(25, 88%, 55%);
+}
+
+#overlay {
+    position: fixed;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    opacity: 50%;
+    z-index: 1000;
+}
+
+#overlay span {
+    color: white;
+    font-size: 3rem;
+    font-family: "Tahoma", sans-serif;
+}
+
+#finish-form-msg {
+    display: none;
+    margin: auto;
+    font-family: "Tahoma", sans-serif;
+    margin-bottom: 1rem;
+    width: fit-content;
+    color: red;
+    font-size: 1.5rem;
+}
+
+@media only screen and (min-height: 595px) {
+    #wrapper {
+        margin-top: 0;
+    }
+    #pane {
+        margin-bottom: 2rem;
+    }
+}
+
+@media only screen and (max-width: 645px) {
+    #personal-data {
+        grid-template-columns: 13.65rem;
+        grid-template-rows: auto auto auto auto auto;
+    }
+}

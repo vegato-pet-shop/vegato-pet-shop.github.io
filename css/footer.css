@@ -1,0 +1,97 @@
+/*---Footer----------------------------------------------------*/
+
+footer {
+    width: 100%;
+    background: var(--dark-blue);
+}
+
+#footer-logo {
+    width: 10rem;
+}
+
+#footer-content-container {
+    margin: auto;
+    max-width: 70rem;
+    width: 100vw;
+}
+
+#footer-grid-content-container {
+    display: grid;
+    justify-content: center;
+    margin-top: 1rem;
+    margin-bottom: 1.5rem;
+    margin-left: 2rem;
+    margin-right: 2rem;
+    grid-template-columns: max-content;
+}
+
+#copyright-container p {
+    font-size: 0.9rem;
+    color: white;
+    font-family: "Tahoma", sans-serif;
+}
+
+#copyright-container a {
+    font-size: 1.1rem;
+    color: white;
+    font-family: "Tahoma", sans-serif;
+}
+
+#newsletter-container {
+    display: none;
+    margin-top: 2rem;
+}
+
+#newsletter-container h4 {
+    color: #ffffff;
+    margin-bottom: 0.5rem;
+}
+
+#newsletterEmailInput {
+    height: 2rem;
+    width: 12rem;
+    border-radius: 1rem 0 0 1rem;
+    filter: drop-shadow( 0.07rem 0.14rem 0.07rem rgb(0 0 0 / 0.4));
+}
+
+#newsletterEmailInput {
+    padding-left: 0.7rem;
+    font-size: 1.1rem;
+}
+
+#newsletterEmailInput::placeholder {
+    padding-left: 0.5rem;
+    font: 1.1rem "Tahoma", sans-serif;
+}
+
+#newsletterEmailButton {
+    position: absolute;
+    width: 6.5rem;
+    height: 2rem;
+    background: var(--orange);
+    color: #ffffff;
+    font-family: "Tahoma", sans-serif;
+    font-size: 1.2rem;
+    border-radius: 0 1rem 1rem 0;
+    filter: drop-shadow( 0.07rem 0.14rem 0.07rem rgb(0 0 0 / 0.4));
+}
+
+#copyright-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#copyright-container img {
+    margin-bottom: 0.2rem;
+}
+
+#copyright-container p {
+    margin-bottom: 0.5rem;
+}
+
+#copyright-container a {
+    text-decoration: underline;
+}

@@ -1,0 +1,77 @@
+<!--
+
+DO NOT EDIT. CREATED AUTOMATICALLY
+
+-->    
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Chiron - Test</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta property="og:title" content="Chiron - Test">
+    <meta property="og:description" content="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eu placerat leo. Proin hendrerit sem ipsum, quis laoreet mauris vulputate in. Curabitur vestibulum neque eleifend, sodales orci sit amet, volutpat massa. Morbi vitae ex at eros aliquam auctor.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://images.saymedia-content.com/.image/ar_4:3%2Cc_fill%2Ccs_srgb%2Cfl_progressive%2Cq_auto:eco%2Cw_1200/MTc2Mjk3MzgwNzA5NDc1NTAx/the-centaur-chiron-in-greek-mythology.jpg">
+    <meta property="og:url" content="">
+
+    <!--Load libraries-->
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.3.2/dist/echarts.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.slim.js" integrity="sha256-HwWONEZrpuoh951cQD1ov2HUK5zA5DwJ1DNUXaM6FsY=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.3/gsap.min.js"></script>
+
+    <!--Load fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Space+Grotesk" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap" rel="stylesheet">
+
+    <!--Load css-->
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/test-basic.css">
+    <link rel="stylesheet" href="css/test.css">
+
+    <!--Load javascript-->
+
+
+    <!--Load components-->
+    <script type = 'module' src='js/components/cloud-generator.js'></script>
+    <script type = 'module' src='js/components/footer-logged.js'></script>
+    <script type = 'module' src='js/components/footer-not-logged.js'></script>
+    <script type = 'module' src='js/components/navbar-logged.js'></script>
+    <script type = 'module' src='js/components/navbar-not-logged.js'></script>
+    <script type = 'module' src='js/components/test-full.js'></script>
+    <script type = 'module' src='js/components/grass-item.js'></script>
+    <script type = 'module' src='js/components/test-demo.js'></script>
+    <script type = 'module' src='js/components/test-about.js'></script>
+    <script type = 'module' src='js/components/test-demographic.js'></script>
+    <script type = 'module' src='js/components/test-diet-info.js'></script>
+    <script type = 'module' src='js/components/test-diet.js'></script>
+    <script type = 'module' src='js/components/test-medical-bloodwork.js'></script>
+    <script type = 'module' src='js/components/test-medical-general.js'></script>
+    <script type = 'module' src='js/components/test-medical-info.js'></script>
+    <script type = 'module' src='js/components/test-results.js'></script>
+    <script type = 'module' src='js/components/test-demo-results.js'></script>
+    <script type = 'module' src='js/components/test-demo-selection.js'></script>
+    <script type = 'module' src='js/components/select-component.js'></script>
+</head>
+<body>
+    <% if authenticated() %>
+        <navbar-logged></navbar-logged>
+    <% else %>
+        <navbar-not-logged></navbar-not-logged>
+    <% end %>
+
+    <cloud-generator></cloud-generator>
+
+    <%@yield%>
+
+    <% if authenticated() %>
+        <footer-logged></footer-logged>
+    <% else %>
+        <footer-not-logged></footer-not-logged>
+    <% end %>
+</body>
+</html>

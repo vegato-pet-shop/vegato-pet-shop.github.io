@@ -1,0 +1,263 @@
+#wrapper {
+    margin-top: 3.4rem;
+}
+
+/*---Products----------------------------------------------------------*/
+
+#products {
+    position: relative;
+    width: 100%;
+    margin-bottom: 3.4rem;
+    padding: 3rem 0.0rem;
+    background: var(--whitish);
+    border: 0.14rem solid black;
+    z-index: 1;
+}
+
+#products h2 {
+    text-align: center;
+    padding-bottom: 0.7rem;
+    width: max-content;
+    white-space: nowrap;
+    margin: auto;
+    padding: 0 2rem;
+    border-bottom: 0.14rem solid black;
+}
+
+/*---Feeds---*/
+
+#food {
+    position: relative;
+    margin: auto;
+    width: 90%;
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+}
+
+.product-card-wrapper {
+    position: relative;
+    display: grid;
+    grid-template-columns: max-content max-content;
+    justify-content: center;
+    grid-gap: 8rem;
+    width: 90%;
+    margin: 1.7rem auto;
+    margin-bottom: 2.5rem;
+}
+
+#food h3 {
+    position: relative;
+    font-size: 1.84rem;
+    font-weight: 700;
+}
+
+#food p {
+    position: relative;
+    font-size: 1.4rem;
+}
+
+.input-div {
+    margin-top: 1.4rem;
+}
+
+.input-div > .span {
+    position: relative;
+    display: block;
+    font-family: "Tahoma", sans-serif;
+}
+
+.price-total {
+    font-size: 1.4rem;
+}
+
+.price-kg {
+    position: relative;
+    display: block;
+    font-size: 1.4rem;
+    font-family: "Tahoma", sans-serif;
+}
+
+/* Feed images */
+.feed-card {
+    position: relative;
+    display: block;
+    width: 13.65rem;
+    margin: auto;
+    filter: drop-shadow( 0.14rem 0.14rem 0.068rem rgba(0, 0, 0, 0.377));
+}
+
+.price-kg {
+    font-size: 1rem;
+}
+
+.number-input {
+    margin-top: 0.75rem;
+    margin-bottom: 0rem;
+}
+
+.cart-quantity-wrapper {
+    display: inline-flex;
+    margin-left: 1.5rem;
+}
+
+.span-quantity {
+    position: relative;
+    display: block;
+    top: 0.45rem;
+    font-size: 1.2rem;
+    font-family: "Tahoma", sans-serif;
+    color: var(--orange)
+}
+
+.quantity {
+    pointer-events: none; 
+}
+
+.add-cart {
+    position: relative;
+    display: block;
+    margin-top: 2rem;
+    padding: 0.8rem 2rem;
+    padding-top: 0.6rem;
+    background:hsl(25, 88%, 75%);
+    border: 0.14rem solid black;
+    border-radius: 3rem;
+    font-size: 1.6rem;
+    filter: drop-shadow( 0.1rem 0.1rem 0.07rem rgba(0, 0, 0, 0.377));
+}
+
+.add-cart:hover {
+    filter: drop-shadow( 0rem 0rem 0.2rem rgba(0, 0, 0, 0.377));
+    background:hsl(25, 88%, 65%);
+}
+
+.add-cart:active {
+    filter: drop-shadow( 0rem 0rem 0.2rem rgba(0, 0, 0, 0.377));
+    background:hsl(25, 88%, 55%);
+}
+
+@media only screen and (max-width: 600px) {
+    .product-card-wrapper {
+        grid-gap: 3rem;
+    }
+}
+
+/*---Formula---*/
+
+#products hr {
+    position: relative;
+    margin: auto;
+    border-top: 0.14rem solid black;
+    width: 35%;
+}
+
+#formula-text {
+    margin-left: 10%;
+    margin-right: 10%;
+    text-align: center;
+    font-size: 1.5rem;
+    padding: 2.73rem 0.0rem;
+    font-family: "Special";
+}
+
+/*---Labels---*/
+
+#labels {
+    display: flex;
+    margin-top: 3.4rem;
+    margin-bottom: 2rem;
+    justify-content: center;
+}
+
+#labels img {
+    width: 10rem;
+}
+
+/*---------------------------------------------------------*/
+
+#buttons-line {
+    width: max-content;
+    margin: auto;
+    filter: drop-shadow( 0rem 0rem 0.2rem rgba(0, 0, 0, 0.377));
+}
+
+#buttons-line * {
+    position: relative;
+    display: inline;
+    width: max-content;
+    margin-bottom: 3rem;
+    padding: 0.8rem 2rem;
+    background: var(--whitish);
+    border: 0.14rem solid black;
+    font-size: 1.6rem;
+}
+
+#buttons-line *:hover {
+    filter: brightness(100%);
+    background:hsl(25, 88%, 75%);
+}
+
+#buttons-line *:active {
+    filter: brightness(100%);
+    background:hsl(25, 88%, 55%);
+}
+
+#buttons-line> :nth-child(1){
+    border-radius: 3rem 0 0 3rem;
+}
+
+#buttons-line> :nth-child(2){
+    border-width: 0.14rem 0rem 0.14rem 0rem;
+}
+
+#buttons-line> :nth-child(3){
+    border-radius: 0rem 3rem 3rem 0rem;
+}
+
+#texts {
+    position: relative;
+    margin: auto;
+    width: 85%;
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+#texts > * {
+    display: none;
+}
+
+#texts h3 {
+    margin-bottom: 1rem;
+}
+
+#ingredients p {
+    margin-bottom: 1rem;
+}
+
+#ingredients p:first-of-type {
+    margin-bottom: 2rem;
+}
+
+#ingredients p:nth-of-type(4) {
+    margin-bottom: 2rem;
+}
+
+.no-margin {
+    margin-bottom: 1rem;
+}
+
+.no-margin * {
+    margin-bottom: 0rem;
+}
+
+#nutri-info p {
+    margin-bottom: 1rem;
+}
+
+#nutri-info>:nth-child(3), #nutri-info>:nth-child(5) {
+    margin-bottom: 2rem;
+}
+
+#uses p {
+    margin-bottom: 0rem;
+}
