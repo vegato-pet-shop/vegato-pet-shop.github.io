@@ -53,7 +53,7 @@
     width: max-content;
 }
 
-#dpd-div {
+#dpd-div, #omniva-div, #letter-div {
     position: relative;
     margin-bottom: 1.365rem;
 }
@@ -63,13 +63,8 @@
     text-align: right;
 }
 
-#dpd-pickup-point-select {
-    display: block;
-    width: 27.3rem;
-    margin-top: 0.682rem;
-}
 
-#omniva-pickup-point-select {
+#omniva-pickup-point-select, #dpd-pickup-point-select {
     display: block;
     width: 27.3rem;
     margin-top: 0.682rem;
@@ -86,9 +81,10 @@
 }
 
 .transport-type input {
-    margin-top: 0.0rem;
+    margin-top: 0.35rem;
     margin-right: 1.365rem;
     width: 1.365rem;
+    height: 1.365rem;
     accent-color: var(-dark-blue);
 }
 
