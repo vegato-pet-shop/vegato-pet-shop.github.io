@@ -10,13 +10,14 @@ let transportation = ["","",-1]
 let transportationPrice = {
     "self-pickup": 0,
     DPD: 3,
-    Omniva: 3.50
+    Omniva: 3.50,
+    Letter: 0
 }
 
 let price = {
-    catFoodSmall: 23,
+    catFoodSmall: 2,
     catFoodBig: 93.75,
-    dogFoodSmall: 20, 
+    dogFoodSmall: 2, 
     dogFoodBig: 83.75
 }
 
@@ -26,9 +27,9 @@ let orderReceipt = []
 let orderError = []
 
 let names = {
-    catFoodSmall: {est: "VeggieAnimals kassitoit 2 kg", rus: "VeggieAnimals кошачья еда 2 кг", eng: "VeggieAnimals cat food 2 kg"},
+    catFoodSmall: {est: "VeggieAnimals kassitoit 50 g", rus: "VeggieAnimals кошачья еда 50 г", eng: "VeggieAnimals cat food 50 g"},
     catFoodBig: {est: "VeggieAnimals kassitoit 12.5 kg", rus: "VeggieAnimals кошачья еда 12.5 kg", eng: "VeggieAnimals cat food 12.5 kg"},
-    dogFoodSmall: {est: "VeggieAnimals koeratoit 2 kg", rus: "VeggieAnimals собачья еда 2 kg", eng: "VeggieAnimals dog food 2 kg"},
+    dogFoodSmall: {est: "VeggieAnimals koeratoit 50 g", rus: "VeggieAnimals собачья еда 50 г", eng: "VeggieAnimals dog food 50 g"},
     dogFoodBig: {est: "VeggieAnimals koeratoit 12.5 kg", rus: "VeggieAnimals собачья еда 12.5 kg", eng: "VeggieAnimals dog food 12.5 kg"},
 }
 

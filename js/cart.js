@@ -63,6 +63,16 @@ function updateCart() {
     let priceTotal = 0
     let order = []
     let ksItems = Object.keys(price)
+
+    if ((quantity.catFoodSmall!=0 || quantity.dogFoodSmall!=0) && quantity.catFoodBig==0 && quantity.dogFoodBig==0) {
+        document.getElementById("letter-div").style.display = "flex"
+        document.getElementById("omniva-div").style.display = "none"
+        document.getElementById("dpd-div").style.display = "none"
+        document.getElementById("letter-radio-button").checked = true
+        transportation = ["Letter",""]
+        localStorage.setItem('transportation',JSON.stringify(transportation))
+    }
+
     for (let i=0; i<ksItems.length; i++) {
         let item = ksItems[i]
         let productQuantity = quantity[item]
@@ -95,18 +105,25 @@ function updateCart() {
     if (transportation[0]!="") {
         let language = userData.language
         let languageText
+        let transportationType = transportation[0]
         if (language=="est") {
             languageText = "Transport"
+            if (transportationType=="Letter") {
+                transportationType = "Kiri"
+            }
         }
         else if (language=="rus") {
             languageText = "Транспорт"
+            if (transportationType=="Letter") {
+                transportationType = "Письмо"
+            }
         }
         else {
             languageText = "Transport"
         }
 
         let p = document.createElement("p");
-        let text = document.createTextNode(languageText+" ("+transportation[0]+")")
+        let text = document.createTextNode(languageText+" ("+transportationType+")")
         p.appendChild(text)
         objProducts.appendChild(p)
 
@@ -141,11 +158,14 @@ function selectTransportationType(ind) {
         let select = document.getElementById("dpd-pickup-point-select")
         transportation = ["DPD",select.options[select.selectedIndex].text,select.selectedIndex]
     }
-    else {
+    else if (ind==2) {
         document.getElementById("dpd-pickup-point-select").style.display = "none"
         document.getElementById("omniva-pickup-point-select").style.display = "inline"
         select = document.getElementById("omniva-pickup-point-select")
         transportation = ["Omniva",select.options[select.selectedIndex].text,select.selectedIndex]
+    }
+    else if (ind==3) {
+        transportation = ["Letter",""]
     }
     localStorage.setItem('transportation',JSON.stringify(transportation))
     updateCart()
