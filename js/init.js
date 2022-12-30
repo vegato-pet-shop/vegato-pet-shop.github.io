@@ -9,15 +9,14 @@ let quantity = {
 let transportation = ["","",-1]
 let transportationPrice = {
     "self-pickup": 0,
-    DPD: 3,
-    Omniva: 3.50,
-    Letter: 0
+    DPD: 2.50,
+    Omniva: 2.50
 }
 
 let price = {
-    catFoodSmall: 2,
+    catFoodSmall: 4,
     catFoodBig: 93.75,
-    dogFoodSmall: 2, 
+    dogFoodSmall: 3.50, 
     dogFoodBig: 83.75
 }
 
