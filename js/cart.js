@@ -64,15 +64,6 @@ function updateCart() {
     let order = []
     let ksItems = Object.keys(price)
 
-    if ((quantity.catFoodSmall!=0 || quantity.dogFoodSmall!=0) && quantity.catFoodBig==0 && quantity.dogFoodBig==0) {
-        document.getElementById("letter-div").style.display = "flex"
-        document.getElementById("omniva-div").style.display = "none"
-        document.getElementById("dpd-div").style.display = "none"
-        document.getElementById("letter-radio-button").checked = true
-        transportation = ["Letter",""]
-        localStorage.setItem('transportation',JSON.stringify(transportation))
-    }
-
     for (let i=0; i<ksItems.length; i++) {
         let item = ksItems[i]
         let productQuantity = quantity[item]
@@ -108,15 +99,9 @@ function updateCart() {
         let transportationType = transportation[0]
         if (language=="est") {
             languageText = "Transport"
-            if (transportationType=="Letter") {
-                transportationType = "Kiri"
-            }
         }
         else if (language=="rus") {
             languageText = "Транспорт"
-            if (transportationType=="Letter") {
-                transportationType = "Письмо"
-            }
         }
         else {
             languageText = "Transport"
@@ -163,9 +148,6 @@ function selectTransportationType(ind) {
         document.getElementById("omniva-pickup-point-select").style.display = "inline"
         select = document.getElementById("omniva-pickup-point-select")
         transportation = ["Omniva",select.options[select.selectedIndex].text,select.selectedIndex]
-    }
-    else if (ind==3) {
-        transportation = ["Letter",""]
     }
     localStorage.setItem('transportation',JSON.stringify(transportation))
     updateCart()
