@@ -85,7 +85,7 @@ function updateCart() {
 
             p = document.createElement("p")
             p.className = "products-price"
-            text = document.createTextNode(productPrice.toFixed(2)+" EUR")
+            text = document.createTextNode(productPrice.toFixed(2)+" €")
             p.appendChild(text)
             objProducts.appendChild(p)
         }
@@ -119,7 +119,7 @@ function updateCart() {
         objProducts.appendChild(p)
 
         p = document.createElement("p")
-        text = document.createTextNode(transportationPrice[transportation[0]].toFixed(2)+" EUR")
+        text = document.createTextNode(transportationPrice[transportation[0]].toFixed(2)+" €")
         priceTotal += transportationPrice[transportation[0]]
         p.appendChild(text)
         objProducts.appendChild(p)
@@ -127,7 +127,7 @@ function updateCart() {
 
     let objTotal = document.getElementById("products-price-total")
     objTotal.innerHTML = ""
-    objTotal.appendChild(document.createTextNode(priceTotal+" EUR"))
+    objTotal.appendChild(document.createTextNode(priceTotal+" €"))
     userData.orderSum = priceTotal
 }
 
