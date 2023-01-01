@@ -99,7 +99,7 @@ function createFiles()
                             id = row["Kood"]
                             location = row["Sihtkoht"]
                             region = row["Regioon"]
-                            address = row["Aadress"]
+                            address = row["Sihtkoht"]
                             option = "<option value=$id>$address</option>"
                             push!(itella_html,option)
                         end
