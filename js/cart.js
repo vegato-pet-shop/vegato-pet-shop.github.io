@@ -150,7 +150,7 @@ function updateCart() {
         let objTotal = document.getElementById("products-price-total")
         objTotal.innerHTML = ""
         objTotal.appendChild(document.createTextNode(priceTotal.toFixed(2)+" €"))
-        userData.orderSum = priceTotal
+        userData.orderSum = priceTotal.toFixed(2)
     }
 }
 
@@ -324,8 +324,8 @@ function sendConfirmationEmail() {
     userData.address = address
     userData.time = time
     userData.orderNumber = getOrderNumber()
-    userData.transport =  [transportation[0],transportation[1],transportation[2],transportationPrice[transportation[0]]]
-    
+    userData.transport =  [transportation[0],transportation[1],transportation[2],parseFloat(transportationPrice[transportation[0]])]
+
     localStorage.setItem('orderData',JSON.stringify(userData))
     
     let url = 'https://server.vegato-pet-shop.com/send-order'
