@@ -23,7 +23,7 @@ function item(order)
 end
 
 function create_order_subject_message(order_data)
-    local message, subject, transport_item, location
+    local message, subject, transport_item, country
     language = order_data["language"]
     countries = Dict(
         "Estonia" => Dict(
@@ -43,8 +43,10 @@ function create_order_subject_message(order_data)
             "est" => "Soome"
         )
     )
-    if language!="eng"
-        order_data["transport"][2] = countries[order_data["transport"][2]][language]
+    if language=="eng"
+        country = order_data["transport"][2]
+    else
+        country = countries[order_data["transport"][2]][language]
     end
     if language=="est"
         message = messageEst
@@ -63,7 +65,7 @@ function create_order_subject_message(order_data)
     message = "Content-Type: text/html\r\n"*message
     
     pairs = map(x -> "\$"*x => order_data[x],["name1","name2","email","phoneNumber","address","time","orderNumber","orderSum"])
-    transport = join(order_data["transport"][1:3]," ")
+    transport = order_data["transport"][1]*" "*country" "*order_data["transport"][3]
     order_with_transport = [order_data["order"]...,transport_item]
     items = join(map(x -> item(x),order_with_transport))
 
