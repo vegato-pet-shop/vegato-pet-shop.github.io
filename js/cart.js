@@ -155,7 +155,8 @@ function updateCart() {
 }
 
 function selectTransportationType(ind) {
-    let transportationCountry = document.getElementById("country-select").value.toLowerCase()
+    let transportationCountryRaw = document.getElementById("country-select").value
+    let transportationCountry = transportationCountryRaw.toLowerCase()
     for (let provider of ["dpd","omniva","itella"]) {
         for (let country of ["estonia","latvia","lithuania","finland"]) {
             let select = document.getElementById(provider+"-pickup-point-select-"+country)
@@ -178,7 +179,7 @@ function selectTransportationType(ind) {
     n = type[0]
     select = type[1]
     select.style.display = "inline"
-    transportation = [n,transportationCountry,select.options[select.selectedIndex].text,select.selectedIndex]
+    transportation = [n,transportationCountryRaw,select.options[select.selectedIndex].text,select.selectedIndex]
     localStorage.setItem('transportation',JSON.stringify(transportation))
     updateCart()
 }
