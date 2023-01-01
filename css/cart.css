@@ -89,7 +89,8 @@
 }
 
 .transport-type select {
-    width: 13.65rem;
+    width: 20rem;
+    height: 2.73rem;
     margin-top: 0.5rem;
 }
 
