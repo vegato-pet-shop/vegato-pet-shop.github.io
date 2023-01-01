@@ -4,7 +4,7 @@ using Genie, Genie.Requests, Genie.Renderer.Json
 using SMTPClient, JSON3
 
 function send_order() 
-    order_data = jsonpayload()
+    order_data = copy(jsonpayload())
     receiver = order_data["email"]
     subject,message = create_order_subject_message(order_data)
     return send_email(receiver,subject,message)
