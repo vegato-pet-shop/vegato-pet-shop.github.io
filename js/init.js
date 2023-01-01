@@ -6,12 +6,59 @@ let quantity = {
     dogFoodBig: 0
 }
 
-let transportation = ["","",-1]
-let transportationPrice = {
-    "self-pickup": 0,
-    DPD: 3,
-    Omniva: 3,
-    Itella: 3
+let transportation = ["","","",-1]
+let transportationPrice = {}
+let transportationCountry = ""
+
+let transportationPrices = {
+    Estonia: {
+        small: {
+            DPD: 2.50,
+            Omniva: 2.50,
+            Itella: 2.50
+        },
+        big: {
+            DPD: 5,
+            Omniva: 5,
+            Itella: 5
+        }
+    },
+    Latvia: {
+        small: {
+            DPD: 5.50,
+            Omniva: 5.50,
+            Itella: 5.50
+        },
+        big: {
+            DPD: 9,
+            Omniva: 9,
+            Itella: 9
+        }
+    },
+    Lithuania: {
+        small: {
+            DPD: 7.50,
+            Omniva: 7.50,
+            Itella: 7.50
+        },
+        big: {
+            DPD: 10,
+            Omniva: 1,
+            Itella: 10
+        }
+    },
+    Finland: {
+        small: {
+            DPD: 10,
+            Omniva: 10,
+            Itella: 10
+        },
+        big: {
+            DPD: 14,
+            Omniva: 14,
+            Itella: 14
+        }
+    }
 }
 
 let price = {

@@ -91,92 +91,113 @@ function updateCart() {
         }
     }
     userData.order = order
-    
     // Transport
-    if (transportation[0]!="") {
-        let language = userData.language
-        let languageText
-        let transportationType = transportation[0]
-        if (language=="est") {
-            languageText = "Transport"
-        }
-        else if (language=="rus") {
-            languageText = "Транспорт"
+    let transportationCountry = document.getElementById("country-select").value
+    if (transportationCountry!="") {
+        if (transportationCountry!="Estonia") {
+            document.getElementById("dpd-div").style.display = "none"
+            document.getElementById("omniva-div").style.display = "none"
         }
         else {
-            languageText = "Transport"
+            document.getElementById("dpd-div").style.display = "flex"
+            document.getElementById("omniva-div").style.display = "flex"
+        }
+        let transportationPriceCountry = transportationPrices[transportationCountry]
+        if ((quantity.catFoodSmall!=0 || quantity.dogFoodSmall!=0) && quantity.catFoodBig==0 && quantity.dogFoodBig==0) {
+            transportationPrice = transportationPriceCountry.small
+        }
+        else {
+            transportationPrice = transportationPriceCountry.big
         }
 
-        let p = document.createElement("p");
-        let text = document.createTextNode(languageText+" ("+transportationType+")")
-        p.appendChild(text)
-        objProducts.appendChild(p)
-
-        p = document.createElement("p")
-
-        text = document.createTextNode("")
-        p.appendChild(text)
-        objProducts.appendChild(p)
-
-        p = document.createElement("p")
-        text = document.createTextNode(transportationPrice[transportation[0]].toFixed(2)+" €")
-        priceTotal += transportationPrice[transportation[0]]
-        p.appendChild(text)
-        objProducts.appendChild(p)
+        let transportationSpans = document.getElementsByClassName("transportation-price")
+        for (let span of transportationSpans) {
+            span.innerHTML = transportationPrice.DPD
+        }
+        
+        if (transportation[0]!="") {
+            let language = userData.language
+            let languageText
+            let transportationType = transportation[0]
+            if (language=="est") {
+                languageText = "Transport"
+            }
+            else if (language=="rus") {
+                languageText = "Транспорт"
+            }
+            else {
+                languageText = "Transport"
+            }
+    
+            let p = document.createElement("p");
+            let text = document.createTextNode(languageText+" ("+transportationType+")")
+            p.appendChild(text)
+            objProducts.appendChild(p)
+    
+            p = document.createElement("p")
+    
+            text = document.createTextNode("")
+            p.appendChild(text)
+            objProducts.appendChild(p)
+    
+            p = document.createElement("p")
+            text = document.createTextNode(transportationPrice[transportation[0]].toFixed(2)+" €")
+            priceTotal += transportationPrice[transportation[0]]
+            p.appendChild(text)
+            objProducts.appendChild(p)
+        }
+    
+        let objTotal = document.getElementById("products-price-total")
+        objTotal.innerHTML = ""
+        objTotal.appendChild(document.createTextNode(priceTotal.toFixed(2)+" €"))
+        userData.orderSum = priceTotal
     }
-
-    let objTotal = document.getElementById("products-price-total")
-    objTotal.innerHTML = ""
-    objTotal.appendChild(document.createTextNode(priceTotal+" €"))
-    userData.orderSum = priceTotal
 }
 
 function selectTransportationType(ind) {
+    let transportationCountry = document.getElementById("country-select").value.toLowerCase()
+    for (let provider of ["dpd","omniva","itella"]) {
+        for (let country of ["estonia","latvia","lithuania","finland"]) {
+            let select = document.getElementById(provider+"-pickup-point-select-"+country)
+            if (select!=null) {
+                select.style.display = "none"
+            }
+        }
+    }
     /*if (ind==0) {
         document.getElementById("dpd-pickup-point-select").style.display = "none"
         document.getElementById("omniva-pickup-point-select").style.display = "none"
         document.getElementById("itella-pickup-point-select").style.display = "none"
         transportation = ["self-pickup",document.getElementById("self-pickup-text").innerHTML.slice(0,-8)]
     }*/
-    if (ind==0) {
-        document.getElementById("dpd-pickup-point-select").style.display = "inline"
-        document.getElementById("omniva-pickup-point-select").style.display = "none"
-        document.getElementById("itella-pickup-point-select").style.display = "none"
-        let select = document.getElementById("dpd-pickup-point-select")
-        transportation = ["DPD",select.options[select.selectedIndex].text,select.selectedIndex]
-    }
-    else if (ind==1) {
-        document.getElementById("dpd-pickup-point-select").style.display = "none"
-        document.getElementById("omniva-pickup-point-select").style.display = "inline"
-        document.getElementById("itella-pickup-point-select").style.display = "none"
-        let select = document.getElementById("dpd-pickup-point-select")
-        transportation = ["Omniva",select.options[select.selectedIndex].text,select.selectedIndex]
-    }
-    else if (ind==2) {
-        document.getElementById("dpd-pickup-point-select").style.display = "none"
-        document.getElementById("omniva-pickup-point-select").style.display = "none"
-        document.getElementById("itella-pickup-point-select").style.display = "inline"
-        select = document.getElementById("itella-pickup-point-select")
-        transportation = ["Itella",select.options[select.selectedIndex].text,select.selectedIndex]
-    }
+    let dpd = document.getElementById("dpd-pickup-point-select-"+transportationCountry)
+    let omniva = document.getElementById("omniva-pickup-point-select-"+transportationCountry)
+    let itella = document.getElementById("itella-pickup-point-select-"+transportationCountry)
+    let types = [["DPD",dpd],["Omniva",omniva],["Itella",itella]]
+    let type = types[ind]
+    n = type[0]
+    select = type[1]
+    select.style.display = "inline"
+    transportation = [n,transportationCountry,select.options[select.selectedIndex].text,select.selectedIndex]
     localStorage.setItem('transportation',JSON.stringify(transportation))
     updateCart()
 }
 
 function selectTransportationDestination(ind) {
+    let transportationCountry = document.getElementById("country-select").value.toLowerCase()
     let msg = document.getElementById("finish-form-msg")
     msg.style.display = "none"
     if (ind==0) {
-        let select = document.getElementById("dpd-pickup-point-select")
-        transportation = ["DPD",select.options[select.selectedIndex].text,select.selectedIndex]
+        let select = document.getElementById("dpd-pickup-point-select-"+transportationCountry)
+        transportation = ["DPD",transportationCountry,select.options[select.selectedIndex].text,select.selectedIndex]
     }
     else if (ind==1) {
-        select = document.getElementById("omniva-pickup-point-select")
-        transportation = ["Omniva",select.options[select.selectedIndex].text,select.selectedIndex]
+        select = document.getElementById("omniva-pickup-point-select-"+transportationCountry)
+        transportation = ["Omniva",transportationCountry,select.options[select.selectedIndex].text,select.selectedIndex]
     }
     else {
-        select = document.getElementById("itella-pickup-point-select")
-        transportation = ["Itella",select.options[select.selectedIndex].text,select.selectedIndex]
+        select = document.getElementById("itella-pickup-point-select-"+transportationCountry)
+        transportation = ["Itella",transportationCountry,select.options[select.selectedIndex].text,select.selectedIndex]
     }
     localStorage.setItem('transportation',JSON.stringify(transportation))
     updateCart()
@@ -301,7 +322,7 @@ function sendConfirmationEmail() {
     userData.address = address
     userData.time = time
     userData.orderNumber = getOrderNumber()
-    userData.transport =  [transportation[0],transportation[1],transportationPrice[transportation[0]]]
+    userData.transport =  [transportation[0],transportation[1],transportation[2],transportationPrice[transportation[0]]]
     
     localStorage.setItem('orderData',JSON.stringify(userData))
     
@@ -359,15 +380,18 @@ window.addEventListener("load", function() {
     }
 
     // Select transportation
+    let transportationCountry = document.getElementById("country-select").value.toLowerCase()
     let provider = transportation[0]
+    let providers = ["dpd","omniva","itella"]
     if (provider!="") {
         let providerFormatted = provider.toLowerCase()
+        let providerInd = providers.indexOf(providerFormatted)
         let button = this.document.getElementById(providerFormatted+"-radio-button")
         button.checked = true
-        if (transportation[2]!=-1) {
-            let select = document.getElementById(providerFormatted+"-pickup-point-select")
-            select.style.display = "initial"
-            select.selectedIndex = transportation[2]
+        selectTransportationType(providerInd)
+        if (transportation[3]!=-1) {
+            let select = document.getElementById(providerFormatted+"-pickup-point-select-"+transportationCountry)
+            select.selectedIndex = transportation[3]
         }
     }
     else {

@@ -87,25 +87,27 @@ function createFiles()
             end
 
             if (file=="cart.html")
-                itella = DataFrame(XLSX.readtable("src/itella.xlsx", "locations"))
-                itella_html = String[]
-                regions = String.(unique(itella[:,"Regioon"]))
-                for region in regions
-                    inds = itella[:,"Regioon"].==region
-                    rows = itella[inds,:]
-                    push!(itella_html,"<optgroup label=$region>")
-                    for row in eachrow(rows)
-                        id = row["Kood"]
-                        location = row["Sihtkoht"]
-                        region = row["Regioon"]
-                        address = row["Aadress"]
-                        option = "<option value=$id>$address</option>"
-                        push!(itella_html,option)
+                for country in ["estonia","latvia","lithuania","finland"]
+                    itella = DataFrame(XLSX.readtable("src/itella_$country.xlsx", "locations"))
+                    itella_html = String[]
+                    regions = String.(unique(itella[:,"Regioon"]))
+                    for region in regions
+                        inds = itella[:,"Regioon"].==region
+                        rows = itella[inds,:]
+                        push!(itella_html,"<optgroup label=$region>")
+                        for row in eachrow(rows)
+                            id = row["Kood"]
+                            location = row["Sihtkoht"]
+                            region = row["Regioon"]
+                            address = row["Aadress"]
+                            option = "<option value=$id>$address</option>"
+                            push!(itella_html,option)
+                        end
+                        push!(itella_html,"</optgroup>")
                     end
-                    push!(itella_html,"</optgroup>")
+                    itella_html_string = vcat(itella_html...)
+                    html = replace(html,"<$country-parcel-shops-itella></$country-parcel-shops-itella>"=>itella_html_string)
                 end
-                itella_html_string = vcat(itella_html...)
-                html = replace(html,"<parcel-shops-itella></parcel-shops-itella>"=>itella_html_string)
             end
 
             # Save
