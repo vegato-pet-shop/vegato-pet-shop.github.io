@@ -184,20 +184,21 @@ function selectTransportationType(ind) {
 }
 
 function selectTransportationDestination(ind) {
-    let transportationCountry = document.getElementById("country-select").value.toLowerCase()
+    let transportationCountryRaw = document.getElementById("country-select").value
+    let transportationCountry = transportationCountryRaw.toLowerCase()
     let msg = document.getElementById("finish-form-msg")
     msg.style.display = "none"
     if (ind==0) {
         let select = document.getElementById("dpd-pickup-point-select-"+transportationCountry)
-        transportation = ["DPD",transportationCountry,select.options[select.selectedIndex].text,select.selectedIndex]
+        transportation = ["DPD",transportationCountryRaw,select.options[select.selectedIndex].text,select.selectedIndex]
     }
     else if (ind==1) {
         select = document.getElementById("omniva-pickup-point-select-"+transportationCountry)
-        transportation = ["Omniva",transportationCountry,select.options[select.selectedIndex].text,select.selectedIndex]
+        transportation = ["Omniva",transportationCountryRaw,select.options[select.selectedIndex].text,select.selectedIndex]
     }
     else {
         select = document.getElementById("itella-pickup-point-select-"+transportationCountry)
-        transportation = ["Itella",transportationCountry,select.options[select.selectedIndex].text,select.selectedIndex]
+        transportation = ["Itella",transportationCountryRaw,select.options[select.selectedIndex].text,select.selectedIndex]
     }
     localStorage.setItem('transportation',JSON.stringify(transportation))
     updateCart()
