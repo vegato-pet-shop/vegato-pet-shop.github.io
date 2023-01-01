@@ -83,7 +83,24 @@
     display: block;
     width: 13.65rem;
     margin: auto;
+    
+}
+
+.feed-card * {
     filter: drop-shadow( 0.14rem 0.14rem 0.068rem rgba(0, 0, 0, 0.377));
+}
+
+.feed-img {
+    width: 100%;
+}
+
+#discount-tag {
+    position: absolute;
+    top: 2rem;
+    left: 8rem;
+    width: 9rem;
+    z-index: 3;
+    transform: rotate(20deg);
 }
 
 .price-kg {

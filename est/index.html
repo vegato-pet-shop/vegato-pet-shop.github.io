@@ -46,10 +46,11 @@
         <img src="/img/paw_print.png" alt="paw print">
     </div>
 
+    <!--
     <div id="notice">
         <p>Me veel oleme kauba soetamise etapis, kuid olete teretulnud ette tellima! Nii me teame, et olete huvitatud. Kauba lattu jõudmisel võtame teiega tasumise osas kindlasti ühendust!</p>
     </div>
-    
+    -->
     <div id="navbar">
     <a href="/est/">
         <img src="/img/vegato_logo.png" id="navbar-logo" alt="vegato logo">
@@ -80,16 +81,18 @@
 </div> 
 
     <div id="wrapper">
+
         <div id="hero">
-            <div id="hero-images">
-                <img src="/img/dog.png" id="dog-hero" alt="dog-hero">
-                <img src="/img/feed.png" id="feed-img" alt="feed">
-            </div>
-            <div id="hero-text">
-                <h1>Taimne<br>lemmikloomatoit<br>optimaalseks<br>terviseks</h1>
-                <button onclick="location.href='#products'">osta kohe</button>
-            </div>
-        </div>
+    <div id="hero-images">
+        <img src="/img/dog.png" id="dog-hero" alt="dog-hero">
+        <img src="/img/feed.png" id="feed-img" alt="feed">
+        <img src="/img/tag.png" id="tag-img" alt="tag">
+    </div>
+    <div id="hero-text">
+        <h1>Taimne<br>lemmikloomatoit<br>optimaalseks<br>terviseks</h1>
+        <button onclick="location.href='#products'">osta kohe</button>
+    </div>
+</div>
 
         <div id="products">
             <h2>Tooted</h2>
@@ -97,6 +100,7 @@
                 <div id="cat-food">
                     <div class="product-card-wrapper">
                         <img src="/img/ginger_cat.png" id="cat-card" alt="cat">
+                        <img src="/img/discount.png" id="discount-tag" alt="discount tag">
                         <a href="/est/cats"><img src="/img/cat_food.svg" class="feed-card" alt="cat food"></a>
                         <div class="description">
                             <h3>KUIVTOIT KASSIDELE</h3>
@@ -104,7 +108,11 @@
                             <p>sobib igale suurusele</p>
                         </div>
                         <div class="input-div">
-                            <span class="span price-total">4 EUR (100 g)</span>
+                            <span class="span price-total">
+                                <span style="font-size: inherit; color: var(--orange)">3.60 €</span>
+                                <s style="font-size: inherit; color: rgb(193, 193, 193);">4 €</s>
+                                 (100 g proovimiseks)
+                            </span>
                             <div id="cat-small-input" class="number-input">
                                 <button onclick="subtract(this)" class="minus"></button>
                                 <input id="cat-food-small-input" class="quantity" min="0" name="quantity" value="0" type="number">
@@ -115,8 +123,15 @@
                             </div>
                         </div>
                         <div class="input-div">
-                            <span class="span price-total">93.75 EUR (12.5 kg)</span>
-                            <span class="span price-kg">7.50 EUR/kg</span>
+                            <span class="span price-total">
+                                <span style="font-size: inherit; color: var(--orange)">84.40 € </span>
+                                <s style="font-size: inherit; color: rgb(193, 193, 193);">93.75 €</s>
+                                 (12.5 kg)
+                            </span>
+                            <span class="span price-kg">
+                                <span style="font-size: inherit">6.75 €/kg </span>
+                                <s style="font-size: inherit; color: rgb(193, 193, 193);">7.50 €/kg</s>
+                            </span>
                             <div id="cat-small-input" class="number-input">
                                 <button onclick="subtract(this)" class="minus"></button>
                                 <input id="cat-food-big-input" class="quantity" min="0" name="quantity" value="0" type="number">
@@ -132,6 +147,7 @@
                 <div id="dog-food">
                     <div class="product-card-wrapper">
                         <img src="/img/dog.png" id="dog-card" alt="dog">
+                        <img src="/img/discount.png" id="discount-tag" alt="discount tag">
                         <a href="/est/dogs"><img src="/img/dog_food.svg" class="feed-card" alt="dog food"></a>
                         <div class="description">
                             <h3>KUIVTOIT KOERTELE</h3>
@@ -139,7 +155,11 @@
                             <p>sobib igale suurusele</p>
                         </div>
                         <div class="input-div">
-                            <span class="span price-total">3.50 EUR (100 g)</span>
+                            <span class="span price-total">
+                                <span style="font-size: inherit; color: var(--orange)">3.15 €</span>
+                                <s style="font-size: inherit; color: rgb(193, 193, 193);">3.50 €</s>
+                                 (100 g proovimiseks)
+                            </span>
                             <div id="cat-small-input" class="number-input">
                                 <button onclick="subtract(this,['dogFoodSmall'])" class="minus"></button>
                                 <input id="dog-food-small-input" class="quantity" min="0" name="quantity" value="0" type="number">
@@ -150,8 +170,15 @@
                             </div>
                         </div>
                         <div class="input-div">
-                            <span class="span price-total">83.75 EUR (12.5 kg)</span>
-                            <span class="span price-kg">6.70 EUR/kg</span>
+                            <span class="span price-total">
+                                <span style="font-size: inherit; color: var(--orange)">75.40 € </span>
+                                <s style="font-size: inherit; color: rgb(193, 193, 193);">83.75 €</s>
+                                 (12.5 kg)
+                            </span>
+                            <span class="span price-kg">
+                                <span style="font-size: inherit">6 €/kg </span>
+                                <s style="font-size: inherit; color: rgb(193, 193, 193);">6.70 €/kg</s>
+                            </span>
                             <div id="cat-small-input" class="number-input">
                                 <button onclick="subtract(this)" class="minus"></button>
                                 <input id="dog-food-big-input" class="quantity" min="0" name="quantity" value="0" type="number">

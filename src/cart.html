@@ -47,9 +47,11 @@
         <img src="/img/paw_print.png" alt="paw print">
     </div>
     
+    <!--
     <div id="notice">
         <p>We are still in the process of acquiring stock, but you are welcome to pre-order so we know that you are interested. We are going to contact you when stock is available to arrange payment.</p>
     </div>
+    -->
 
     <navbar-component></navbar-component>
 
@@ -65,10 +67,10 @@
             <h2>Transportation</h2>
             <div id="transport">
                 <div id="dpd-div" class="transport-type">
-                    <input id="dpd-radio-button" type="radio" name="group1" onclick="selectTransportationType(1)"></input>
+                    <input id="dpd-radio-button" type="radio" name="group1" onclick="selectTransportationType(0)"></input>
                     <div>
                         <p>DPD parcel locker (2.50 EUR)</p>
-                        <select id="dpd-pickup-point-select" style="display: none;" onchange="selectTransportationDestination(1)">
+                        <select id="dpd-pickup-point-select" style="display: none;" onchange="selectTransportationDestination(0)">
                             <option></option>
                             <optgroup  label="Abja-Paluoja">
                                 <option  value="EE90105">Automaat Abja-Paluoja Konsum, Pärnu mnt 13, Abja-Paluoja 69403</option>
@@ -833,10 +835,10 @@
                     </div>
                 </div>
                 <div id="omniva-div" class="transport-type">
-                    <input id="omniva-radio-button" type="radio" name="group1" onclick="selectTransportationType(2)"></input>
+                    <input id="omniva-radio-button" type="radio" name="group1" onclick="selectTransportationType(1)"></input>
                     <div>
                         <p>Omniva parcel locker (2.50 EUR)</p>
-                        <select id="omniva-pickup-point-select" style="display: none;" onchange="selectTransportationDestination(2)">
+                        <select id="omniva-pickup-point-select" style="display: none;" onchange="selectTransportationDestination(1)">
                             <option></option>
                             <optgroup label="Viljandi maakond">
                                 <option value="96243">Abja Coop Konsumi pakiautomaat (Mulgi vald)</option>
@@ -1443,6 +1445,16 @@
                             
                                 <option value="96227">Valga Siili Coop Konsumi pakiautomaat (Valga vald)</option>
                             </optgroup>
+                        </select>
+                    </div>
+                </div>
+                <div id="itella-div" class="transport-type">
+                    <input id="itella-radio-button" type="radio" name="group1" onclick="selectTransportationType(2)"></input>
+                    <div>
+                        <p>Itella parcel locker (2.50 EUR)</p>
+                        <select id="itella-pickup-point-select" style="display: none;" onchange="selectTransportationDestination(2)">
+                            <option></option>
+                            <parcel-shops-itella></parcel-shops-itella>
                         </select>
                     </div>
                 </div>

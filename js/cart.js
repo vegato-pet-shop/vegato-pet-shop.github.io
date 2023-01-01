@@ -119,7 +119,7 @@ function updateCart() {
         objProducts.appendChild(p)
 
         p = document.createElement("p")
-        text = document.createTextNode(transportationPrice[transportation[0]]+" EUR")
+        text = document.createTextNode(transportationPrice[transportation[0]].toFixed(2)+" EUR")
         priceTotal += transportationPrice[transportation[0]]
         p.appendChild(text)
         objProducts.appendChild(p)
@@ -132,22 +132,32 @@ function updateCart() {
 }
 
 function selectTransportationType(ind) {
-    if (ind==0) {
+    /*if (ind==0) {
         document.getElementById("dpd-pickup-point-select").style.display = "none"
         document.getElementById("omniva-pickup-point-select").style.display = "none"
+        document.getElementById("itella-pickup-point-select").style.display = "none"
         transportation = ["self-pickup",document.getElementById("self-pickup-text").innerHTML.slice(0,-8)]
-    }
-    else if (ind==1) {
+    }*/
+    if (ind==0) {
         document.getElementById("dpd-pickup-point-select").style.display = "inline"
         document.getElementById("omniva-pickup-point-select").style.display = "none"
+        document.getElementById("itella-pickup-point-select").style.display = "none"
         let select = document.getElementById("dpd-pickup-point-select")
         transportation = ["DPD",select.options[select.selectedIndex].text,select.selectedIndex]
     }
-    else if (ind==2) {
+    else if (ind==1) {
         document.getElementById("dpd-pickup-point-select").style.display = "none"
         document.getElementById("omniva-pickup-point-select").style.display = "inline"
-        select = document.getElementById("omniva-pickup-point-select")
+        document.getElementById("itella-pickup-point-select").style.display = "none"
+        let select = document.getElementById("dpd-pickup-point-select")
         transportation = ["Omniva",select.options[select.selectedIndex].text,select.selectedIndex]
+    }
+    else if (ind==2) {
+        document.getElementById("dpd-pickup-point-select").style.display = "none"
+        document.getElementById("omniva-pickup-point-select").style.display = "none"
+        document.getElementById("itella-pickup-point-select").style.display = "inline"
+        select = document.getElementById("itella-pickup-point-select")
+        transportation = ["Itella",select.options[select.selectedIndex].text,select.selectedIndex]
     }
     localStorage.setItem('transportation',JSON.stringify(transportation))
     updateCart()
@@ -156,13 +166,17 @@ function selectTransportationType(ind) {
 function selectTransportationDestination(ind) {
     let msg = document.getElementById("finish-form-msg")
     msg.style.display = "none"
-    if (ind==1) {
+    if (ind==0) {
         let select = document.getElementById("dpd-pickup-point-select")
         transportation = ["DPD",select.options[select.selectedIndex].text,select.selectedIndex]
     }
-    else {
+    else if (ind==1) {
         select = document.getElementById("omniva-pickup-point-select")
         transportation = ["Omniva",select.options[select.selectedIndex].text,select.selectedIndex]
+    }
+    else {
+        select = document.getElementById("itella-pickup-point-select")
+        transportation = ["Itella",select.options[select.selectedIndex].text,select.selectedIndex]
     }
     localStorage.setItem('transportation',JSON.stringify(transportation))
     updateCart()
@@ -347,30 +361,22 @@ window.addEventListener("load", function() {
     // Select transportation
     let provider = transportation[0]
     if (provider!="") {
-        if (provider=="DPD") {
-            let button = this.document.getElementById("dpd-radio-button")
-            button.checked = true
-            if (transportation[2]!=-1) {
-                let select = document.getElementById("dpd-pickup-point-select")
-                select.style.display = "initial"
-                select.selectedIndex = transportation[2]
-            }
-        }
-        else if (provider=="Omniva") {
-            let button = this.document.getElementById("omniva-radio-button")
-            button.checked = true
-            if (transportation[2]!=-1) {
-                let select = document.getElementById("omniva-pickup-point-select")
-                select.style.display = "initial"
-                select.selectedIndex = transportation[2]
-            }
+        let providerFormatted = provider.toLowerCase()
+        let button = this.document.getElementById(providerFormatted+"-radio-button")
+        button.checked = true
+        if (transportation[2]!=-1) {
+            let select = document.getElementById(providerFormatted+"-pickup-point-select")
+            select.style.display = "initial"
+            select.selectedIndex = transportation[2]
         }
     }
     else {
         let buttonDPD = this.document.getElementById("dpd-radio-button")
         let buttonOmniva = this.document.getElementById("omniva-radio-button")
+        let buttonItella = this.document.getElementById("itella-radio-button")
         buttonDPD.checked = false
         buttonOmniva.checked = false
+        buttonItella.checked = false
     }
 })
 
