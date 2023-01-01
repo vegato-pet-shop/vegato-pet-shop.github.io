@@ -47,9 +47,11 @@
         <img src="/img/paw_print.png" alt="paw print">
     </div>
 
+    <!--
     <div id="notice">
         <p>We are still in the process of acquiring stock, but you are welcome to pre-order so we know that you are interested. We are going to contact you when stock is available to arrange payment.</p>
     </div>
+    -->
     
     <navbar-component></navbar-component>
 
@@ -58,7 +60,10 @@
             <h2>Cat food</h2>
             <div id="food">
                 <div class="product-card-wrapper">
-                    <img src="/img/cat_food.svg" class="feed-card" alt="cat food">
+                    <div class="feed-card">
+                        <img src="/img/cat_food.svg" class="feed-img" alt="cat food">
+                        <img src="/img/discount.png" id="discount-tag" alt="discount tag">
+                    </div>
                     <div id="product-data">
                         <div class="description">
                             <h3>DRY FOOD FOR CATS</h3>
@@ -66,7 +71,11 @@
                             <p>for all sizes</p>
                         </div>
                         <div class="input-div">
-                            <span class="span price-total">4 EUR (100 g)</span>
+                            <span class="span price-total">
+                                <span style="font-size: inherit; color: var(--orange)">3.60 €</span>
+                                <s style="font-size: inherit; color: rgb(193, 193, 193);">4 €</s>
+                                 (100 g sample)
+                            </span>
                             <div id="cat-small-input" class="number-input">
                                 <button onclick="subtract(this)" class="minus"></button>
                                 <input id="cat-food-small-input" class="quantity" min="0" name="quantity" value="0" type="number">
@@ -77,8 +86,15 @@
                             </div>
                         </div>
                         <div class="input-div">
-                            <span class="span price-total">93.75 EUR (12.5 kg)</span>
-                            <span class="span price-kg">7.50 EUR/kg</span>
+                            <span class="span price-total">
+                                <span style="font-size: inherit; color: var(--orange)">84.40 € </span>
+                                <s style="font-size: inherit; color: rgb(193, 193, 193);">93.75 €</s>
+                                 (12.5 kg)
+                            </span>
+                            <span class="span price-kg">
+                                <span style="font-size: inherit">6.75 €/kg </span>
+                                <s style="font-size: inherit; color: rgb(193, 193, 193);">7.50 €/kg</s>
+                            </span>
                             <div id="cat-small-input" class="number-input">
                                 <button onclick="subtract(this)" class="minus"></button>
                                 <input id="cat-food-big-input" class="quantity" min="0" name="quantity" value="0" type="number">

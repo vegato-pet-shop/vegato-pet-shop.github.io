@@ -24,6 +24,9 @@ function createFiles()
     footer = open(joinpath("src/components/footer.html")) do f
         read(f, String)
     end
+    hero = open(joinpath("src/components/hero.html")) do f
+        read(f, String)
+    end
 
     files = readdir("src")
     html_files = String[]
@@ -45,6 +48,9 @@ function createFiles()
         # Add navbar
         navbar_temp = fix_links(navbar,lang)
         html = replace(html,"<navbar-component></navbar-component>"=>navbar_temp)
+
+        # Add hero
+        html = replace(html,"<hero-component></hero-component>"=>hero)
 
         # Add footer
         html = replace(html,"<footer-component></footer-component>"=>footer)
@@ -78,6 +84,28 @@ function createFiles()
             html = replace(html,"a href=\"/cats"=>"a href=\"/"*lang*"/cats")
             if lang!="eng"
                 html = replace(html,pairs...)
+            end
+
+            if (file=="cart.html")
+                itella = DataFrame(XLSX.readtable("src/itella.xlsx", "locations"))
+                itella_html = String[]
+                regions = String.(unique(itella[:,"Regioon"]))
+                for region in regions
+                    inds = itella[:,"Regioon"].==region
+                    rows = itella[inds,:]
+                    push!(itella_html,"<optgroup label=$region>")
+                    for row in eachrow(rows)
+                        id = row["Kood"]
+                        location = row["Sihtkoht"]
+                        region = row["Regioon"]
+                        address = row["Aadress"]
+                        option = "<option value=$id>$address</option>"
+                        push!(itella_html,option)
+                    end
+                    push!(itella_html,"</optgroup>")
+                end
+                itella_html_string = vcat(itella_html...)
+                html = replace(html,"<parcel-shops-itella></parcel-shops-itella>"=>itella_html_string)
             end
 
             # Save

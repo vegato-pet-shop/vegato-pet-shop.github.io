@@ -64,7 +64,7 @@
 }
 
 
-#omniva-pickup-point-select, #dpd-pickup-point-select {
+#omniva-pickup-point-select, #dpd-pickup-point-select, #itella-pickup-point-select {
     display: block;
     width: 27.3rem;
     margin-top: 0.682rem;

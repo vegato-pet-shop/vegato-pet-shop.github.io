@@ -27,8 +27,19 @@
     filter: drop-shadow( 0.14rem 0.14rem 0.068rem rgba(0, 0, 0, 0.377));
 }
 
+#tag-img {
+    position: absolute;
+    top: calc(4rem*var(--scale));
+    left: calc(12rem*var(--scale));
+    width: calc(10rem*var(--scale));
+    z-index: 3;
+    transform: rotate(-20deg);
+    filter: drop-shadow( 0.14rem 0.14rem 0.068rem rgba(0, 0, 0, 0.377));
+}
+
 #dog-hero {
     position: relative;
+    visibility: hidden;
     top: calc(5rem*var(--scale));
     left: calc(13rem*var(--scale));
     width: calc(5.5rem*var(--scale));
@@ -98,6 +109,7 @@
     }
     #hero-text h1 {
         font-size: 3.3rem;
+        line-height: 2.5rem;
     }
     #hero-images {
         --scale: 0.85;
@@ -109,7 +121,7 @@
 
 @media only screen and (max-width: 540px) {
     #hero-text h1 {
-        line-height: 4rem;
+        line-height: 2.5rem;
     }
 }
 

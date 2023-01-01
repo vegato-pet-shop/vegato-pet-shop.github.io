@@ -430,3 +430,14 @@ optgroup {
 #notice * {
     font-size: 1.3rem;
 }
+
+#discount-tag {
+    position: absolute;
+    margin: auto;
+    top: 2rem;
+    left: 13rem;
+    width: 9rem;
+    z-index: 3;
+    transform: rotate(20deg);
+    filter: drop-shadow( 0.14rem 0.14rem 0.068rem rgba(0, 0, 0, 0.377));
+}
