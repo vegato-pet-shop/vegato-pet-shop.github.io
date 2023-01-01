@@ -33,23 +33,49 @@ function createCORSRequest(method, url) {
 }
 
 function item(order) {
-    return `<tr><td style="color: #737373; border: 1px solid #e4e4e4; padding: 12px; text-align: left; vertical-align: middle; font-family: 'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif; word-wrap: break-word;">${order[0]}</td><td style="color: #737373; border: 1px solid #e4e4e4; padding: 12px; text-align: left; vertical-align: middle; font-family: 'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif;">${order[1]}</td><td style="color: #737373; border: 1px solid #e4e4e4; padding: 12px; text-align: left; vertical-align: middle; font-family: 'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif;"><span>${order[2]} <span>€</span></span></td></tr>`
+    let cost = order[2]
+    cost = (typeof cost)=="string" ? cost : cost.toFixed(2)
+    return `<tr><td style="color: #737373; border: 1px solid #e4e4e4; padding: 12px; text-align: left; vertical-align: middle; font-family: 'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif; word-wrap: break-word;">${order[0]}</td><td style="color: #737373; border: 1px solid #e4e4e4; padding: 12px; text-align: left; vertical-align: middle; font-family: 'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif;">${order[1]}</td><td style="color: #737373; border: 1px solid #e4e4e4; padding: 12px; text-align: left; vertical-align: middle; font-family: 'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif;"><span>${cost} <span>€</span></span></td></tr>`
 }
 
 function addData(message) {
+    countries = {
+        Estonia: {
+            rus: "Эстония",
+            est: "Eesti"
+        },
+        Latvia: {
+            rus: "Латвия",
+            est: "Läti"
+        },
+        Lithuania: {
+            rus: "Латвия",
+            est: "Leedu"
+        },
+        Finland: {
+            rus: "Финляндия",
+            est: "Soome"
+        }
+    }
+    if (language!="eng") {
+        orderData["transport"][1] = countries[orderData["transport"][1]][language]
+    }
+    let transportCost = orderData["transport"][3]
+    let transportCostString = transportCost.toFixed(2)
+    let provider = orderData["transport"][0]
     if (language=="est") {
-        transportItem = ["Transport ("+orderData["transport"][0]+")","",orderData["transport"][2]]
+        transportItem = ["Transport ("+provider+")","",transportCostString]
     }
     else if (language=="rus") {
-        transportItem = ["Транспорт ("+orderData["transport"][0]+")","",orderData["transport"][2]]
+        transportItem = ["Транспорт ("+provider+")","",transportCostString]
     }
     else {
-        transportItem = ["Transportation ("+orderData["transport"][0]+")","",orderData["transport"][2]]
+        transportItem = ["Transportation ("+provider+")","",transportCostString]
     }
     
     let keys = ["name1","name2","email","phoneNumber","address","time","orderNumber","orderSum"]
     let pairs = keys.map(x => ["$"+x, orderData[x]])
-    let transport = orderData["transport"][0]+" "+orderData["transport"][1]
+    let transport = orderData["transport"][0]+" "+orderData["transport"][1]+" "+orderData["transport"][2]
     orderWithTransport = [...orderData["order"],transportItem]
     items = orderWithTransport.map(x => item(x)).join(" ")
     pairs.push(["$transport", transport], ["$items", items])
