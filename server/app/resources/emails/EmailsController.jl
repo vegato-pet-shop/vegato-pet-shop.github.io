@@ -23,26 +23,47 @@ function item(order)
 end
 
 function create_order_subject_message(order_data)
-    local message, subject, transport_item
+    local message, subject, transport_item, location
     language = order_data["language"]
+    countries = Dict(
+        "Estonia" => Dict(
+            "rus" => "Эстония",
+            "est" => "Eesti"
+        ),
+        "Latvia" => Dict(
+            "rus" => "Латвия",
+            "est" => "Läti"
+        ),
+        "Lithuania" => Dict(
+            "rus" => "Латвия",
+            "est" => "Leedu"
+        ),
+        "Finland" => Dict(
+            "rus" => "Финляндия",
+            "est" => "Soome"
+        )
+    )
+    if language!="eng"
+        order_data["transport"][2] = countries[order_data["transport"][2]][language]
+    end
     if language=="est"
         message = messageEst
         subject = string("Vegato (tellimus ",order_data["orderNumber"],")")
-        transport_item = ["Transport ("*order_data["transport"][1]*")","",order_data["transport"][3]]
+        transport_item = ["Transport ("*order_data["transport"][1]*")","",order_data["transport"][4]]
     elseif language=="rus"
         message = messageRus
         subject = string("Vegato (заказ ",order_data["orderNumber"],")")
-        transport_item = ["Транспорт ("*order_data["transport"][1]*")","",order_data["transport"][3]]
+        transport_item = ["Транспорт ("*order_data["transport"][1]*")","",order_data["transport"][4]]
     else
         message = messageEng
         subject = string("Vegato (order ",order_data["orderNumber"],")")
-        transport_item = ["Transportation ("*order_data["transport"][1]*")","",order_data["transport"][3]]
+        transport_item = ["Transportation ("*order_data["transport"][1]*")","",order_data["transport"][4]]
     end
     
     message = "Content-Type: text/html\r\n"*message
     
     pairs = map(x -> "\$"*x => order_data[x],["name1","name2","email","phoneNumber","address","time","orderNumber","orderSum"])
-    transport = join(order_data["transport"][1:2]," ")
+    transport = join(order_data["transport"][1:3]," ")
     order_with_transport = [order_data["order"]...,transport_item]
     items = join(map(x -> item(x),order_with_transport))
 

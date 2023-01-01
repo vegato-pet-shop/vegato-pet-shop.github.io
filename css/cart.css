@@ -63,7 +63,6 @@
     text-align: right;
 }
 
-
 #omniva-pickup-point-select, #dpd-pickup-point-select, #itella-pickup-point-select {
     display: block;
     width: 27.3rem;
@@ -81,6 +80,7 @@
 }
 
 .transport-type input {
+    display: inline;
     margin-top: 0.35rem;
     margin-right: 1.365rem;
     width: 1.365rem;
@@ -90,6 +90,20 @@
 
 .transport-type select {
     width: 13.65rem;
+    margin-top: 0.5rem;
+}
+
+.transportation-price {
+    font-size: inherit;
+    font-family: inherit;
+    color: inherit;
+}
+
+.country-select {
+    display: inline-block;
+    margin-bottom: 1rem;
+    height: 2.73rem;
+    width: 10rem;
 }
 
 #personal-data {

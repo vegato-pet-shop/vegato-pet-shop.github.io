@@ -66,11 +66,18 @@
             </div>
             <h2>Transportation</h2>
             <div id="transport">
+                <label>Country: </label>
+                <select id="country-select" class="country-select" onchange="selectTransportationType(2)">
+                    <option value="Estonia">Estonia</option>
+                    <option value="Latvia">Latvia</option>
+                    <option value="Lithuania">Lithuania</option>
+                    <option value="Finland">Finland</option>
+                </select>
                 <div id="dpd-div" class="transport-type">
                     <input id="dpd-radio-button" type="radio" name="group1" onclick="selectTransportationType(0)"></input>
                     <div>
-                        <p>DPD parcel locker (3 €)</p>
-                        <select id="dpd-pickup-point-select" style="display: none;" onchange="selectTransportationDestination(0)">
+                        <p>DPD parcel locker (<span class="transportation-price"></span> €)</p>
+                        <select id="dpd-pickup-point-select-estonia" style="display: none;" onchange="selectTransportationDestination(0)">
                             <option></option>
                             <optgroup  label="Abja-Paluoja">
                                 <option  value="EE90105">Automaat Abja-Paluoja Konsum, Pärnu mnt 13, Abja-Paluoja 69403</option>
@@ -837,8 +844,8 @@
                 <div id="omniva-div" class="transport-type">
                     <input id="omniva-radio-button" type="radio" name="group1" onclick="selectTransportationType(1)"></input>
                     <div>
-                        <p>Omniva parcel locker (3 €)</p>
-                        <select id="omniva-pickup-point-select" style="display: none;" onchange="selectTransportationDestination(1)">
+                        <p>Omniva parcel locker (<span class="transportation-price"></span> €)</p>
+                        <select id="omniva-pickup-point-select-estonia" style="display: none;" onchange="selectTransportationDestination(1)">
                             <option></option>
                             <optgroup label="Viljandi maakond">
                                 <option value="96243">Abja Coop Konsumi pakiautomaat (Mulgi vald)</option>
@@ -1451,10 +1458,22 @@
                 <div id="itella-div" class="transport-type">
                     <input id="itella-radio-button" type="radio" name="group1" onclick="selectTransportationType(2)"></input>
                     <div>
-                        <p>Itella parcel locker (3 €)</p>
-                        <select id="itella-pickup-point-select" style="display: none;" onchange="selectTransportationDestination(2)">
+                        <p>Itella parcel locker (<span class="transportation-price"></span> €)</p>
+                        <select id="itella-pickup-point-select-estonia" style="display: none;" onchange="selectTransportationDestination(2)">
                             <option></option>
-                            <parcel-shops-itella></parcel-shops-itella>
+                            <estonia-parcel-shops-itella></estonia-parcel-shops-itella>
+                        </select>
+                        <select id="itella-pickup-point-select-latvia" style="display: none;" onchange="selectTransportationDestination(2)">
+                            <option></option>
+                            <latvia-parcel-shops-itella></latvia-parcel-shops-itella>
+                        </select>
+                        <select id="itella-pickup-point-select-lithuania" style="display: none;" onchange="selectTransportationDestination(2)">
+                            <option></option>
+                            <lithuania-parcel-shops-itella></lithuania-parcel-shops-itella>
+                        </select>
+                        <select id="itella-pickup-point-select-finland" style="display: none;" onchange="selectTransportationDestination(2)">
+                            <option></option>
+                            <finland-parcel-shops-itella></finland-parcel-shops-itella>
                         </select>
                     </div>
                 </div>
