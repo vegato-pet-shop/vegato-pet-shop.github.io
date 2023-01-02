@@ -72,13 +72,13 @@ function addData(message) {
     else {
         transportItem = ["Transportation ("+provider+")","",transportCostString]
     }
-    
-    let keys = ["name1","name2","email","phoneNumber","address","time","orderNumber","orderSum"]
+    let keys = ["name1","name2","email","phoneNumber","address","time","orderNumber","orderSum","referralMsg"]
     let pairs = keys.map(x => ["$"+x, orderData[x]])
     let transport = orderData["transport"][0]+" "+orderData["transport"][1]+" "+orderData["transport"][2]
     orderWithTransport = [...orderData["order"],transportItem]
     items = orderWithTransport.map(x => item(x)).join(" ")
     pairs.push(["$transport", transport], ["$items", items])
+    pairs.push()
     for (pair of pairs) {
         message = message.replaceAll(...pair)
     }
@@ -125,7 +125,6 @@ function downloadOrder() {
 let callback = function() {
     let cartCounter = document.getElementById("cart-counter")
     cartCounter.innerHTML = 0
-
     
     let url = "/assets/order_messages/message"+language.toUpperCase()+".html";
     let xhr = createCORSRequest('GET', url);
