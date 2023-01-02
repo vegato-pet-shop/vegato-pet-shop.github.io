@@ -94,6 +94,11 @@ let userData = {
     language: ""
 }
 
+let referral = ""
+if (localStorage.getItem('referral')!=null) {
+    referral = localStorage.getItem('referral')
+}
+
 if (localStorage.getItem('quantity')!=null && localStorage.getItem('quantity')!=undefined) {
     let quantityTemp = JSON.parse(localStorage.getItem('quantity'))
     if (Object.keys(quantityTemp).toString()==Object.keys(quantity).toString()) {

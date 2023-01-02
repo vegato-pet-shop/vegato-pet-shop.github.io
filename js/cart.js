@@ -112,7 +112,7 @@ function updateCart() {
 
         let transportationSpans = document.getElementsByClassName("transportation-price")
         for (let span of transportationSpans) {
-            span.innerHTML = transportationPrice.DPD
+            span.innerHTML = transportationPrice.DPD.toFixed(2)
         }
         
         if (transportation[0]!="") {
@@ -325,6 +325,7 @@ function sendConfirmationEmail() {
     userData.time = time
     userData.orderNumber = getOrderNumber()
     userData.transport =  [transportation[0],transportation[1],transportation[2],parseFloat(transportationPrice[transportation[0]])]
+    userData.referralMsg = document.getElementById("referral").innerHTML
 
     localStorage.setItem('orderData',JSON.stringify(userData))
     
@@ -333,6 +334,7 @@ function sendConfirmationEmail() {
     xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8")
     xhr.onreadystatechange = function() {
         if (xhr.readyState == 4 && xhr.status == 200) {
+            referral = ""
             let response = xhr.responseText
             window.location.href = "/"+userData.language+"/order-succeeded"
         }
@@ -370,8 +372,27 @@ function changePersonalData(name,value) {
     localStorage.setItem('userData',JSON.stringify(userData))
 }
 
+function updateReferral() {
+    let referralP = document.getElementById("referral")
+    if (referral!="") {
+        referralP.style.display = "initial"
+    }
+    if (referral=="cats help") {
+        if (userData.language=="est") {
+            referralP.innerHTML = "10% ostu kasumist läheb Cats Help MTÜ-le."
+        }
+        else if (userData.language=="eng") {
+            referralP.innerHTML = "10% of profit from this purchase is going to be send to the Cats Help MTÜ."
+        }
+        else {
+            referralP.innerHTML = "10% прибыли с этой покупки будет отправлено Cats Help MTÜ."
+        }
+    }
+}
+
 window.addEventListener("load", function() {
     updateCart()
+    updateReferral()
 
     // Load user data
     let ids = ["personal-data-name1","personal-data-name2","personal-data-phone","personal-data-email","personal-data-address"]

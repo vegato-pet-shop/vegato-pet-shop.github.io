@@ -65,7 +65,7 @@ function create_order_subject_message(order_data)
     
     message = "Content-Type: text/html\r\n"*message
     
-    pairs = map(x -> "\$"*x => order_data[x],["name1","name2","email","phoneNumber","address","time","orderNumber","orderSum"])
+    pairs = map(x -> "\$"*x => order_data[x],["name1","name2","email","phoneNumber","address","time","orderNumber","orderSum","referralMsg"])
     transport = order_data["transport"][1]*" "*country*" "*order_data["transport"][3]
     order_with_transport = [order_data["order"]...,transport_item]
     items = join(map(x -> item(x),order_with_transport))
